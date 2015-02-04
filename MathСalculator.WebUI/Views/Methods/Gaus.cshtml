@@ -1,0 +1,91 @@
+﻿
+@model MathСalculator.WebUI.Models.GausModel
+@{
+    ViewBag.Title = "Gaus";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+
+<div>
+    <p><b>Ме́тод Га́усса</b> — классический метод решения системы линейных алгебраических уравнений (СЛАУ). 
+    Это метод последовательного исключения переменных, когда с помощью элементарных преобразований система уравнений приводится к равносильной системе треугольного вида, из которой последовательно, начиная с последних (по номеру), находятся все переменные системы.</p>
+    <p><b>История</b>
+    </p>
+    <p>Хотя в настоящее время данный метод повсеместно называется методом Гаусса, он был известен и до К. Ф. Гаусса. Первое известное описание данного метода — в китайском трактате «Математика в девяти книгах».</p>
+</div>
+<br/>
+<form method="post" action="/Methods/Gaus">
+    @if (ViewBag.flag1 == true)
+{
+    <div>
+        @Html.Label("Введите количество строк ")
+        <br/>
+        @Html.EditorFor(x => x.countRows)
+    </div>
+    <div>
+        @Html.Label("Введите количество переменных")
+        <br />
+        @Html.EditorFor(x => x.countVariable)
+    </div>
+            <input type="submit" />
+}
+
+
+
+<form method="post" action="/Methods/Gaus">
+    @if (ViewBag.flag == true)
+    {
+        <br/>
+
+        @Html.Hidden("countRows", Model.countRows)
+        ;
+        @Html.Hidden("countVariable", Model.countVariable)
+        ;
+
+        @Html.LabelFor(x => x.Matrix)
+        <br/>
+        for (int k = 0; k < Model.countRows*Model.countVariable; k++)
+        {
+
+            @Html.TextBox("ints")
+            for (int j = 0; j < Model.countRows; j++)
+            {
+                if (k == j*Model.countRows - 1)
+                {
+                    <br/>
+                }
+            }
+        }
+
+        <br/>
+        @Html.LabelFor(x => x.myArray)
+        <br/>
+        for (int k = 0; k < Model.countRows; k++)
+        {
+            @Html.TextBoxFor(x => x.myArray)
+
+            <br/>
+        }
+        <br/>
+        <br/>
+        <input type="submit"/>
+
+    }
+</form>
+@if (ViewBag.answer == true)
+{
+    <br/>
+    <br/>
+    <br/>
+    for (int i = 0; i < Model.answer.Length; i++)
+    {
+        @Html.Label("x["+i+"] = "+Model.answer[i].ToString())
+     <br/>
+    }
+    {
+    <br/>
+    }
+}
+
+    

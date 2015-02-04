@@ -1,0 +1,44 @@
+﻿@model MathСalculator.WebUI.Models.UsersLogin
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{Html.EnableClientValidation();}
+@{Html.EnableUnobtrusiveJavaScript();}
+<center>
+    
+    <h2>Log in</h2>
+    @using (@Html.BeginForm())
+    {
+        
+        <div class="text-error">
+            <b>@Html.ValidationSummary(true, "You have some problem: ")</b>
+        </div>
+        <div class="control-group">
+            @Html.LabelFor(m => m.Login, new { @class = "control-label" })
+            <div class="controls">
+                @Html.TextBoxFor(m => m.Login, new { @class = "control-label", @placeholder = "Login" })
+                <div class="text-error">
+                    <b> @Html.ValidationMessageFor(m => m.Login)</b>
+                </div>
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(m => m.Password, new { @class = "control-label" })
+            <div class="controls">
+                @Html.PasswordFor(m => m.Password, new { @placeholder = "Password" })
+                <p class="text-error">
+                    <b>@Html.ValidationMessageFor(m => m.Password)</b>
+                </p>
+            </div>
+            <div class="control-group">
+                <div class="controls">
+                    <button type="submit" class="btn btn-primary">Log in</button>
+                </div>
+            </div>
+        </div>
+    }
+</center>
+

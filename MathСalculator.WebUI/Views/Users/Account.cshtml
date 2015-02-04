@@ -1,0 +1,12 @@
+﻿@model MathСalculator.Domain.Entities.Users
+@{
+    Layout = null;
+}
+
+
+    @foreach (var i in Model.Links)
+    {
+    <a href="@Url.Action(i.Url, i.NameController)" class="btn btn-primary " role="button">@i.Name</a>
+    }
+
+

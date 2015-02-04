@@ -1,0 +1,19 @@
+﻿@model MathСalculator.WebUI.Models.GCDModel
+@{
+    ViewBag.Title = "НОД";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>НОД</h2>
+
+@using (@Html.BeginForm())
+    {
+        @Html.Label("firstNumber:");
+  @Html.TextBoxFor(x => x.firstNumber);
+    <br/>
+                                      @Html.Label("secondNumber:");
+ @Html.TextBoxFor(x => x.secondNumber);
+   
+<button type="submit" class="btn btn-primary">ок</button>
+}
+result:@Html.TextBoxFor(x => x.result);
