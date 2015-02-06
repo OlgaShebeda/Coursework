@@ -15,23 +15,47 @@
     <p>Хотя в настоящее время данный метод повсеместно называется методом Гаусса, он был известен и до К. Ф. Гаусса. Первое известное описание данного метода — в китайском трактате «Математика в девяти книгах».</p>
 </div>
 <br/>
-<form method="post" action="/Methods/Gaus">
-    @if (ViewBag.flag1 == true)
-{
-    <div>
-        @Html.Label("Введите количество строк ")
-        <br/>
-        @Html.EditorFor(x => x.countRows)
-    </div>
-    <div>
-        @Html.Label("Введите количество переменных")
-        <br />
-        @Html.EditorFor(x => x.countVariable)
-    </div>
-            <input type="submit" />
+@if (ViewBag.flag1 == true)
+    {
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+   Начать решение
+</button>
 }
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Введите количество строк и количество переменных</h4>
+            </div>
+@using (@Html.BeginForm("Gaus", "Methods", FormMethod.Post))
+{
 
+            <div class="modal-body">
 
+        <div>
+            @Html.Label("Введите количество строк ")
+            <br />
+            @Html.EditorFor(x => x.countRows)
+        </div>
+        <div>
+            @Html.Label("Введите количество переменных")
+            <br />
+            @Html.EditorFor(x => x.countVariable)
+        </div>
+        
+ 
+        </div>
+      <div class="modal-footer">
+          <input type="submit" class="btn btn-default" />
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+}
+          
+        </div>
+    </div>
+</div>
 
 <form method="post" action="/Methods/Gaus">
     @if (ViewBag.flag == true)
@@ -80,7 +104,8 @@
     <br/>
     for (int i = 0; i < Model.answer.Length; i++)
     {
-        @Html.Label("x["+i+"] = "+Model.answer[i].ToString())
+        @Html.Label("x["+i+"] = ")
+    @Html.TextBoxFor(x => x.answer[i]);
      <br/>
     }
     {

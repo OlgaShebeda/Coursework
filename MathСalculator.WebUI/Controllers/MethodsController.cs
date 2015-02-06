@@ -64,7 +64,7 @@ namespace MathСalculator.WebUI.Controllers
                 }
                 model1.Matrix = Matrix;
             }
-            ViewBag.flag = true;
+            ViewBag.flag = false;
             ViewBag.answer = true;
             model1.answer = GausResult(model1.Matrix, model1.myArray, model1.countRows);
             return View(model1);
