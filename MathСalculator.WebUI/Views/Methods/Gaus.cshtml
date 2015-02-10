@@ -1,5 +1,4 @@
-﻿
-@model MathСalculator.WebUI.Models.GausModel
+﻿@model MathСalculator.WebUI.Models.GausModel
 @{
     ViewBag.Title = "Gaus";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,18 +7,21 @@
 
 
 <div>
-    <p><b>Ме́тод Га́усса</b> — классический метод решения системы линейных алгебраических уравнений (СЛАУ). 
-    Это метод последовательного исключения переменных, когда с помощью элементарных преобразований система уравнений приводится к равносильной системе треугольного вида, из которой последовательно, начиная с последних (по номеру), находятся все переменные системы.</p>
-    <p><b>История</b>
+    <p>
+        <b>Ме́тод Га́усса</b> — классический метод решения системы линейных алгебраических уравнений (СЛАУ).
+        Это метод последовательного исключения переменных, когда с помощью элементарных преобразований система уравнений приводится к равносильной системе треугольного вида, из которой последовательно, начиная с последних (по номеру), находятся все переменные системы.
+    </p>
+    <p>
+        <b>История</b>
     </p>
     <p>Хотя в настоящее время данный метод повсеместно называется методом Гаусса, он был известен и до К. Ф. Гаусса. Первое известное описание данного метода — в китайском трактате «Математика в девяти книгах».</p>
 </div>
-<br/>
+<br />
 @if (ViewBag.flag1 == true)
-    {
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-   Начать решение
-</button>
+{
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        Начать решение
+    </button>
 }
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -29,30 +31,30 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">Введите количество строк и количество переменных</h4>
             </div>
-@using (@Html.BeginForm("Gaus", "Methods", FormMethod.Post))
-{
+            @using (@Html.BeginForm("Gaus", "Methods", FormMethod.Post))
+            {
 
-            <div class="modal-body">
+                <div class="modal-body">
 
-        <div>
-            @Html.Label("Введите количество строк ")
-            <br />
-            @Html.EditorFor(x => x.countRows)
-        </div>
-        <div>
-            @Html.Label("Введите количество переменных")
-            <br />
-            @Html.EditorFor(x => x.countVariable)
-        </div>
-        
- 
-        </div>
-      <div class="modal-footer">
-          <input type="submit" class="btn btn-default" />
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-            </div>
-}
-          
+                    <div>
+                        @Html.Label("Введите количество строк ")
+                        <br />
+                        @Html.EditorFor(x => x.countRows)
+                    </div>
+                    <div>
+                        @Html.Label("Введите количество переменных")
+                        <br />
+                        @Html.EditorFor(x => x.countVariable)
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" class="btn btn-default" />
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+            }
+
         </div>
     </div>
 </div>
@@ -60,7 +62,7 @@
 <form method="post" action="/Methods/Gaus">
     @if (ViewBag.flag == true)
     {
-        <br/>
+        <br />
 
         @Html.Hidden("countRows", Model.countRows)
         ;
@@ -68,49 +70,48 @@
         ;
 
         @Html.LabelFor(x => x.Matrix)
-        <br/>
-        for (int k = 0; k < Model.countRows*Model.countVariable; k++)
+        <br />
+        for (int k = 0; k < Model.countRows * Model.countVariable; k++)
         {
 
-            @Html.TextBox("ints")
+            @Html.TextBox("ints", "0")
             for (int j = 0; j < Model.countRows; j++)
             {
-                if (k == j*Model.countRows - 1)
+                if (j != 0 && k == j * Model.countVariable - 1)
                 {
-                    <br/>
+                    <br />
                 }
             }
         }
 
-        <br/>
+        <br />
         @Html.LabelFor(x => x.myArray)
-        <br/>
+        <br />
         for (int k = 0; k < Model.countRows; k++)
         {
             @Html.TextBoxFor(x => x.myArray)
 
-            <br/>
+            <br />
         }
-        <br/>
-        <br/>
-        <input type="submit"/>
+        <br />
+        <br />
+        <input type="submit" />
 
     }
 </form>
 @if (ViewBag.answer == true)
 {
-    <br/>
-    <br/>
-    <br/>
+    <br />
+    <br />
+    <br />
     for (int i = 0; i < Model.answer.Length; i++)
     {
-        @Html.Label("x["+i+"] = ")
-    @Html.TextBoxFor(x => x.answer[i]);
-     <br/>
+        @Html.Label("x[" + i + "] = ")
+        @Html.TextBoxFor(x => x.answer[i]);
+    <br />
     }
     {
-    <br/>
+        <br />
     }
 }
 
-    

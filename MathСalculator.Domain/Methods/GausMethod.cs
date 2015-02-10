@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace MathСalculator.Domain.Methods
 {
@@ -57,6 +58,7 @@ namespace MathСalculator.Domain.Methods
                 Matrix[maxElementIndex][i] = Matrix[sortIndex][i];
                 Matrix[sortIndex][i] = temp;
             }
+        
         }
 
         public int SolveMatrix()
@@ -67,6 +69,7 @@ namespace MathСalculator.Domain.Methods
             for (int i = 0; i < RowCount - 1; i++)
             {
                 SortRows(i);
+               
                 for (int j = i + 1; j < RowCount; j++)
                 {
                     if (Matrix[i][i] == 0) continue;
@@ -76,8 +79,9 @@ namespace MathСalculator.Domain.Methods
                     RightPart[j] -= RightPart[i] * multElement;
                     //для нулевого главного элемента просто пропускаем данный шаг
                 }
+               
             }
-
+           
             //ищем решение
             for (int i = (int)(RowCount - 1); i >= 0; i--)
             {
