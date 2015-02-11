@@ -44,6 +44,10 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="info.lundin.math, Version=1.1.5287.18951, Culture=neutral, PublicKeyToken=2f7fe9ec5efab85f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\info.lundin.math.dll.1.1\lib\net45\info.lundin.math.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Ninject">
       <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
@@ -105,7 +109,6 @@
     <Content Include="Content\glyphicons-halflings-regular.woff" />
     <Content Include="Content\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="info.lundin.math.dll" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\ie-emulation-modes-warning.js" />
