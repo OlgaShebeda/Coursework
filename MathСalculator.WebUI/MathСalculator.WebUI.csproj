@@ -133,6 +133,7 @@
     <Compile Include="Models\ChangePassword.cs" />
     <Compile Include="Models\GausModel.cs" />
     <Compile Include="Models\GCDModel.cs" />
+    <Compile Include="Models\SimpleIterationModel.cs" />
     <Compile Include="Models\UsersLogin.cs" />
     <Compile Include="Models\UsersRegister.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -147,6 +148,7 @@
     <Content Include="Views\Methods\Index.cshtml" />
     <Content Include="Views\Methods\GCD.cshtml" />
     <Content Include="Views\Methods\Gaus.cshtml" />
+    <Content Include="Views\Methods\SimpleIteration.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,25 @@
+﻿@model MathСalculator.WebUI.Models.SimpleIterationModel
+@{
+    ViewBag.Title = "SimpleIteration";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Метод простой итерации</h2>
+
+@using (Html.BeginForm("SimpleIteration", "Methods", FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+@Html.LabelFor(x => x.Fuctions)
+    <br />
+    @Html.TextBoxFor(x => x.Fuctions)
+    <br />
+     @Html.TextBoxFor(x => x.Epsilon)
+    <br />
+    @Html.TextBoxFor(x => x.X0)
+    <br />
+    <div>
+            <input type="submit" class="btn btn-primary" value="Submit" />
+        </div>
+}
+<br />
+@Html.LabelFor(x => x.Result)
+@Html.TextBoxFor(x => x.Result)

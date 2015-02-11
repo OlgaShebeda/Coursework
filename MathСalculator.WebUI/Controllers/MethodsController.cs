@@ -39,7 +39,7 @@ namespace MathСalculator.WebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Gaus(GausModel model1,IList<double> ints)
+        public ActionResult Gaus(GausModel model1, IList<double> ints)
         {
             if (model1.myArray == null)
             {
@@ -49,18 +49,18 @@ namespace MathСalculator.WebUI.Controllers
             }
             if (ints != null)
             {
-                double[] Matr = {};
+                double[] Matr = { };
                 double[,] Matrix = new double[model1.countRows, model1.countVariable];
-                var count = ints.Count()/model1.countRows;
+                var count = ints.Count() / model1.countRows;
                 for (int i = 0; i < model1.countRows; i++)
                 {
-                    Matr = ints.Skip(i *Matr.Length).Take(count).ToArray();
+                    Matr = ints.Skip(i * Matr.Length).Take(count).ToArray();
                     for (int j = 0; j < model1.countVariable; j++)
                     {
-                        
+
                         Matrix[i, j] = Matr[j];
                     }
-                   
+
                 }
                 model1.Matrix = Matrix;
             }
@@ -70,15 +70,15 @@ namespace MathСalculator.WebUI.Controllers
             return View(model1);
         }
 
-    [NonAction]
-        public double[] GausResult(double[,] matrix, double[] mas, int n)
+        [NonAction]
+        private double[] GausResult(double[,] matrix, double[] mas, int n)
         {
-            var row = (uint)n; 
+            var row = (uint)n;
             var answer = new double[row];
             var solution = new GausMethod(row, row);
             for (var i = 0; i < row; i++)
                 solution.RightPart[i] = mas[i];
-          
+
             for (var i = 0; i < row; i++)
             {
                 for (int j = 0; j < row; j++)
@@ -88,6 +88,20 @@ namespace MathСalculator.WebUI.Controllers
             for (int i = 0; i < row; i++)
                 answer[i] = solution.Answer[i];
             return answer;
+        }
+
+        [HttpGet]
+        public ViewResult SimpleIteration()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ViewResult SimpleIteration(SimpleIterationModel model)
+        {
+            SimpleIterationMethod method = new SimpleIterationMethod();
+            model.Result = method.Calc(model.Fuctions, model.X0, model.Epsilon);
+            return View(model);
         }
     }
 }

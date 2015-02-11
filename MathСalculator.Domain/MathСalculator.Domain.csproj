@@ -36,6 +36,9 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="info.lundin.math">
+      <HintPath>..\MathСalculator.WebUI\Mydll\info.lundin.math.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -54,6 +57,7 @@
     <Compile Include="Entities\Users.cs" />
     <Compile Include="Methods\GausMethod.cs" />
     <Compile Include="Methods\GCDMethod.cs" />
+    <Compile Include="Methods\SimpleIterationMethod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
