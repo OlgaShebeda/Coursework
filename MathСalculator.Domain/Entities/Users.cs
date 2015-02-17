@@ -11,6 +11,7 @@ namespace MathСalculator.Domain.Entities
         public string Email { get; set; }
         public string Password { get; set; }
         public IEnumerable<Link> Links { get; set; }
-
+        public byte[] ImageData { get; set; }
+        public string ImageMimeType { get; set; }   
     }
 }
