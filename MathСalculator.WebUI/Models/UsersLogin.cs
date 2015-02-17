@@ -9,7 +9,7 @@ namespace MathСalculator.WebUI.Models
     public class UsersLogin
     {
         [Required]
-        [Display(Name = "Enter login")]
+        [Display(Name = "Login")]
         [StringLength(50, ErrorMessage = "This fiels must be less the {1} symbols")]
         public string Login { get; set; }
 

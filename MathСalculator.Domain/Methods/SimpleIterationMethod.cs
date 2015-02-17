@@ -22,6 +22,7 @@ namespace MathСalculator.Domain.Methods
                 k++;
                 parser.Values.Remove("x");
             } while ((Math.Abs(y - X0) > Epsilon));
+
             return X0;
         }
     }

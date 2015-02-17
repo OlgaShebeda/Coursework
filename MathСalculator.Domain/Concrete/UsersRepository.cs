@@ -30,6 +30,8 @@ namespace MathСalculator.Domain.Concrete
             userOfDb.Login = user.Login;
             userOfDb.Password = user.Password;
             userOfDb.Email = user.Email;
+            userOfDb.ImageData = user.ImageData;
+            userOfDb.ImageMimeType = user.ImageMimeType;
             mathDb.SaveChanges();
             return true;
         }
