@@ -9,11 +9,11 @@ using MathСalculator.Domain.Entities;
 
 namespace MathСalculator.Domain.Concrete
 {
-    class MathCalculatorDB: DbContext
+    class MathCalculatorDB : DbContext
     {
-         public DbSet<Users> Users { get; set; }
+        public DbSet<Users> Users { get; set; }
 
-         static MathCalculatorDB()
+        static MathCalculatorDB()
         {
             var ensureDllIsCopied = SqlProviderServices.Instance;
         }

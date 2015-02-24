@@ -8,10 +8,18 @@ namespace MathСalculator.WebUI.Models
 {
     public class SimpleIterationModel
     {
+        [Required]
         [Display(Name = "Введите функцию")]
         public string Fuctions { get; set; }
+
+        [Display(Name = "Результат")]
         public double Result { get; set; }
-        public double X0 {get; set;}
+
+        [Display(Name = "Начальное приближение")]
+         public double X0 {get; set;}
+
+        [Display(Name = "Епсилон")]
         public double Epsilon { get; set; }
     }
 }
+

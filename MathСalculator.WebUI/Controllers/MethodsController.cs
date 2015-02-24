@@ -6,13 +6,21 @@ using System.Web;
 using System.Web.Mvc;
 using MathСalculator.WebUI.Models;
 using MathСalculator.Domain.Methods;
+using MathСalculator.Domain.Abstract;
+using MathСalculator.Domain.Entities;
 
 namespace MathСalculator.WebUI.Controllers
 {
     public class MethodsController : Controller
     {
+
+        private IUserRepository _userRepos;
+        private int PostsPerPage = 3;
+
+
         //
         // GET: /Methods/
+        [HttpGet, ValidateInput(false)]
         public ActionResult Index()
         {
             return View();
@@ -37,6 +45,8 @@ namespace MathСalculator.WebUI.Controllers
             ViewBag.flag1 = true;
             return View();
         }
+
+       
 
         [HttpPost]
         public ActionResult Gaus(GausModel model1, IList<double> ints)
@@ -99,6 +109,11 @@ namespace MathСalculator.WebUI.Controllers
         [HttpPost]
         public ViewResult SimpleIteration(SimpleIterationModel model)
         {
+            if (!ModelState.IsValid)
+            {
+                ModelState.AddModelError("", "Пожалуйста введите корректно начальные данные");
+                return View(model);
+            }
             SimpleIterationMethod method = new SimpleIterationMethod();
             model.Result = method.Calc(model.Fuctions, model.X0, model.Epsilon);
             return View(model);

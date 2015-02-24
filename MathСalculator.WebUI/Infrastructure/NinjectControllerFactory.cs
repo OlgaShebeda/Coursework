@@ -28,6 +28,7 @@ namespace MathСalculator.WebUI.Infrastructure
         private void AddBindings()
         {
             _ninjectKernel.Bind<IUserRepository>().To<UsersRepository>();
+        
         }
     }
 }

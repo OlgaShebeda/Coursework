@@ -21,6 +21,7 @@
    <p class="help-block">  @Html.ValidationSummary(true, "You have some problem: ") </p>
     
     <div class="form-group">
+   
          <div class="">
              @Html.TextBoxFor(m => m.Login, new { @class = "form-control", @placeholder = "Login" })
             <p class="help-block">@Html.ValidationMessageFor(m => m.Login)</p>
