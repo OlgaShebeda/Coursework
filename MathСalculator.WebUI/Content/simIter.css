@@ -1,0 +1,77 @@
+﻿ .clickable {
+            cursor: pointer;
+        }
+
+        .panel-heading span {
+            margin-top: -20px;
+            font-size: 15px;
+        }
+
+        span.absat {
+            color: rgb(37, 37, 37);
+            font-family: sans-serif;
+            font-size: 14px;
+            line-height: 22.3999996185303px;
+            background-color: rgb(255, 255, 255)
+        }
+
+        img.mwe-math-fallback-image-inline.tex {
+            border: none;
+            vertical-align: middle;
+            margin: 0px;
+            display: inline-block
+        }
+
+        span.span1 {
+            color: rgb(37, 37, 37);
+            font-family: sans-serif;
+            font-size: 14px;
+            line-height: 22.3999996185303px;
+            background-color: rgb(255, 255, 255)
+        }
+
+        dl.mydl {
+            margin-top: 0.2em;
+            margin-bottom: 0.5em;
+            color: rgb(37, 37, 37);
+            font-family: sans-serif;
+            font-size: 14px;
+            line-height: 22.3999996185303px;
+            background-color: rgb(255, 255, 255)
+        }
+
+        .mw-headline { }
+
+        h2.myh2 { text-align: center }
+
+        dd.mydd {
+            line-height: 1.5em;
+            margin-left: 1.6em;
+            margin-bottom: 0.1em;
+            margin-right: 0px
+        }
+
+        div.thumb.tright {
+            clear: right;
+            float: right;
+            margin: 0.5em 0px 0.8em 1.4em;
+            width: auto;
+            border: none;
+            color: rgb(37, 37, 37);
+            font-family: sans-serif;
+            font-size: 14px;
+            line-height: 22.3999996185303px;
+            background-color: rgb(255, 255, 255)
+        }
+
+        div.thumbcaption {
+            border: none;
+            line-height: 1.4em;
+            padding: 3px;
+            font-size: 12.370400428772px;
+            text-align: left
+        }
+
+.texterror {
+    color: red;
+}

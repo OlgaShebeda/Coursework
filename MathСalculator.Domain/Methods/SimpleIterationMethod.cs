@@ -26,10 +26,12 @@ namespace MathСalculator.Domain.Methods
                 }
                 parser.Values.Add("x", X0);
                 y = parser.Parse(Function);
-                resultTEXT+= "\n y = " + y.ToString();
+                resultTEXT+= "\n y = " + y;
                 k++;
                 resultTEXT += "\n k =" + k + "\n";
                 parser.Values.Remove("x");
+
+                if (k > 500) throw new ArgumentException();
             } while ((Math.Abs(y - X0) > Epsilon));
             resultTEXT += "Результат =" + X0 +"\n";
             CreateSampleDocument(resultTEXT,"Метод простой итерации");
@@ -40,7 +42,7 @@ namespace MathСalculator.Domain.Methods
         {
 
             // Modify to suit your machine:
-            string fileName = @"D:\DocXExample.docx";
+            string fileName = @"E:\DocXExample.docx";
 
             // A formatting object for our headline:
             var headLineFormat = new Formatting();
@@ -63,7 +65,7 @@ namespace MathСalculator.Domain.Methods
             // Save to the 
             doc.Save();
             //// Open in Word:
-            //Process.Start("WINWORD.EXE", fileName);
+            Process.Start("WINWORD.EXE", fileName);
         }
     }
 }

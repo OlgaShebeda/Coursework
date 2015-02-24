@@ -115,7 +115,17 @@ namespace MathСalculator.WebUI.Controllers
                 return View(model);
             }
             SimpleIterationMethod method = new SimpleIterationMethod();
-            model.Result = method.Calc(model.Fuctions, model.X0, model.Epsilon);
+            try
+            {
+                model.Result = method.Calc(model.Fuctions, model.X0, model.Epsilon);
+            }
+            catch (Exception)
+            {
+
+                ModelState.AddModelError("", "Метод расходится");
+                return View(model);
+            }
+            
             return View(model);
         }
     }
