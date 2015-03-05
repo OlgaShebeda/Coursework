@@ -107,15 +107,6 @@ namespace MathСalculator.WebUI.Controllers
         private IEnumerable<Link> GetLinksOfAutorizireUsers()
         {
             var links = new List<Link>();
-            //if (User.IsInRole("administrator"))
-            //    links.Add(new Link { Name = "Users", Url = "/AllUsersShow", NameController = "Admin" });
-
-            //if (!User.IsInRole("fan"))
-            //{
-            //    links.Add(new Link { Name = "Edit posts", Url = "/Index", NameController = "ChangePost" });
-            //    links.Add(new Link { Name = "Create post", Url = "/CreatePost", NameController = "ChangePost" });
-            //}
-
             links.Add(new Link { Name = "Change password", Url = "/ChangeUsersPassword", NameController = "Users" });
             links.Add(new Link { Name = "Log out", Url = "/Logout", NameController = "Users" });
             return links;
