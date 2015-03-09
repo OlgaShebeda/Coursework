@@ -98,19 +98,21 @@
       <DependentUpon>MathCalculatorDB.mdf</DependentUpon>
     </Content>
     <Content Include="Content\avatar.jpg" />
-    <Content Include="Content\barcelona-boardwalk.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Content\ilovemaths.jpg" />
+    <Content Include="Content\I love math-762627.png" />
     <Content Include="Content\imafe3.jpg" />
     <Content Include="Content\jquery-1.10.2.min.js" />
+    <Content Include="Content\maths-1280x800.jpg" />
     <Content Include="Content\offcanvas.css" />
+    <Content Include="Content\school-newsletter-ideas-for-parents-716.jpg" />
     <Content Include="Content\simIter.css" />
     <Content Include="Content\StyleSheet1.css" />
+    <Content Include="Content\ZvqE2wp2kw-1680x1050.jpg" />
     <Content Include="Global.asax" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
