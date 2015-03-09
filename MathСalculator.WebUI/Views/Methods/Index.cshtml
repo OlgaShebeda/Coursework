@@ -6,96 +6,84 @@
 
 
 
-@*<div class="jumbotron">
-    <h1>Marketing stuff!</h1>
-    <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
-    <p><a class="btn btn-lg btn-success" href="#" role="button">Get started today</a></p>
-</div>*@
 
-
-    <!-- Carousel -->
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-        </ol>
-
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <img src="~/Content/barcelona-boardwalk.jpg" alt="First slide">
-                <!-- Static Header -->
-                <div class="header-text hidden-xs">
-                    <div class="col-md-12 text-center">
-                        <h2>
-                            <span>Добро пожаловать на <strong>MATH CALCULATOR</strong></span>
-                        </h2>
-                        <br>
-                        <h3>
-                            <span>Пожалуйста войдите в свою учётную запись или зарегистрируйтесь</span>
-                        </h3>
-                        <br>
-                        <div class="">
-                            <a class="btn btn-theme btn-sm btn-min-block" href="@Url.Action("Login", "Users")">Войти</a><a class="btn btn-theme btn-sm btn-min-block" href="@Url.Action("Register", "Users")">Регистрация</a>
-                        </div>
-                    </div>
-                </div><!-- /header-text -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src="http://freewallpapers4desktop.com/wallpapers/maths-1280x800.jpg" alt="First slide">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>Добро пожаловаать на MathCalculator</h1>
+                    <p>Пожалуйста войдите в свою учётную запись либо зарегистрируйтесь</p>
+                    <p><a class="btn btn-lg btn-primary" href="@Url.Action("Login", "Users")" role="button">Войти</a>
+                        <a class="btn btn-lg btn-primary" href="@Url.Action("Register", "Users")" role="button">Регистрация</a></p>
+                </div>
             </div>
-          
-            <div class="item">
-                <img src="~/Content/ilovemaths.jpg" alt="Second slide">
-                <!-- Static Header -->
-                <div class="header-text hidden-xs">
-                    <div class="col-md-12 text-center">
-                       
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                      
-                    </div>
-
-                </div><!-- /header-text -->
-            </div>
-        
-            <div class="item">
-                <img src="~/Content/imafe3.jpg" alt="Third slide">
-                <!-- Static Header -->
-                <div class="header-text hidden-xs">
-                    <div class="col-md-12 text-center">
-                        <br/>
-                        <br/>
-                        <h2>
-                            <span><strong>МЕТОД ГАУССА</strong></span>
-                        </h2>
-                        <br>
-                        <br>
-                        <h3>
-                            <span>С помощью нашего сервиса вы научитесь решать СЛАУ методом Гаусса и другими</span>
-                        </h3>
-                       
-                        <br>
-                        <br>
-                        <div class="">
-                            <a class="btn btn-primary" href="@Url.Action("Gaus", "Methods")">Подробнее</a>
-                        </div>
-                    </div>
-                    
-                </div><!-- /header-text -->
-              
-            </div>
-
         </div>
-        <!-- Controls -->
-        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-        </a>
-        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
-    </div><!-- /carousel -->
+        <div class="item">
+            <img src="http://www.fondosni.com/images/2013-03-28/I%20love%20math-762627.png" alt="Second slide">
+            <div class="container">
+                <div class="carousel-caption">
+                    <a href="@Url.Action("Chord", "Methods")">Особенно когда можно решить уравнение f(x) = 0 методом хорд онлайн:))</a></p>
+            
+                </div>
+            </div>
+        </div>
+       
+
+        <div class="item">
+            <img src="http://img.mota.ru/upload/wallpapers/2013/06/12/10/03/36179/ZvqE2wp2kw-1680x1050.jpg" alt="Third slide">
+            <div class="container">
+                <div class="carousel-caption">
+                            <h1>Не нужно усложнять!!!</h1>
+                    <p>Ведь можно решить уравнения методом Ньютона за несколько секунд!</p>
+                    <p><a class="btn btn-lg btn-primary" href="@Url.Action("Newton", "Methods")" role="button">Подробнее</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src=" http://www.dcicomp.com/school-newsletter-ideas-for-parents-716.jpg" alt="Third slide">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>Вы ещё считаете производные и интегралы вручную?!!!</h1>
+                    <p>Воспользуйтесь нашим онлайн-калькулятором</p>
+                    <p><a class="btn btn-lg btn-primary" href="@Url.Action("MathCalc", "Methods")" role="button">Подробнее</a></p>
+                </div>
+            </div>
+        </div>
+       
+        <div class="item">
+            <img src="~/Content/imafe3.jpg" alt="Third slide">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>Метод Гаусса</h1>
+                    <h3>
+                        <span>С помощью нашего сервиса вы научитесь решать СЛАУ методом Гаусса и другими</span>
+                    </h3>
+                    <p><a class="btn btn-lg btn-primary" href="@Url.Action("Gaus", "Methods")" role="button">Подробнее</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Предыдущий</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Следующий</span>
+    </a>
+</div><!-- /.carousel -->
+
 
 
 <!-- Example row of columns -->

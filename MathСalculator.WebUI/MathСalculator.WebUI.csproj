@@ -118,6 +118,7 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Properties\PublishProfiles\mathcalculator.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -162,7 +163,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Users\Account.cshtml" />
     <Content Include="Views\Methods\Index.cshtml" />
-    <Content Include="Views\Methods\GCD.cshtml" />
     <Content Include="Views\Methods\Gaus.cshtml" />
     <Content Include="Views\Methods\SimpleIteration.cshtml" />
     <Content Include="Views\Post\List.cshtml" />
@@ -170,6 +170,11 @@
     <Content Include="Views\Methods\Newton.cshtml" />
     <Content Include="Views\Methods\Chord.cshtml" />
     <Content Include="Views\Methods\Secants.cshtml" />
+    <Content Include="Views\Methods\Index.Mobile.cshtml" />
+    <Content Include="Views\Shared\_LayoutMobile.cshtml" />
+    <Content Include="Views\Methods\SimpleIteration.Mobile.cshtml" />
+    <Content Include="Views\Methods\Gaus.Mobile.cshtml" />
+    <Content Include="Views\Methods\Newton.Mobile.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -105,7 +105,9 @@ div.account > * {
 
 .carousel-inner img {
     width: 100%;
-    max-height: 460px
+    max-height: 460px;
+    
+    
 }
 
 .carousel-control {
@@ -170,7 +172,8 @@ div.account > * {
 
 .header-text h2 span {
     background-color: #2980b9;
-	padding: 10px;
+	padding: 15px;
+   
 }
 
 .header-text h3 span {
@@ -265,3 +268,16 @@ div.account > * {
 .pad-top {
     padding-top:40px;
 }
+
+
+.title h1 {
+    font-size: 40px;
+}
+
+.title h1  {
+    background-color: #2980b9;
+	padding: 15px;
+   
+}
+
+
