@@ -1,0 +1,76 @@
+﻿@model MathСalculator.WebUI.Models.UsersLogin
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutMobile.cshtml";
+}
+
+@{Html.EnableClientValidation();}
+@{Html.EnableUnobtrusiveJavaScript();}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+         
+            <div class="account-wall">
+                <img class="profile-img" src="~/Content/avatar.jpg" />
+                 
+
+@using (@Html.BeginForm("Login", "Users", FormMethod.Post, new { @class = "form-signin", @role = "form" }))
+{
+
+   <p class="help-block">  @Html.ValidationSummary(true, "You have some problem: ") </p>
+    
+    <div class="form-group">
+   
+         <div class="">
+             @Html.TextBoxFor(m => m.Login, new { @class = "form-control", @placeholder = "Login" })
+            <p class="help-block">@Html.ValidationMessageFor(m => m.Login)</p>
+         </div>
+      </div>
+    
+    <div class="form-group">
+         <div class="">
+             @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Password" })
+             <p class="help-block">@Html.ValidationMessageFor(m => m.Password)</p>
+         </div>
+      </div>
+
+    <div class="form-group">
+         <div class="">
+
+             <button class="btn btn-lg btn-primary btn-block">
+                 Войти
+                 
+             </button>
+
+         </div>
+      </div>
+}
+            </div>
+            <a href="#" class="text-center new-account">Создать новый аккаунт </a>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+
+    $(function () {
+        $('.validation-summary-errors').each(function () {
+            $(this).addClass('alert');
+            $(this).addClass('alert-danger');
+        });
+
+        $('form').each(function () {
+            $(this).find('div.form-group').each(function () {
+                if ($(this).find('span.field-validation-error').length > 0) {
+                    $(this).addClass('has-error');
+                    $(this).find('span.field-validation-error').
+                       removeClass('field-validation-error');
+                }
+            });
+        });
+
+    });
+</script>

@@ -120,6 +120,8 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Properties\PublishProfiles\mathcalculator - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\mathcalculator - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\mathcalculator.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -177,6 +179,7 @@
     <Content Include="Views\Methods\SimpleIteration.Mobile.cshtml" />
     <Content Include="Views\Methods\Gaus.Mobile.cshtml" />
     <Content Include="Views\Methods\Newton.Mobile.cshtml" />
+    <Content Include="Views\Users\Login.Mobile.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
