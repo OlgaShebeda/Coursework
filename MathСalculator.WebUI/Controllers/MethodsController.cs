@@ -32,6 +32,12 @@ namespace MathСalculator.WebUI.Controllers
             return View();
         }
 
+        [HttpGet]
+        public ActionResult MathCalc()
+        {
+            return View();
+        }
+
         [HttpPost]
         public ActionResult GCD(GCDModel model)
         {
@@ -104,6 +110,95 @@ namespace MathСalculator.WebUI.Controllers
         public ViewResult SimpleIteration()
         {
             return View();
+        }
+
+        [HttpGet]
+        public ViewResult Secants()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ViewResult Secants(ChordModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                ModelState.AddModelError("", "Пожалуйста введите корректно начальные данные");
+                return View(model);
+            }
+            COfSecantsMethod method = new COfSecantsMethod();
+            try
+            {
+                model.Result = method.OfSecantsMethod(model.Fuctions, model.X0, model.X1, model.Epsilon);
+            }
+            catch (Exception)
+            {
+
+                ModelState.AddModelError("", "Метод расходится");
+                return View(model);
+            }
+
+            return View(model);
+        }
+
+        [HttpGet]
+        public ViewResult Newton()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ViewResult Chord()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ViewResult Chord(ChordModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                ModelState.AddModelError("", "Пожалуйста введите корректно начальные данные");
+                return View(model);
+            }
+            CChordMethod method = new CChordMethod();
+            try
+            {
+                model.Result = method.ChordMethod(model.Fuctions, model.X0,model.X1, model.Epsilon);
+            }
+            catch (Exception)
+            {
+
+                ModelState.AddModelError("", "Метод расходится");
+                return View(model);
+            }
+
+            return View(model);
+        }
+
+
+
+        [HttpPost]
+        public ViewResult Newton(SimpleIterationModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                ModelState.AddModelError("", "Пожалуйста введите корректно начальные данные");
+                return View(model);
+            }
+            CNewtonsMethod method = new CNewtonsMethod();
+            try
+            {
+                model.Result = method.NewtonsMethod(model.Fuctions, model.X0, model.Epsilon);
+            }
+            catch (Exception)
+            {
+
+                ModelState.AddModelError("", "Метод расходится");
+                return View(model);
+            }
+
+            return View(model);
         }
 
         [HttpPost]

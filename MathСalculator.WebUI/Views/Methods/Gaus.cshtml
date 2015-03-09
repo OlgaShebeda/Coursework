@@ -6,35 +6,73 @@
 }
 
 
-<div>
-    <p>
-        <b>Ме́тод Га́усса</b> — классический метод решения системы линейных алгебраических уравнений (СЛАУ).
-        Это метод последовательного исключения переменных, когда с помощью элементарных преобразований система уравнений приводится к равносильной системе треугольного вида, из которой последовательно, начиная с последних (по номеру), находятся все переменные системы.
-    </p>
-    <p>
-        <b>История</b>
-    </p>
-    <p>Хотя в настоящее время данный метод повсеместно называется методом Гаусса, он был известен и до К. Ф. Гаусса. Первое известное описание данного метода — в китайском трактате «Математика в девяти книгах».</p>
-</div>
-<br/>
+<p style="text-align: center;"><strong><span style="font-size:26px;"><font color="#252525" face="sans-serif"><span style="line-height: 22.3999996185303px; background-color: rgb(255, 255, 255);">Метод Гаусса</span></font></span></strong></p>
 
-<div>
-    <b>Описание метода</b>
-    <p>
-        Пусть исходная система выглядит следующим образом
-        <br/>
+<hr />
+<h1><span style="color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; line-height: 22.3999996185303px; background-color: rgb(255, 255, 255);">&mdash; это&nbsp;классический метод решения&nbsp;</span><a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D1%85_%D0%B0%D0%BB%D0%B3%D0%B5%D0%B1%D1%80%D0%B0%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85_%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9" style="text-decoration: none; color: rgb(11, 0, 128); font-family: sans-serif; font-size: 14px; line-height: 22.3999996185303px; background: none rgb(255, 255, 255);" title="Система линейных алгебраических уравнений">системы линейных алгебраических уравнений</a><span style="color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; line-height: 22.3999996185303px; background-color: rgb(255, 255, 255);">&nbsp;(СЛАУ). Это метод последовательного исключения&nbsp;</span><a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F_%D0%B2%D0%B5%D0%BB%D0%B8%D1%87%D0%B8%D0%BD%D0%B0" style="text-decoration: none; color: rgb(11, 0, 128); font-family: sans-serif; font-size: 14px; line-height: 22.3999996185303px; background: none rgb(255, 255, 255);" title="Переменная величина">переменных</a><span style="color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; line-height: 22.3999996185303px; background-color: rgb(255, 255, 255);">, когда с помощью элементарных преобразований система уравнений приводится к равносильной системе треугольного вида, из которой последовательно, начиная с последних (по номеру), находятся все переменные системы</span><span style="color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; line-height: 22.3999996185303px; background-color: rgb(255, 255, 255);">.</span></h1>
 
-        <img src="http://upload.wikimedia.org/math/8/0/4/804d4d8007c48c6a0f855cd664d34edb.png"/>
+<hr />
+<h2 style="font-weight: normal; margin: 1em 0px 0.25em; overflow: hidden; padding: 0px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(170, 170, 170); font-family: 'Linux Libertine', Georgia, Times, serif; line-height: 1.3; text-align: center; background: none rgb(255, 255, 255);"><span class="mw-headline" id=".D0.9E.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BC.D0.B5.D1.82.D0.BE.D0.B4.D0.B0">Описание метода</span></h2>
 
-        Матрица <b>A </b> называется основной матрицей системы, <b>b </b> — столбцом свободных членов.
-        <br/>
-    </p>
-    <p>
-        Тогда, согласно свойству элементарных преобразований над строками, основную матрицу этой системы можно привести к ступенчатому виду (эти же преобразования нужно применять к столбцу свободных членов):
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">Пусть исходная система выглядит следующим образом</p>
 
-        <img src="http://upload.wikimedia.org/math/b/c/2/bc2b83ab783eda5084f70dd36855d3cb.png"/>
-    </p>
-</div>
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">
+    <img alt="\left\{\begin{array}{lcr}
+a_{11}x_1+\ldots+a_{1n}x_n &amp;=&amp; b_1 \\
+\ldots &amp; &amp; \\
+a_{m1}x_1+\ldots+a_{mn}x_n &amp;=&amp; b_m \\
+\end{array}\right.\iff Ax = b,\quad A=\left( \begin{array}{ccc}
+a_{11} &amp; \ldots &amp; a_{1n}\\
+\ldots &amp;  &amp;  \\
+a_{m1} &amp; \ldots &amp; a_{mn}
+\end{array}\right),\quad x = \left( \begin{array}{c}x_1 \\ \vdots \\ x_n \end{array} \right), \quad b = \left( \begin{array}{c}b_1 \\ \vdots \\ b_m \end{array} \right).\quad (1)" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/8/0/4/804d4d8007c48c6a0f855cd664d34edb.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />
+</p>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">Матрица&nbsp;<img alt="A" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/7/f/c/7fc56270e7a70fa81a5935b72eacbe29.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;называется основной матрицей системы,&nbsp;<img alt="b" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/9/2/e/92eb5ffee6ae2fec3ad71c777531578f.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;&mdash; столбцом свободных членов.</p>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">Тогда, согласно свойству&nbsp;<a href="https://ru.wikipedia.org/wiki/%D0%AD%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%80%D0%BD%D1%8B%D0%B5_%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B" style="text-decoration: none; color: rgb(11, 0, 128); background: none;" title="Элементарные преобразования матрицы">элементарных преобразований</a>&nbsp;над строками, основную матрицу этой системы можно привести к ступенчатому виду (эти же преобразования нужно применять к столбцу свободных членов):</p>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">
+    <img alt="\left\{\begin{array}{rcl}
+\alpha_{1j_1}x_{j_1}+\alpha_{1j_2}x_{j_2}+\ldots+\alpha_{1j_r}x_{j_r}+\ldots+\alpha_{1j_n}x_{j_n} &amp;=&amp; \beta_1 \\
+                     \alpha_{2j_2}x_{j_2}+\ldots+\alpha_{2j_r}x_{j_r}+\ldots+\alpha_{2j_n}x_{j_n} &amp;=&amp; \beta_2 \\
+                                                                                               &amp;\ldots&amp; \\
+                                                 \alpha_{rj_r}x_{j_r}+\ldots+\alpha_{rj_n}x_{j_n} &amp;=&amp; \beta_r \\
+                                                                                                0 &amp;=&amp; \beta_{r+1} \\
+                                                                                               &amp;\ldots&amp; \\
+                                                                                                0 &amp;=&amp; \beta_m
+\end{array}\right.,\qquad \alpha_{1j_1},\ldots,\alpha_{rj_r}\neq 0." class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/b/c/2/bc2b83ab783eda5084f70dd36855d3cb.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />
+</p>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">При этом будем считать, что&nbsp;<a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B8%D0%BD%D0%BE%D1%80_(%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D0%B0%D1%8F_%D0%B0%D0%BB%D0%B3%D0%B5%D0%B1%D1%80%D0%B0)" style="text-decoration: none; color: rgb(11, 0, 128); background: none;" title="Минор (линейная алгебра)">базисный минор</a>&nbsp;(ненулевой&nbsp;<a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B8%D0%BD%D0%BE%D1%80_(%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D0%B0%D1%8F_%D0%B0%D0%BB%D0%B3%D0%B5%D0%B1%D1%80%D0%B0)" style="text-decoration: none; color: rgb(11, 0, 128); background: none;" title="Минор (линейная алгебра)">минор</a>&nbsp;максимального порядка) основной матрицы находится в верхнем левом углу, то есть в него входят только коэффициенты при переменных&nbsp;<img alt="x_{j_1},\ldots,x_{j_r}\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/6/3/9/639f1621d306312ea3e5627c05dc1a75.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" /><sup class="reference" id="cite_ref-4" style="line-height: 1em; unicode-bidi: -webkit-isolate;"><a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%93%D0%B0%D1%83%D1%81%D1%81%D0%B0#cite_note-4" style="text-decoration: none; color: rgb(11, 0, 128); background: none;">[4]</a></sup>.</p>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">Тогда переменные&nbsp;<img alt="x_{j_1},\ldots,x_{j_r}\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/6/3/9/639f1621d306312ea3e5627c05dc1a75.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;называются&nbsp;<i>главными переменными</i>. Все остальные называются&nbsp;<i>свободными</i>.</p>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">Если хотя бы одно число&nbsp;<img alt="\beta_i\neq 0\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/7/4/e/74e32f990eec1bda33d251719fb22daf.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />, где&nbsp;<img alt="i &gt; r" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/b/9/4/b942d190abdd3c9e333c392e037172f6.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />, то рассматриваемая система&nbsp;<a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D1%85_%D0%B0%D0%BB%D0%B3%D0%B5%D0%B1%D1%80%D0%B0%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85_%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9" style="text-decoration: none; color: rgb(11, 0, 128); background: none;" title="Система линейных алгебраических уравнений">несовместна</a>, т.е. у неё нет ни одного решения.</p>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">Пусть&nbsp;<img alt="\beta_i = 0\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/3/b/4/3b4ac88101432adcf9084c8bb105f97d.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;для любых&nbsp;<img alt="i &gt; r" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/b/9/4/b942d190abdd3c9e333c392e037172f6.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />.</p>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">Перенесём свободные переменные за знаки равенств и поделим каждое из уравнений системы на свой коэффициент при самом левом&nbsp;<img alt="x\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/3/a/4/3a427d888687d9dfe0f72040d9fa53a4.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;(<img alt="\alpha_{ij_i},\, i=1,\ldots,r\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/9/8/d/98d1c8494e9de0b3c540ffc6cfcfd6d6.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />, где&nbsp;<img alt="i\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/8/b/a/8ba8b6e7e5402d8c8b32b288a7bb65c5.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;&mdash; номер строки):</p>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">
+    <img alt="\left\{\begin{array}{rcc}
+x_{j_1}+\widehat{\alpha}_{1j_2}x_{j_2}+\ldots+\widehat{\alpha}_{1j_r}x_{j_r}&amp;=&amp; \widehat{\beta}_1-\widehat{\alpha}_{1j_{r+1}}x_{j_{r+1}}-\ldots- \widehat{\alpha}_{1j_n}x_{j_n} \\
+                     x_{j_2}+\ldots+\widehat{\alpha}_{2j_r}x_{j_r}&amp;=&amp; \widehat{\beta}_2-\widehat{\alpha}_{2j_{r+1}}x_{j_{r+1}}-\ldots- \widehat{\alpha}_{2j_n}x_{j_n} \\
+                                                           &amp;\ldots&amp; \\
+                                                       x_{j_r}&amp;=&amp; \widehat{\beta}_r-\widehat{\alpha}_{rj_{r+1}}x_{j_{r+1}}-\ldots- \widehat{\alpha}_{rj_n}x_{j_n} \\
+\end{array}\right., \qquad \widehat{\beta}_i=\frac{\beta_i}{\alpha_{ij_i}},\quad \widehat{\alpha}_{ij_k}=\frac{\alpha_{ij_k}}{\alpha_{ij_i}}\quad (2)" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/1/6/b/16bd915baa75bac963ca489dc80c045f.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />,<br />
+    где&nbsp;<img alt="i=1,\ldots,r,\quad k=i+1,\ldots,n.\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/b/f/0/bf096c4d69de94b561ef0a0616a90997.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />
+</p>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">Если свободным переменным системы (2) придавать все возможные значения и решать новую систему относительно главных неизвестных снизу вверх (то есть от нижнего уравнения к верхнему), то мы получим все решения этой&nbsp;<a class="mw-redirect" href="https://ru.wikipedia.org/wiki/%D0%A1%D0%9B%D0%90%D0%A3" style="text-decoration: none; color: rgb(11, 0, 128); background: none;" title="СЛАУ">СЛАУ</a>. Так как эта система получена путём&nbsp;<a href="https://ru.wikipedia.org/wiki/%D0%AD%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%80%D0%BD%D1%8B%D0%B5_%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B" style="text-decoration: none; color: rgb(11, 0, 128); background: none;" title="Элементарные преобразования матрицы">элементарных преобразований</a>&nbsp;над исходной системой (1), то по теореме об эквивалентности при элементарных преобразованиях системы (1) и (2) эквивалентны, то есть множества их решений совпадают.</p>
+
+<hr />
+<h3 style="margin: 0.3em 0px 0px; overflow: hidden; padding-top: 0.5em; padding-bottom: 0px; border-bottom-style: none; line-height: 1.6; font-family: sans-serif; text-align: center; background: none rgb(255, 255, 255);"><span class="mw-headline" id=".D0.A3.D1.81.D0.BB.D0.BE.D0.B2.D0.B8.D0.B5_.D1.81.D0.BE.D0.B2.D0.BC.D0.B5.D1.81.D1.82.D0.BD.D0.BE.D1.81.D1.82.D0.B8">Условие совместности</span></h3>
+
+<hr />
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">Упомянутое выше условие&nbsp;<img alt="\beta_i= 0\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/3/b/4/3b4ac88101432adcf9084c8bb105f97d.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;для всех&nbsp;<img alt="i &gt; r\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/4/7/b/47b0e431535ce2ef1d908c3662097e76.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;может быть сформулировано в качестве необходимого и достаточного условия совместности:</p>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">Напомним, что рангом совместной системы называется ранг её основной матрицы (либо расширенной, так как они равны).</p>
 @if (ViewBag.flag1 == true)
 {
     <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">

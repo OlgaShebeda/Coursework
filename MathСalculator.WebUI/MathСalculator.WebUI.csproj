@@ -98,11 +98,16 @@
       <DependentUpon>MathCalculatorDB.mdf</DependentUpon>
     </Content>
     <Content Include="Content\avatar.jpg" />
+    <Content Include="Content\barcelona-boardwalk.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\ilovemaths.jpg" />
+    <Content Include="Content\imafe3.jpg" />
+    <Content Include="Content\jquery-1.10.2.min.js" />
     <Content Include="Content\offcanvas.css" />
     <Content Include="Content\simIter.css" />
     <Content Include="Content\StyleSheet1.css" />
@@ -141,6 +146,7 @@
     </Compile>
     <Compile Include="Infrastructure\NinjectControllerFactory.cs" />
     <Compile Include="Models\ChangePassword.cs" />
+    <Compile Include="Models\ChordModel.cs" />
     <Compile Include="Models\GausModel.cs" />
     <Compile Include="Models\GCDModel.cs" />
     <Compile Include="Models\SimpleIterationModel.cs" />
@@ -160,6 +166,10 @@
     <Content Include="Views\Methods\Gaus.cshtml" />
     <Content Include="Views\Methods\SimpleIteration.cshtml" />
     <Content Include="Views\Post\List.cshtml" />
+    <Content Include="Views\Methods\MathCalc.cshtml" />
+    <Content Include="Views\Methods\Newton.cshtml" />
+    <Content Include="Views\Methods\Chord.cshtml" />
+    <Content Include="Views\Methods\Secants.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

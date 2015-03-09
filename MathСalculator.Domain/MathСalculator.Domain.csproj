@@ -62,8 +62,12 @@
     <Compile Include="Concrete\UsersRepository.cs" />
     <Compile Include="Entities\Link.cs" />
     <Compile Include="Entities\Users.cs" />
+    <Compile Include="Methods\CalcMethods.cs" />
+    <Compile Include="Methods\CChordMethod.cs" />
+    <Compile Include="Methods\COfSecantsMethod.cs" />
     <Compile Include="Methods\GausMethod.cs" />
     <Compile Include="Methods\GCDMethod.cs" />
+    <Compile Include="Methods\CNewtonsMethod.cs" />
     <Compile Include="Methods\SimpleIterationMethod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

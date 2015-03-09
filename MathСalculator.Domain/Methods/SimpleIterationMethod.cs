@@ -10,32 +10,23 @@ namespace MathСalculator.Domain.Methods
 {
     public class SimpleIterationMethod
     {
-        public double Calc(string Function, double X0 =1, double Epsilon = 0.000001)
+
+        public double Calc(string Function, double X0 = 1, double Epsilon = 0.000001)
         {
-            ExpressionParser parser = new ExpressionParser();
-            double k = 0;
-            double y = 0;
+            double y = CalcMethods.ParseFunction(Function, X0);
+            double k = 1;
             string resultTEXT = "Функция x = f(x) = " + Function + "\n";
-            //resultTEXT += "x0 =" + X0 + "\n" + "Eps = " + Epsilon + "\n";
-            do
+            while ((Math.Abs(y - X0) > Epsilon))
             {
-                if (k > 0)
-                {
-                    X0 = y;
-                   
-                }
-                parser.Values.Add("x", X0);
-                y = parser.Parse(Function);
-                resultTEXT+= "\n y = " + y;
+                if (k > 500) throw new ArgumentException("k > 500");
+                resultTEXT += "\n y = " + y;
                 k++;
                 resultTEXT += "\n k =" + k + "\n";
-                parser.Values.Remove("x");
-
-                if (k > 500) throw new ArgumentException();
-            } while ((Math.Abs(y - X0) > Epsilon));
-            resultTEXT += "Результат =" + X0 +"\n";
-            CreateSampleDocument(resultTEXT,"Метод простой итерации");
-            return X0;
+                X0 = y;
+                y = CalcMethods.ParseFunction(Function, X0);
+            }
+            resultTEXT += "Результат =" + X0 + "\n";
+            return y;
         }
 
         public void CreateSampleDocument(string paraOne, string headlineText)
