@@ -30,6 +30,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+                
                 <a class="navbar-brand" href="@Url.Action("Index", "Methods")">MathСalculator
                 </a>
             </div>
@@ -123,10 +124,10 @@
     </footer>
 </body>
 </html>
-@*<script>
-    $(".collapse").collapse()
+<script>
+    if ($(document).height() <= $(window).height())
+        $("footer.footer").addClass("navbar-fixed-bottom");
 
-    $('#collapseExample').collapse()
+</script>
 
-</script>*@
 
