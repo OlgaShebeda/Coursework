@@ -23,17 +23,6 @@ namespace MathСalculator.WebUI.Controllers
         [HttpGet, ValidateInput(false)]
         public ActionResult Index()
         {
-            ViewBag.Browser = true;
-            string user_agent = HttpContext.Request.UserAgent;
-            string browser = "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36";
-            if (user_agent != browser)
-                ViewBag.Browser = false;
-            return View();
-        }
-
-        [HttpGet]
-        public ActionResult GCD()
-        {
             return View();
         }
 
@@ -43,12 +32,7 @@ namespace MathСalculator.WebUI.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult GCD(GCDModel model)
-        {
-            model.result = GCDMethod.GCD(model.firstNumber, model.secondNumber);
-            return View(model);
-        }
+
 
         [HttpGet]
         public ActionResult Gaus()

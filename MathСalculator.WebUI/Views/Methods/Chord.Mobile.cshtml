@@ -1,0 +1,83 @@
+﻿@model MathСalculator.WebUI.Models.ChordModel
+@{
+    ViewBag.Title = "Метод хорд";
+    Layout = "~/Views/Shared/_LayoutMobile.cshtml";
+}
+
+<p style="text-align: center;"><span style="font-size:22px;">Метод хорд</span></p>
+
+<hr />
+<p><span style="font-size: 22px;">это итерационный численный метод приближённого нахождения корня уравнения.</span></p>
+
+<h2 class="myh2"><strong>Решение</strong></h2>
+
+<hr />
+
+<div class="alert alert-success" role="alert">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    Пример ввода операторов и функций:
+    <br />
+    +, -, *, /, ^, %
+    <br />
+    sqrt, sin, cos, tan, atan, acos, asin, acotan, exp, ln, log, sinh, cosh, tanh, abs, ceil, floor, fac, sfac, round, fpart
+    <br />
+    !, ==, !=, ||, &&, >, < , >=, <=
+    <br />
+    Константы
+    <br />
+    PI (value of System.Math.PI),
+    Euler (value of System.Math.E) true (1.0),
+    false (0.0),
+    infinity (value of Double.PositiveInfinity),
+</div>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Введите начальные данные</h3>
+        <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+    </div>
+    <div class="panel-body">
+        <center>
+            @using (Html.BeginForm("Chord", "Methods", FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+                <p class="texterror">
+                    @Html.ValidationSummary(true, "Вы что-то сделали не так. Возможные проблемы: ")
+                </p>
+
+                @Html.LabelFor(x => x.Fuctions)
+                <br />
+
+                @Html.TextBoxFor(x => x.Fuctions, new { @placeholder = "x = f(x)" })
+                <br />
+                @Html.Label("Введите eps")
+                <br />
+                @Html.TextBoxFor(x => x.Epsilon, new { Value = 0.000001 })
+                <br />
+                @Html.Label("Введите начальное приближение х0")
+                <br />
+                @Html.TextBoxFor(x => x.X0, new { Value = 1 })
+                <br/>
+                
+                @Html.Label("Введите начальное приближение х1")
+                <br />
+                @Html.TextBoxFor(x => x.X0, new { Value = 1 })
+                <br />
+                <br />
+
+                <div>
+                    <input type="submit" class="btn btn-primary" value="Решить" />
+                </div>
+            }
+        </center>
+    </div>
+    <div class="panel-footer">
+        @Html.LabelFor(x => x.Result)
+        @Html.TextBoxFor(x => x.Result)
+
+        @if (User.Identity.IsAuthenticated)
+        {
+            <a href="E:\DocXExample.docx">Скачать решение в .doc</a>
+        }
+    </div>
+</div>
+

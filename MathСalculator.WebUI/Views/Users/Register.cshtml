@@ -1,7 +1,7 @@
 ﻿@model MathСalculator.WebUI.Models.UsersRegister
 
 @{
-    
+    ViewBag.Title = "Регистрация";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -24,9 +24,6 @@
                     @using (Html.BeginForm("Register", "Users", new { ViewBag.ReturnUrl },
         FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal", @id = "profileForm" }))
                     {
-                        <p class="text-danger">@Html.ValidationSummary(true, "You have some problem: ") </p>
-
-                        <br />
     <p class="text-danger">@Html.ValidationMessageFor(m => m.Login)</p>
                         <div class="form-group input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>

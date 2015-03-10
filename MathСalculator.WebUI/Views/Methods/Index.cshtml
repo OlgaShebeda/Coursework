@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Главная";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -30,12 +30,16 @@
         </div>
       
         <div class="item">
-            <img src="~/Content/I%20love%20math-762627.png" alt="Second slide">
+            <img src="~/Content/hq-wallpapers_ru_funny_13844_1920x1200.jpg" alt="Second slide">
             <div class="container">
                 <div class="carousel-caption">
-                    <a href="@Url.Action("Chord", "Methods")">Особенно когда можно решить уравнение f(x) = 0 методом хорд онлайн:))</a></p>
-            
+                    <h1>Метод хорд</h1>
+                    <p class="text-success">
+                        Решите уравнение f(x) = 0 методом хорд онлайн всего за несколько секунд:))
+                    </p>
+                    <p><a class="btn btn-lg btn-primary" href="@Url.Action("Chord", "Methods")" role="button">Подробнее</a></p>
                 </div>
+
             </div>
         </div>
 

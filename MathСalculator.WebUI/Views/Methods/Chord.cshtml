@@ -1,6 +1,6 @@
 ﻿@model MathСalculator.WebUI.Models.ChordModel
 @{
-    ViewBag.Title = "Chord";
+    ViewBag.Title = "Метод хорд";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -131,7 +131,7 @@
                 <br />
                 @Html.Label("Введите eps")
                 <br />
-                @Html.TextBoxFor(x => x.Epsilon, new { Value = 0.000001 })
+                @Html.TextBoxFor(x => x.Epsilon)
                 <br />
                 @Html.Label("Введите начальное приближение х0")
                 <br />

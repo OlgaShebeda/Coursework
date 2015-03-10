@@ -1,12 +1,12 @@
 ﻿@model MathСalculator.WebUI.Models.SimpleIterationModel
 @{
-    ViewBag.Title = "SimpleIteration";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Метод простой итерации";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
-@{Html.EnableClientValidation();}
-@{Html.EnableUnobtrusiveJavaScript();}
+@*@{Html.EnableClientValidation();}
+@{Html.EnableUnobtrusiveJavaScript();}*@
 
 <h2 class="myh2"><strong>Метод простой итерации
                     <img alt="smiley" height="23" src="http://www.quackit.com/html/online-html-editor/ckeditor/ckeditor_4.4.1_full/plugins/smiley/images/regular_smile.png" title="smiley" width="23" /></strong></h2>
@@ -252,17 +252,14 @@
                                 <br />
                                 @Html.Label("Введите eps")
                                 <br />
-                                @Html.TextBoxFor(x => x.Epsilon, new { Value = 0.000001 })
+                                @Html.TextBoxFor(x => x.Epsilon)
                                 <br />
                                 @Html.Label("Введите начальное приближение х0")
                                 <br />
                                 @Html.TextBoxFor(x => x.X0, new { Value = 1 })
                                 <br />
     <br/>
-                                @*@Html.Label("Проверить на устойчивость")
-                                @Html.EditorFor(x =>x.Chek)
-                                @ViewBag.chek*@
-                                <div>
+                  <div>
                                     <input type="submit" class="btn btn-primary" value="Решить" />
                                 </div>
                             }
@@ -279,3 +276,5 @@
                     </div>
                 </div>
 
+@*<script src="~/Scripts/simIter.js"></script>
+<link href="~/Content/simIter.css" rel="stylesheet" />*@

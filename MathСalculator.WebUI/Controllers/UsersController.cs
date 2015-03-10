@@ -48,6 +48,11 @@ namespace MathСalculator.WebUI.Controllers
                 image.InputStream.Read(user.ImageData, 0, image.ContentLength);
             }
             _repo.Create(user);
+            if (_repo.Authentication(model.Login, model.Password))
+            {
+                FormsAuthentication.RedirectFromLoginPage(user.Login, false);
+                return RedirectToAction("Index","Methods");
+            }
             return RedirectToAction("Login");
         }
 

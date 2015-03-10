@@ -105,11 +105,13 @@
     <Content Include="Content\fon1.jpg" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Content\I love math-762627.png" />
+    <Content Include="Content\hq-wallpapers_ru_funny_13844_1920x1200.jpg" />
     <Content Include="Content\imafe3.jpg" />
     <Content Include="Content\jquery-1.10.2.min.js" />
+    <Content Include="Content\mathematics_00389745_thumb.png" />
     <Content Include="Content\maths-1280x800.jpg" />
     <Content Include="Content\offcanvas.css" />
+    <Content Include="Content\robots11.jpg" />
     <Content Include="Content\school-newsletter-ideas-for-parents-716.jpg" />
     <Content Include="Content\simIter.css" />
     <Content Include="Content\StyleSheet1.css" />
@@ -125,6 +127,7 @@
     <None Include="Properties\PublishProfiles\mathcalculator - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\mathcalculator.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="robots11.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\ie-emulation-modes-warning.js" />
@@ -171,7 +174,6 @@
     <Content Include="Views\Methods\Index.cshtml" />
     <Content Include="Views\Methods\Gaus.cshtml" />
     <Content Include="Views\Methods\SimpleIteration.cshtml" />
-    <Content Include="Views\Post\List.cshtml" />
     <Content Include="Views\Methods\MathCalc.cshtml" />
     <Content Include="Views\Methods\Newton.cshtml" />
     <Content Include="Views\Methods\Chord.cshtml" />
@@ -184,6 +186,7 @@
     <Content Include="Views\Users\Login.Mobile.cshtml" />
     <Content Include="Views\Users\Register.Mobile.cshtml" />
     <Content Include="Views\Methods\Secants.Mobile.cshtml" />
+    <Content Include="Views\Methods\Chord.Mobile.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
