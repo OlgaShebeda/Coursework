@@ -38,20 +38,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AppLimit.CloudComputing.SharpBox">
-      <HintPath>..\packages\AppLimit.CloudComputing.SharpBox.1.2.0.542\lib\net40-full\AppLimit.CloudComputing.SharpBox.dll</HintPath>
-    </Reference>
-    <Reference Include="AppLimit.CloudComputing.SharpBox.ExperimentalProvider">
-      <HintPath>..\packages\AppLimit.CloudComputing.SharpBox.1.2.0.542\lib\net40-full\AppLimit.CloudComputing.SharpBox.ExperimentalProvider.dll</HintPath>
-    </Reference>
-    <Reference Include="AppLimit.CloudComputing.SharpBox.MockProvider">
-      <HintPath>..\packages\AppLimit.CloudComputing.SharpBox.1.2.0.542\lib\net40-full\AppLimit.CloudComputing.SharpBox.MockProvider.dll</HintPath>
-    </Reference>
     <Reference Include="DocX">
       <HintPath>..\packages\DocX.1.0.0.13\lib\net40\DocX.dll</HintPath>
-    </Reference>
-    <Reference Include="DropBoxTokenIssuer">
-      <HintPath>..\packages\AppLimit.CloudComputing.SharpBox.1.2.0.542\lib\net40-full\DropBoxTokenIssuer.exe</HintPath>
     </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
@@ -86,9 +74,6 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="WolframAPI">
-      <HintPath>..\packages\WolframAPI.1.2\lib\WolframAPI.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Web.Razor">
@@ -133,6 +118,7 @@
     <Content Include="Content\school-newsletter-ideas-for-parents-716.jpg" />
     <Content Include="Content\simIter.css" />
     <Content Include="Content\StyleSheet1.css" />
+    <Content Include="Content\TextFile1.txt" />
     <Content Include="Content\ZvqE2wp2kw-1680x1050.jpg" />
     <Content Include="Global.asax" />
     <Content Include="Content\bootstrap-theme.css.map" />
@@ -219,7 +205,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\docFiles\" />
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
@@ -230,7 +215,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>

@@ -25,6 +25,6 @@ namespace MathСalculator.WebUI.Models
         public double Epsilon { get; set; }
 
         [Display(Name = "проверка")]
-        public string adress { get; set; }
+        public string Equation { get; set; }
     }
 }

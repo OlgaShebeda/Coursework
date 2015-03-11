@@ -55,7 +55,10 @@
                 <p class="texterror">
                     @Html.ValidationSummary(true, "Вы что-то сделали не так. Возможные проблемы: ")
                 </p>
-
+                 @Html.Label("Введите уравнение")
+  <br />
+                                @Html.TextBoxFor(x => x.Equation, new { @placeholder= "f(x) = 0" })
+                                <br />
                 @Html.LabelFor(x => x.Fuctions)
                 <br />
 
@@ -88,7 +91,8 @@
 
         @if (User.Identity.IsAuthenticated)
         {
-            <a href="E:\DocXExample.docx">Скачать решение в .doc</a>
+               @Html.ActionLink("Скачать решение в .doc", "GetFile", new { path = "Secants.doc" })
+    <a style="margin-left: 20px;" href="@ViewBag.Adress" target="_blank">Проверить решение</a>
         }
     </div>
 </div>

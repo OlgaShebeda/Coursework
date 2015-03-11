@@ -184,14 +184,16 @@
                         <center>
                             @using (Html.BeginForm("SimpleIteration", "Methods", FormMethod.Post, new { @class = "form-horizontal" }))
                             {
-                                <p class="texterror">
-                                    @Html.ValidationSummary(true, "Вы что-то сделали не так. Возможные проблемы: ")
+                             <p class="texterror">@Html.ValidationSummary(true, "Вы что-то сделали не так. Возможные проблемы: ") 
                             </p>
-
+    @Html.Label("Введите уравнение")
+  <br />
+                                @Html.TextBoxFor(x => x.equation, new { @placeholder= "f(x) = 0" })
+                                <br />
                                 @Html.LabelFor(x => x.Fuctions)
                                 <br />
 
-                                @Html.TextBoxFor(x => x.Fuctions, new { @placeholder = "x = f(x)" })
+                                @Html.TextBoxFor(x => x.Fuctions, new { @placeholder= "x = f(x)" })
                                 <br />
                                 @Html.Label("Введите eps")
                                 <br />
@@ -201,8 +203,8 @@
                                 <br />
                                 @Html.TextBoxFor(x => x.X0)
                                 <br />
-                                <br />
-                                <div>
+    <br/>
+                  <div>
                                     <input type="submit" class="btn btn-primary" value="Решить" />
                                 </div>
                             }
@@ -213,9 +215,10 @@
                         @Html.TextBoxFor(x => x.Result)
 
                    @if (User.Identity.IsAuthenticated)
-{
-    <a href="E:\DocXExample.docx">Скачать решение в .doc</a>
-}
+                   {
+                       @Html.ActionLink("Скачать решение в .doc", "GetFile", new {path = "MPI.doc"})
+                       <a style="margin-left: 20px;" href="@ViewBag.Adress" target="_blank">Проверить решение</a>
+                   }
                     </div>
                 </div>
 

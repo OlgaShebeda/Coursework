@@ -1,4 +1,5 @@
-﻿@model MathСalculator.WebUI.Models.SimpleIterationModel
+﻿@using System.IO
+@model MathСalculator.WebUI.Models.SimpleIterationModel
 @{
     ViewBag.Title = "Метод простой итерации";
     //Layout = "~/Views/Shared/_Layout.cshtml";
@@ -243,7 +244,10 @@
 {
     <p class="texterror">@Html.ValidationSummary(true, "Вы что-то сделали не так. Возможные проблемы: ") 
                             </p>
-                               
+    @Html.Label("Введите уравнение")
+  <br />
+                                @Html.TextBoxFor(x => x.equation, new { @placeholder= "f(x) = 0" })
+                                <br />
                                 @Html.LabelFor(x => x.Fuctions)
                                 <br />
 
@@ -270,9 +274,11 @@
 
                    @if (User.Identity.IsAuthenticated)
                    {
-                       string path1 = @"docExample/docExample1";
-                    <a href="@Path.GetFullPath(path1)">Скачать решение в .doc</a>
-    @*<a href="@ViewBag.Adress">Проверить решение</a>*@
+                     
+                    @*<a href="@Path.GetFullPath(path1)">Скачать решение в .doc</a>*@
+                       @Html.ActionLink("Скачать решение в .doc", "GetFile", new { path = "MPI.doc" })
+
+    <a style="margin-left: 20px;" href="@ViewBag.Adress" target="_blank">Проверить решение</a>
                    }
                     </div>
                 </div>

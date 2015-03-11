@@ -9,7 +9,7 @@ namespace MathСalculator.WebUI.Models
     public class SimpleIterationModel
     {
         [Required]
-        [Display(Name = "Введите функцию")]
+        [Display(Name = "Введите функцию x=f(x)")]
         public string Fuctions { get; set; }
 
         [Display(Name = "Результат")]
@@ -21,8 +21,8 @@ namespace MathСalculator.WebUI.Models
         [Display(Name = "Епсилон")]
         public double Epsilon { get; set; }
 
-        [Display(Name = "проверка")]
-        public string adress;
+        [Display(Name = "уравнение")]
+        public string equation { get; set; }
     }
 }
 

@@ -118,5 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-
+  <data name="MethodsController_Chord_Решение_не_найдено__Произошло_деление_на_ноль_" xml:space="preserve">
+    <value>Решение не найдено! Произошло деление на ноль!</value>
+  </data>
+  <data name="MethodsController_Chord_Метод_расходится" xml:space="preserve">
+    <value>Метод расходится</value>
+  </data>
+  <data name="MethodsController_Newton_Пожалуйста_введите_корректно_начальные_данные" xml:space="preserve">
+    <value>Пожалуйста введите корректно начальные данные</value>
+  </data>
 </root>

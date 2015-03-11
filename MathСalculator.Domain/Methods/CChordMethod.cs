@@ -16,21 +16,24 @@ namespace MathСalculator.Domain.Methods
         /// <param name="XLast">x(n-1) - not changed</param>
         /// <param name="Epsilon"></param>
         /// <returns>x(n+1)=y</returns>
-        public double ChordMethod(string Function, double X0 = 1, double XLast = -3, double Epsilon = 0.0000001)
+        public double ChordMethod(string Function, double X0 , double XLast, double Epsilon,ref string resultTEXT)
         {
             double y = X0 - (X0 - XLast) * CalcMethods.ParseFunction(Function, X0) / (CalcMethods.DerivativeOfFunction(Function, X0) - CalcMethods.DerivativeOfFunction(Function, XLast));
             double k = 1;
-            string resultTEXT = "Функция x = f(x) = " + Function + "\n";
+           resultTEXT = "Функция x = f(x) = " + Function + "\n";
+           resultTEXT += "x0 = " + X0 +"  X1 = "+XLast+"   Epsilon =  " + Epsilon + "\n"; 
             while ((Math.Abs(y - X0) > Epsilon))
             {
+                resultTEXT += "\n|у -x0| = " + (Math.Abs(y - X0));
                 if (k > 500) throw new ArgumentException("k > 500");
                 resultTEXT += "\n y = " + y;
-                k++;
                 resultTEXT += "\n k =" + k + "\n";
+                k++;
+                
                 X0 = y;
                 y = X0 - (X0 - XLast) * CalcMethods.ParseFunction(Function, X0) / (CalcMethods.DerivativeOfFunction(Function, X0) - CalcMethods.DerivativeOfFunction(Function, XLast));
             }
-            resultTEXT += "Результат =" + X0 + "\n";
+            resultTEXT += "Результат =" + y + "\n";
             return y;
         }
     }
