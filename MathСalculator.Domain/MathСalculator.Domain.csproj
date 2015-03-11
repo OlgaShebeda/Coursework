@@ -68,6 +68,7 @@
     <Compile Include="Methods\GausMethod.cs" />
     <Compile Include="Methods\GCDMethod.cs" />
     <Compile Include="Methods\CNewtonsMethod.cs" />
+    <Compile Include="Methods\helpers\CreateDoc.cs" />
     <Compile Include="Methods\SimpleIterationMethod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -77,6 +78,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="docExample\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

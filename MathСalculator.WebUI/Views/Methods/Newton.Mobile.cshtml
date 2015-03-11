@@ -54,7 +54,7 @@
             {
                 <p class="texterror">
                     @Html.ValidationSummary(true, "Вы что-то сделали не так. Возможные проблемы: ")
-            </p>
+                </p>
 
                 @Html.LabelFor(x => x.Fuctions)
                 <br />
@@ -63,11 +63,11 @@
                 <br />
                 @Html.Label("Введите eps")
                 <br />
-                @Html.TextBoxFor(x => x.Epsilon, new { Value = 0.000001 })
+                @Html.TextBoxFor(x => x.Epsilon, new { @placeholder = "0,00001" })
                 <br />
                 @Html.Label("Введите начальное приближение х0")
                 <br />
-                @Html.TextBoxFor(x => x.X0, new { Value = 1 })
+                @Html.TextBoxFor(x => x.X0, new { @placeholder = "0" })
                 <br />
                 <br />
 

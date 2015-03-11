@@ -16,7 +16,7 @@ namespace MathСalculator.Domain.Methods
         /// <param name="XLast">x(n-1) - not changed</param>
         /// <param name="Epsilon"></param>
         /// <returns>x(n+1)=y</returns>
-        public double ChordMethod(string Function, double X0 = 1, double XLast = 1, double Epsilon = 0.0000001)
+        public double ChordMethod(string Function, double X0 = 1, double XLast = -3, double Epsilon = 0.0000001)
         {
             double y = X0 - (X0 - XLast) * CalcMethods.ParseFunction(Function, X0) / (CalcMethods.DerivativeOfFunction(Function, X0) - CalcMethods.DerivativeOfFunction(Function, XLast));
             double k = 1;

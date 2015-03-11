@@ -120,7 +120,7 @@ namespace MathСalculator.WebUI.Controllers
         public FileContentResult GetImage(int userId)
         {
             Users user = _repo.Get.FirstOrDefault(p => p.Id == userId);
-            if (user != null)
+            if (user.ImageData != null)
                 return File(user.ImageData, user.ImageMimeType);
             return null;
         }

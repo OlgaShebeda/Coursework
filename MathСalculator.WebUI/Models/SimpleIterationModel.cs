@@ -21,7 +21,8 @@ namespace MathСalculator.WebUI.Models
         [Display(Name = "Епсилон")]
         public double Epsilon { get; set; }
 
-        [Display(Name = "Проверка на устойчивость")] public bool Chek;
+        [Display(Name = "проверка")]
+        public string adress;
     }
 }
 

@@ -183,25 +183,26 @@
                     <div class="panel-body">
                         <center>
                             @using (Html.BeginForm("SimpleIteration", "Methods", FormMethod.Post, new { @class = "form-horizontal" }))
-{
-    <p class="texterror">@Html.ValidationSummary(true, "Вы что-то сделали не так. Возможные проблемы: ") 
+                            {
+                                <p class="texterror">
+                                    @Html.ValidationSummary(true, "Вы что-то сделали не так. Возможные проблемы: ")
                             </p>
-                               
+
                                 @Html.LabelFor(x => x.Fuctions)
                                 <br />
 
-                                @Html.TextBoxFor(x => x.Fuctions, new { @placeholder= "x = f(x)" })
+                                @Html.TextBoxFor(x => x.Fuctions, new { @placeholder = "x = f(x)" })
                                 <br />
                                 @Html.Label("Введите eps")
                                 <br />
-                                @Html.TextBoxFor(x => x.Epsilon, new { Value = 0.000001 })
+                                @Html.TextBoxFor(x => x.Epsilon, new { @placeholder = "0,000001" })
                                 <br />
                                 @Html.Label("Введите начальное приближение х0")
                                 <br />
-                                @Html.TextBoxFor(x => x.X0, new { Value = 1 })
+                                @Html.TextBoxFor(x => x.X0)
                                 <br />
-    <br/>
-                                                           <div>
+                                <br />
+                                <div>
                                     <input type="submit" class="btn btn-primary" value="Решить" />
                                 </div>
                             }

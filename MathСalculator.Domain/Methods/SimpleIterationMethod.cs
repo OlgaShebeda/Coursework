@@ -5,13 +5,14 @@ using System.Text;
 using info.lundin.math;
 using System.Diagnostics;
 using Novacode;
+using System.IO;
 
 namespace MathСalculator.Domain.Methods
 {
     public class SimpleIterationMethod
     {
 
-        public double Calc(string Function, double X0 = 1, double Epsilon = 0.000001)
+        public double MethodOfSimpleIteration(string Function, double X0, double Epsilon)
         {
             double y = CalcMethods.ParseFunction(Function, X0);
             double k = 1;
@@ -31,9 +32,11 @@ namespace MathСalculator.Domain.Methods
 
         public void CreateSampleDocument(string paraOne, string headlineText)
         {
+            string path1 = @"docExample/docExample1";
 
+ 
             // Modify to suit your machine:
-            string fileName = @"E:\DocXExample.docx";
+            string fileName = Path.GetFullPath(path1); 
 
             // A formatting object for our headline:
             var headLineFormat = new Formatting();
@@ -56,7 +59,7 @@ namespace MathСalculator.Domain.Methods
             // Save to the 
             doc.Save();
             //// Open in Word:
-            Process.Start("WINWORD.EXE", fileName);
+          
         }
     }
 }

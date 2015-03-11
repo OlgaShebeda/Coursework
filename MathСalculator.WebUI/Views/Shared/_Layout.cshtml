@@ -2,19 +2,20 @@
 
 <html>
 <head>
+   
     <meta name="viewport" content="width=device-width" />
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
-    <script src="~/Scripts/jquery.validate.min.js"></script>
+    @*<script src="~/Scripts/jquery.validate.min.js"></script>*@
     <script src="~/Scripts/simIter.js"></script>
     <link href="~/Content/simIter.css" rel="stylesheet" />
-    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-    @*<script>
+    @*<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>*@
+   @*<script>
+    $(".collapse").collapse('hide');
     if ($(document).height() <= $(window).height())
         $("footer.footer").addClass("navbar-fixed-bottom");
-
-    </script>*@
+</script>*@
 
     <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="~/Content/offcanvas.css" rel="stylesheet" />
@@ -124,8 +125,10 @@
     </div><!--/.container-->
     <footer class="footer">
         <div class="container">
-            <p class="text-muted">Данный сайт находится в разработке.Все пожелания Вы можете мне присылать на <a href="mailto:#">mik.borischewskij@gmail.com</a></p>
+            @*<p class="text-muted">Данный сайт находится в разработке.Все пожелания Вы можете мне присылать на <a href="mailto:#">mik.borischewskij@gmail.com</a></p>*@
+           <br />
         </div>
     </footer>
 </body>
 </html>
+

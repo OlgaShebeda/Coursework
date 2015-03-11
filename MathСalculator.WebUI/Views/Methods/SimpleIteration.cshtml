@@ -8,8 +8,7 @@
 @*@{Html.EnableClientValidation();}
 @{Html.EnableUnobtrusiveJavaScript();}*@
 
-<h2 class="myh2"><strong>Метод простой итерации
-                    <img alt="smiley" height="23" src="http://www.quackit.com/html/online-html-editor/ckeditor/ckeditor_4.4.1_full/plugins/smiley/images/regular_smile.png" title="smiley" width="23" /></strong></h2>
+<h2 class="myh2"><strong>Метод простой итерации</strong></h2>
 
     <hr />
     <p>
@@ -252,11 +251,11 @@
                                 <br />
                                 @Html.Label("Введите eps")
                                 <br />
-                                @Html.TextBoxFor(x => x.Epsilon)
+                                @Html.TextBoxFor(x => x.Epsilon, new { @placeholder = "0,000001" })
                                 <br />
                                 @Html.Label("Введите начальное приближение х0")
                                 <br />
-                                @Html.TextBoxFor(x => x.X0, new { Value = 1 })
+                                @Html.TextBoxFor(x => x.X0)
                                 <br />
     <br/>
                   <div>
@@ -270,11 +269,18 @@
                         @Html.TextBoxFor(x => x.Result)
 
                    @if (User.Identity.IsAuthenticated)
-{
-    <a href="E:\DocXExample.docx">Скачать решение в .doc</a>
-}
+                   {
+                       string path1 = @"docExample/docExample1";
+                    <a href="@Path.GetFullPath(path1)">Скачать решение в .doc</a>
+    @*<a href="@ViewBag.Adress">Проверить решение</a>*@
+                   }
                     </div>
                 </div>
 
-@*<script src="~/Scripts/simIter.js"></script>
-<link href="~/Content/simIter.css" rel="stylesheet" />*@
+
+@*@{ string path1 = @"docExample/docExample1";
+
+
+            // Modify to suit your machine:
+            string fileName = Path.GetFullPath(path1); 
+            }*@

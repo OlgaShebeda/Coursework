@@ -8,6 +8,10 @@ using MathСalculator.WebUI.Models;
 using MathСalculator.Domain.Methods;
 using MathСalculator.Domain.Abstract;
 using MathСalculator.Domain.Entities;
+using System.Collections.Specialized;
+using System.Net;
+using System.Text;
+using System.IO;
 
 namespace MathСalculator.WebUI.Controllers
 {
@@ -119,6 +123,11 @@ namespace MathСalculator.WebUI.Controllers
             try
             {
                 model.Result = method.OfSecantsMethod(model.Fuctions, model.X0, model.X1, model.Epsilon);
+                if (model.Result.Equals(Double.NaN))
+                {
+                    ModelState.AddModelError("", "Решение не найдено! Произошло деление на ноль!");
+                    return View(model);
+                }
             }
             catch (Exception)
             {
@@ -127,6 +136,7 @@ namespace MathСalculator.WebUI.Controllers
                 return View(model);
             }
 
+            ViewBag.Adress = "http://www.wolframalpha.com/input/?i=" + Server.UrlEncode("solve(" + model.Fuctions + ")");
             return View(model);
         }
 
@@ -154,6 +164,11 @@ namespace MathСalculator.WebUI.Controllers
             try
             {
                 model.Result = method.ChordMethod(model.Fuctions, model.X0,model.X1, model.Epsilon);
+                if (model.Result.Equals(Double.NaN))
+                {
+                    ModelState.AddModelError("", "Решение не найдено! Произошло деление на ноль!");
+                    return View(model);
+                }
             }
             catch (Exception)
             {
@@ -162,6 +177,7 @@ namespace MathСalculator.WebUI.Controllers
                 return View(model);
             }
 
+            ViewBag.Adress = "http://www.wolframalpha.com/input/?i=" + Server.UrlEncode("solve(" + model.Fuctions + ")");
             return View(model);
         }
 
@@ -179,6 +195,12 @@ namespace MathСalculator.WebUI.Controllers
             try
             {
                 model.Result = method.NewtonsMethod(model.Fuctions, model.X0, model.Epsilon);
+              
+                if (model.Result.Equals(Double.NaN))
+                {
+                    ModelState.AddModelError("", "Решение не найдено! Произошло деление на ноль!");
+                    return View(model);
+                }
             }
             catch (Exception)
             {
@@ -187,8 +209,11 @@ namespace MathСalculator.WebUI.Controllers
                 return View(model);
             }
 
+            ViewBag.Adress = "http://www.wolframalpha.com/input/?i=" + Server.UrlEncode("solve(" + model.Fuctions + ")");
+           
             return View(model);
         }
+
 
         [HttpPost]
         public ViewResult SimpleIteration(SimpleIterationModel model)
@@ -201,7 +226,12 @@ namespace MathСalculator.WebUI.Controllers
             SimpleIterationMethod method = new SimpleIterationMethod();
             try
             {
-                model.Result = method.Calc(model.Fuctions, model.X0, model.Epsilon);
+                model.Result = method.MethodOfSimpleIteration(model.Fuctions, model.X0, model.Epsilon);
+                if (model.Result.Equals(Double.NaN))
+                {
+                    ModelState.AddModelError("", "Решение не найдено! Произошло деление на ноль!");
+                    return View(model);
+                }
             }
             catch (Exception)
             {
@@ -209,7 +239,8 @@ namespace MathСalculator.WebUI.Controllers
                 ModelState.AddModelError("", "Метод расходится");
                 return View(model);
             }
-            
+
+            ViewBag.Adress = "http://www.wolframalpha.com/input/?i=" + Server.UrlEncode("solve(" + model.Fuctions + ")");
             return View(model);
         }
     }

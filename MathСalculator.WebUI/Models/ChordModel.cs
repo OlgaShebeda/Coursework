@@ -8,7 +8,7 @@ namespace MathСalculator.WebUI.Models
 {
     public class ChordModel
     {
-        //[Required]
+        [Required]
         [Display(Name = "Введите функцию")]
         public string Fuctions { get; set; }
 
@@ -23,5 +23,8 @@ namespace MathСalculator.WebUI.Models
 
         [Display(Name = "Епсилон")]
         public double Epsilon { get; set; }
+
+        [Display(Name = "проверка")]
+        public string adress { get; set; }
     }
 }

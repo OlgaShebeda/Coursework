@@ -131,16 +131,16 @@
                 <br />
                 @Html.Label("Введите eps")
                 <br />
-                @Html.TextBoxFor(x => x.Epsilon)
+                @Html.TextBoxFor(x => x.Epsilon, new { @placeholder = "0,000001" })
                 <br />
                 @Html.Label("Введите начальное приближение х0")
                 <br />
-                @Html.TextBoxFor(x => x.X0, new { Value = 1 })
+                @Html.TextBoxFor(x => x.X0)
                 <br/>
                 
                 @Html.Label("Введите начальное приближение х1")
                 <br />
-                @Html.TextBoxFor(x => x.X0, new { Value = 1 })
+                @Html.TextBoxFor(x => x.X1)
                 <br />
                 <br />
 
@@ -157,6 +157,7 @@
         @if (User.Identity.IsAuthenticated)
         {
             <a href="E:\DocXExample.docx">Скачать решение в .doc</a>
+    @*<a href="@ViewBag.Adress">Проверить решение</a>*@
         }
     </div>
 </div>
