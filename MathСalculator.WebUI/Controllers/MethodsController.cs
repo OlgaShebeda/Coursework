@@ -49,30 +49,11 @@ namespace MathСalculator.WebUI.Controllers
             return View();
         }
 
-        //public FileResult Download(string id)
-        //{
-        //    DataClasses objData = new DataClasses();
-        //    int fid = Convert.ToInt32(id);
-        //    var files = objData.GetFiles();
-        //    string filename = (from f in files
-        //                       where f.FileId == fid
-        //                       select f.FilePath).First();
-        //    string contentType = "application/docx";
-        //    //Parameters to file are
-        //    //1. The File Path on the File Server
-        //    //2. The content type MIME type
-        //    //3. The parameter for the file save by the browser
-        //    return File(filename, contentType, "DocExample.docx");
-        //}
-
         public FileResult GetFile(string path)
         {
-            // Путь к файлу
+   
             string file_path = Server.MapPath("~/Content/" + path);
-            // Тип файла - content-type
             string file_type = "application/msword";
-            // Имя файла - необязательно
-            //string file_name = "TextFile1.txt";
             return File(file_path, file_type, path);
         }
 
