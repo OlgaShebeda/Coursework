@@ -133,5 +133,34 @@ namespace MathСalculator.WebUI.Controllers
             imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
             return ms.ToArray();
         }
+
+        [HttpGet, Authorize]
+        public ViewResult ChangeUsersPassword()
+        {
+            return View();
+        }
+
+        [Authorize]
+        [HttpPost, ValidateInput(false)]
+        public ActionResult ChangeUsersPassword(ChangePassword model)
+        {
+            if (!ModelState.IsValid)
+            {
+                ModelState.AddModelError("", "Неправильно введён пароль! Попробуйте снова!");
+                return View();
+            }
+            var oldPass = model.OldPassword.GetHashCode().ToString();
+            var user = _repo.Get.FirstOrDefault(u => u.Login == User.Identity.Name && u.Password == oldPass);
+
+            if (user == null)
+            {
+                ModelState.AddModelError("", "Неправильно введён пароль! Попробуйте снова!");
+                return View();
+            }
+            user.Password = model.Password.GetHashCode().ToString();
+            _repo.Update(user);
+
+            return RedirectToAction("Index", "Methods");
+        }
     }
 }

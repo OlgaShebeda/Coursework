@@ -112,6 +112,7 @@
     <Content Include="Content\hq-wallpapers_ru_funny_13844_1920x1200.jpg" />
     <Content Include="Content\imafe3.jpg" />
     <Content Include="Content\jquery-1.10.2.min.js" />
+    <Content Include="Content\lJ5AfkLBb7.jpg" />
     <Content Include="Content\mathematics_00389745_thumb.png" />
     <Content Include="Content\maths-1280x800.jpg" />
     <Content Include="Content\offcanvas.css" />
@@ -198,6 +199,7 @@
     <Content Include="Views\Users\Register.Mobile.cshtml" />
     <Content Include="Views\Methods\Secants.Mobile.cshtml" />
     <Content Include="Views\Methods\Chord.Mobile.cshtml" />
+    <Content Include="Views\Users\ChangeUsersPassword.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
