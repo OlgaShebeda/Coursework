@@ -256,7 +256,7 @@ namespace MathСalculator.WebUI.Controllers
                     return View(model);
                 }
                 CreateSampleDocument(resultTxt, "Метод простой итерации", "MPI.doc");
-              
+             
             }
             catch (Exception)
             {

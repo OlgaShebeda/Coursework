@@ -100,6 +100,7 @@
     <Content Include="App_Data\MathCalculatorDB_log.ldf">
       <DependentUpon>MathCalculatorDB.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\435.jpg" />
     <Content Include="Content\avatar.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />

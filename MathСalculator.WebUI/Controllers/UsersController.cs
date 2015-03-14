@@ -111,9 +111,11 @@ namespace MathСalculator.WebUI.Controllers
 
         private IEnumerable<Link> GetLinksOfAutorizireUsers()
         {
-            var links = new List<Link>();
-            links.Add(new Link { Name = "Change password", Url = "/ChangeUsersPassword", NameController = "Users" });
-            links.Add(new Link { Name = "Log out", Url = "/Logout", NameController = "Users" });
+            var links = new List<Link>
+            {
+                new Link {Name = "Изменить пароль", Url = "/ChangeUsersPassword", NameController = "Users",NameImage = "glyphicon glyphicon-lock"},
+                new Link {Name = "Выйти", Url = "/Logout", NameController = "Users",NameImage = "glyphicon glyphicon-off"}
+            };
             return links;
         }
 

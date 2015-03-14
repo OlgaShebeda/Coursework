@@ -13,5 +13,6 @@ namespace MathСalculator.Domain.Entities
         public string Name { get; set; }
         public string Url { get; set; }
         public string NameController { get; set; }
+        public string NameImage { get; set; }
     }
 }

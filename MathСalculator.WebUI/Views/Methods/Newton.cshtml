@@ -149,7 +149,7 @@
 
         @if (User.Identity.IsAuthenticated)
         {
-             @Html.ActionLink("Скачать решение в .doc", "GetFile", new { path = "Newton.doc" })
+            <span class="glyphicon glyphicon-download-alt"></span>  @Html.ActionLink("Скачать решение в .doc", "GetFile", new { path = "Newton.doc" })
     <a style="margin-left: 20px;" href="@ViewBag.Adress" target="_blank">Проверить решение</a>
 
         }

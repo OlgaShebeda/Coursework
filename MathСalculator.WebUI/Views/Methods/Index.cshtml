@@ -22,9 +22,19 @@
             <div class="container">
                 <div class="carousel-caption">
                     <h1>Добро пожаловать на MathCalculator</h1>
-                    <p>Пожалуйста войдите в свою учётную запись либо зарегистрируйтесь</p>
-                    <p><a class="btn btn-lg btn-primary" href="@Url.Action("Login", "Users")" role="button">Войти</a>
-                        <a class="btn btn-lg btn-primary" href="@Url.Action("Register", "Users")" role="button">Регистрация</a></p>
+                    @if (!User.Identity.IsAuthenticated)
+                    {
+                        <p>Пожалуйста войдите в свою учётную запись либо зарегистрируйтесь</p>
+                        <p><a class="btn btn-lg btn-primary" href="@Url.Action("Login", "Users")" role="button">Войти</a>
+                            <a class="btn btn-lg btn-primary" href="@Url.Action("Register", "Users")" role="button">Регистрация</a>
+                        </p>
+                    }
+                    else
+                    {
+                        <p>Вы вошли на сайт под именем <b>@User.Identity.Name</b>
+                        </p>
+                        <br/> <br/> <br/>
+                    }
                 </div>
             </div>
         </div>

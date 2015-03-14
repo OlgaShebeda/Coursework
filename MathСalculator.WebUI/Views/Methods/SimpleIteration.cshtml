@@ -207,13 +207,55 @@
         <img alt=" x_1\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/f/d/a/fdad14c036fde9f986da06150b87a44c.png" />&nbsp;может выскочить из рассматриваемой окрестности корня&nbsp;<img alt=" x^*\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/7/f/5/7f51fdcd3894b13930944aa06bee1b25.png" />, и сходимости к корню может не быть.
     </p>
 
+<!-- Button trigger modal -->
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+    Посмотреть пример решения
+</button>
 
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Метод простой итерации</h4>
+            </div>
+            <div class="modal-body">
+                <p> <b> Задание: </b> методом простой итерации найти меньший положительный корень уравнения Ln(x) + x + 2 = 0.
+                </p>
+                <p><b>Решение:</b> графически отделяя корни данного уравнения, заключаем, что уравнение имеет действительный корень, лежащего в отрезке [0;0,4]. x≈0,15.
+                </p>
+                <center>
+                    <img src="~/Content/435.jpg" />
+                </center>
+                <br/>
+                Приведём наше уравнение к виду x = e<sup>-2-</sup><sup>x</sup>, или x = ɸ(х), где</p>
+                
+                <p>ɸ(х) =e<sup>-2-</sup><sup>x</sup>;</p>
+
+                <p>&nbsp;ɸ&rsquo;(х) = -e<sup>-2-</sup><sup>x</sup>;</p>
+
+                <p>Условие max| ɸ&rsquo;(х)&nbsp; |= |- 1/e<sup>2.15</sup>| &lt; 1 выполняется.</p>
+
+                <p>Так как условие | ɸ&rsquo;(х) | &lt;1 выполняется, то итерационный процесс&nbsp; сходится. Взяв в качестве нулевого приближения &nbsp;х<sub>0</sub>=0.15,&nbsp; вычислим последующие приближения по формуле:</p>
+
+                <p>X<sub>n</sub><sub>+1 </sub>=e^(-2-x<sub>n</sub>),&nbsp; пока |x<sub>n</sub><sub>+1 </sub>&ndash; x<sub>n</sub>|&lt;10<sup>-4 </sup>.</p>
+             </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+           
+            </div>
+        </div>
+    </div>
+</div>
 
 
     <h2 class="myh2"><strong>Решение</strong></h2>
 
     <hr />
     <p>&nbsp;</p>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 
 <div class="alert alert-success" role="alert">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -238,20 +280,22 @@
                         <h3 class="panel-title">Введите начальные данные</h3>
                         <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
                     </div>
-                    <div class="panel-body">
-                        <center>
+
+                    <center>
+                        <div class="panel-body">
                             @using (Html.BeginForm("SimpleIteration", "Methods", FormMethod.Post, new { @class = "form-horizontal" }))
-{
-    <p class="texterror">@Html.ValidationSummary(true, "Вы что-то сделали не так. Возможные проблемы: ") 
+                            {
+                                <p class="texterror">
+                                    @Html.ValidationSummary(true, "Вы что-то сделали не так. Возможные проблемы: ")
                             </p>
-    @Html.Label("Введите уравнение")
-  <br />
-                                @Html.TextBoxFor(x => x.equation, new { @placeholder= "f(x) = 0" })
+                                @Html.Label("Введите уравнение")
+                                <br />
+                                @Html.TextBoxFor(x => x.equation, new { @placeholder = "f(x) = 0" })
                                 <br />
                                 @Html.LabelFor(x => x.Fuctions)
                                 <br />
 
-                                @Html.TextBoxFor(x => x.Fuctions, new { @placeholder= "x = f(x)" })
+                                @Html.TextBoxFor(x => x.Fuctions, new { @placeholder = "x = f(x)" })
                                 <br />
                                 @Html.Label("Введите eps")
                                 <br />
@@ -261,32 +305,27 @@
                                 <br />
                                 @Html.TextBoxFor(x => x.X0)
                                 <br />
-    <br/>
-                  <div>
+                                <br />
+                                <div>
                                     <input type="submit" class="btn btn-primary" value="Решить" />
                                 </div>
                             }
-                        </center>
-                    </div>
-                    <div class="panel-footer">
-                        @Html.LabelFor(x => x.Result)
-                        @Html.TextBoxFor(x => x.Result)
+                        </div>
+                    </center>
+                                <div class="panel-footer">
+                              
+                                        @Html.LabelFor(x => x.Result);
+                                        @Html.TextBoxFor(x => x.Result)
+                    
+                                        @if (User.Identity.IsAuthenticated)
+                                        {
 
-                   @if (User.Identity.IsAuthenticated)
-                   {
-                     
-                    @*<a href="@Path.GetFullPath(path1)">Скачать решение в .doc</a>*@
-                       @Html.ActionLink("Скачать решение в .doc", "GetFile", new { path = "MPI.doc" })
+                                            @*<a href="@Path.GetFullPath(path1)">Скачать решение в .doc</a>*@
+    <span class="glyphicon glyphicon-download-alt"></span>   @Html.ActionLink("Скачать решение в .doc", "GetFile", new { path = "MPI.doc" })
 
-    <a style="margin-left: 20px;" href="@ViewBag.Adress" target="_blank">Проверить решение</a>
-                   }
-                    </div>
+    <a style="margin-left: 20px;" href="@ViewBag.Adress" target="_blank"><span class="glyphicon glyphicon-export"></span>Проверить решение</a>
+                                        }
+</div>
+                    
                 </div>
 
-
-@*@{ string path1 = @"docExample/docExample1";
-
-
-            // Modify to suit your machine:
-            string fileName = Path.GetFullPath(path1); 
-            }*@
