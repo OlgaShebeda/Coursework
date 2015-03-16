@@ -52,7 +52,7 @@
 #programmer .notebook, #programmer .body-animation .lefthand, #programmer .body-animation .righthand,
 #programmer .body-animation .head, #programmer .body-animation .head .left-eye,
 #programmer .body-animation .head .right-eye {
-	background: url("http://s29.postimg.org/90eyibio7/programmer.png");
+	background: url("/Content/programmer.png");
 	background-size: 750px;
 	display: block;
 	position: absolute;

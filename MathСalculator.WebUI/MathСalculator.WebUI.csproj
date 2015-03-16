@@ -139,9 +139,11 @@
     <Content Include="Content\mathematics_00389745_thumb.png" />
     <Content Include="Content\maths-1280x800.jpg" />
     <Content Include="Content\offcanvas.css" />
+    <Content Include="Content\programmer.png" />
     <Content Include="Content\robots11.jpg" />
     <Content Include="Content\school-newsletter-ideas-for-parents-716.jpg" />
     <Content Include="Content\simIter.css" />
+    <Content Include="Content\style404.css" />
     <Content Include="Content\StyleSheet1.css" />
     <Content Include="Content\TextFile1.txt" />
     <Content Include="Content\ZvqE2wp2kw-1680x1050.jpg" />
@@ -166,12 +168,14 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\simIter.js" />
+    <Content Include="Scripts\velocity.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
