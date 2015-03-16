@@ -21,7 +21,7 @@
             <img src="~/Content/maths-1280x800.jpg" alt="First slide">
             <div class="container">
                 <div class="carousel-caption">
-                    <h1>Добро пожаловать на MathCalculator</h1>
+                    <h1 class="hello">Добро пожаловать на MathCalculator</h1>
                     @if (!User.Identity.IsAuthenticated)
                     {
                         <p>Пожалуйста войдите в свою учётную запись либо зарегистрируйтесь</p>
@@ -119,3 +119,8 @@
         <p><a href="@Url.Action("Newton", "Methods")" class="btn btn-primary" role="button">Подробнее &raquo;</a></p>
     </div><!--/.col-xs-6.col-lg-4-->
 </div>
+
+
+<style>
+    .hello {}
+</style>

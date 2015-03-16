@@ -303,5 +303,11 @@ namespace MathСalculator.WebUI.Controllers
             //// Open in Word:
 
         }
+
+        [HttpGet]
+        public ViewResult Error404()
+        {
+            return View();
+        }
     }
 }

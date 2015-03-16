@@ -1,0 +1,173 @@
+﻿
+
+#content {
+	width: 800px;
+	height: 844px;
+	display: block;
+	margin: 20px auto 0;
+	position: relative;
+}
+
+#title {
+	position: absolute;
+	right: 0;
+	right: 10px;
+	top: 116px;
+}
+
+#title p.rif {
+	font-family: Open Sans;
+	font-style: italic;
+	color: #1a4678;
+	font-size: 66px;
+	text-transform: uppercase;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+	line-height: 60px;
+}
+
+#title p.eb {
+	font-family: Open Sans;
+	font-style: italic;
+	color: #66aee0;
+	font-size: 24px;
+	text-transform: uppercase;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+}
+
+#programmer {
+	width: 424px;
+	height: 844px;
+	display: block;
+	position: relative;
+	//border: 1px solid red;
+}
+
+/*http://s29.postimg.org/90eyibio7/programmer.png
+    http://withan.es/codepen/404-character-new.png
+*/
+#programmer .chair-shadow, #programmer .chair, #programmer .legs,
+#programmer .leftshoe, #programmer .rightshoe, #programmer .body-animation .body,
+#programmer .notebook, #programmer .body-animation .lefthand, #programmer .body-animation .righthand,
+#programmer .body-animation .head, #programmer .body-animation .head .left-eye,
+#programmer .body-animation .head .right-eye {
+	background: url("http://s29.postimg.org/90eyibio7/programmer.png");
+	background-size: 750px;
+	display: block;
+	position: absolute;
+	//border: 1px solid red;
+}
+
+#programmer .chair-shadow {
+	width: 355px;
+	height: 160px;
+	background-position: 446px 171px;
+	z-index: 1;
+	bottom: 0;
+	left: 20px;
+}
+
+#programmer .chair {
+	width: 258px;
+	height: 363px;
+	background-position: -13px 363px;
+	z-index: 2;
+	bottom: 38px;
+	left: 70px;
+}
+
+#programmer .legs {
+	width: 367px;
+	height: 246px;
+	background-position: -383px 617px;
+	z-index: 4;
+	bottom: 206px;
+	left: 24px;
+}
+
+#programmer .leftshoe {
+	width: 128px;
+	height: 90px;
+	background-position: -317px 311px;
+	z-index: 3;
+	bottom: 147px;
+	left: 72px;
+}
+
+#programmer .rightshoe {
+	width: 134px;
+	height: 80px;
+	background-position: -454px 311px;
+	z-index: 3;
+	bottom: 157px;
+	left: 204px;
+}
+
+#programmer .body-animation .body {
+	width: 390px;
+	height: 252px;
+	background-position: 0px 0px;
+	z-index: 5;
+	bottom: 440px;
+	left: 16px;
+}
+
+#programmer .notebook {
+	width: 368px;
+	height: 218px;
+	background-position: 0px -466px;
+	z-index: 7;
+	bottom: 428px;
+	left: 24px;
+}
+
+#programmer .body-animation .lefthand {
+	width: 164px;
+	height: 72px;
+	background-position: -266px -342px;
+	z-index: 6;
+	bottom: 459px;
+	left: 15px;
+}
+
+#programmer .body-animation .righthand {
+	width: 158px;
+	height: 88px;
+	background-position: -442px -324px;
+	z-index: 6;
+	bottom: 455px;
+	left: 246px;
+}
+
+#programmer .body-animation .head {
+	width: 144px;
+	height: 193px;
+	background-position: 0px -264px;
+	z-index: 9;
+	bottom: 649px;
+	left: 122px;
+}
+
+#programmer .body-animation .head .left-eye {
+	width: 13px;
+	height: 16px;
+	background-position: -165px -350px;
+	z-index: 9;
+	bottom: 84px;
+	left: 43px;
+}
+
+#programmer .body-animation .head .right-eye {
+	width: 13px;
+	height: 16px;
+	background-position: -217px -350px;
+	z-index: 9;
+	bottom: 84px;
+	left: 90px;
+}
+
+#programmer .body-animation {
+	position: absolute;
+	bottom: 0px;
+} 
