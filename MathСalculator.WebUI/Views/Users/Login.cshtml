@@ -18,8 +18,8 @@
 @using (@Html.BeginForm("Login", "Users", FormMethod.Post, new { @class = "form-signin", @role = "form" }))
 {
 
-   <p class="help-block">  @Html.ValidationSummary(true, "You have some problem: ") </p>
-    
+    <p class="text-danger">  @Html.ValidationSummary(true, "You have some problem: ") </p>
+
     <div class="form-group">
    
          <div class="">
@@ -31,7 +31,7 @@
     <div class="form-group">
          <div class="">
              @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Password" })
-             <p class="text-danger">@Html.ValidationMessageFor(m => m.Password)</p>
+             <p class="text-danger" >@Html.ValidationMessageFor(m => m.Password)</p>
          </div>
       </div>
 

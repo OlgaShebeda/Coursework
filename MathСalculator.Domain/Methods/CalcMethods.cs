@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using info.lundin.math;
+using WolframAPI;
 
 namespace MathСalculator.Domain.Methods
 {
