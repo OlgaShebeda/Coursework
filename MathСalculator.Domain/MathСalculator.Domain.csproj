@@ -91,6 +91,7 @@
     <Compile Include="Methods\GausMethod.cs" />
     <Compile Include="Methods\GCDMethod.cs" />
     <Compile Include="Methods\CNewtonsMethod.cs" />
+    <Compile Include="Methods\Method_3_8.cs" />
     <Compile Include="Methods\SimpleIterationMethod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
