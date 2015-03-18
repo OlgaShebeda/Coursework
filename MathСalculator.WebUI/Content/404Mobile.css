@@ -1,0 +1,38 @@
+﻿
+
+#content {
+	width: 100%;
+	height: 100%;
+	display: block;
+	margin: 20px auto 0;
+	position: relative;
+}
+
+#title {
+
+	position: absolute;
+	right: 0;
+	right: 10px;
+	/*top: 116px;*/
+}
+
+#title p.rif {
+	font-family: Open Sans;
+	font-style: italic;
+	color: #1a4678;
+	font-size: 66px;
+	text-transform: uppercase;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+	line-height: 60px;
+}
+
+#title p.eb {
+	font-family: Open Sans;
+	font-style: italic;
+	color: #66aee0;
+	font-size: 24px;
+	text-transform: uppercase;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+}

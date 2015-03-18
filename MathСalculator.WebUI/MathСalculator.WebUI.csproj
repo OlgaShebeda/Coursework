@@ -122,6 +122,7 @@
     <Content Include="App_Data\MathCalculatorDB_log.ldf">
       <DependentUpon>MathCalculatorDB.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\404Mobile.css" />
     <Content Include="Content\435.jpg" />
     <Content Include="Content\avatar.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -229,6 +230,7 @@
     <Content Include="Views\Methods\Chord.Mobile.cshtml" />
     <Content Include="Views\Users\ChangeUsersPassword.cshtml" />
     <Content Include="Views\Methods\Error404.cshtml" />
+    <Content Include="Views\Methods\Error404 - Copy.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
