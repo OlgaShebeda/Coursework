@@ -164,6 +164,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\error404.js" />
+    <Content Include="Scripts\flowplayer.audio-3.2.11.swf" />
     <Content Include="Scripts\ie-emulation-modes-warning.js" />
     <Content Include="Scripts\imageScript.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -230,7 +231,7 @@
     <Content Include="Views\Methods\Chord.Mobile.cshtml" />
     <Content Include="Views\Users\ChangeUsersPassword.cshtml" />
     <Content Include="Views\Methods\Error404.cshtml" />
-    <Content Include="Views\Methods\Error404 - Copy.cshtml" />
+    <Content Include="Views\Methods\Error404.Mobile.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

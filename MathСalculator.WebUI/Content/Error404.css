@@ -1,8 +1,8 @@
 ﻿
 
 #content {
-	width: 100%;
-	height: 100%;
+	width: 800px;
+	height: 844px;
 	display: block;
 	margin: 20px auto 0;
 	position: relative;
@@ -52,7 +52,7 @@
 #programmer .notebook, #programmer .body-animation .lefthand, #programmer .body-animation .righthand,
 #programmer .body-animation .head, #programmer .body-animation .head .left-eye,
 #programmer .body-animation .head .right-eye {
-	/*background: url("/Content/programmer.png");*/
+	background: url("/Content/programmer.png");
 	background-size: 750px;
 	display: block;
 	position: absolute;
