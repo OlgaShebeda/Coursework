@@ -10,6 +10,8 @@ namespace MathСalculator.Domain.Methods
     {
         public class CMethodSimpsona
         {
+            int n = 1000;
+            double S = 0;
 
             /// <summary>
             /// метод парабол/симпсона
@@ -20,10 +22,10 @@ namespace MathСalculator.Domain.Methods
             /// <returns></returns>
             public double MethodSimpsona(string function, double a, double b)
             {
-                double h = (a - b)/1000;
+                double h = (a - b) / n;
                 double x0 = a;
                 double x1 = x0 + h;
-                double s = 0;
+
                 for (int i = 0; i <= n - 1; i++)
                 {
                     S += CalcMethods.ParseFunction(function, x0) + 4 * CalcMethods.ParseFunction(function, (x0 + h / 2)) + CalcMethods.ParseFunction(function, x1);
@@ -31,7 +33,7 @@ namespace MathСalculator.Domain.Methods
                     x1 += h;
                 }
 
-                return s;
+                return S;
             }
 
             /// <summary>
@@ -45,7 +47,7 @@ namespace MathСalculator.Domain.Methods
             {
                 double h = (b - a) / (3 * n);
                 S = CalcMethods.ParseFunction(function, a) + CalcMethods.ParseFunction(function, b);
-                int m = 3 * n - 1;
+                int m = 3 * -1;
                 double x;
                 for (int i = 1; i <= m; i++)
                 {
@@ -55,7 +57,22 @@ namespace MathСalculator.Domain.Methods
                     else
                         S = S + 3 * CalcMethods.ParseFunction(function, x);
                 }
-                S = S * 3 / 8 * h;
+                return S * 3 / 8 * h;
+            }
+
+            /// <summary>
+            /// метод трапеций
+            /// </summary>
+            /// <param name="function">подинтегральная функция</param>
+            /// <param name="a">начало отрезка [a, b]</param>
+            /// <param name="b">конец отрезка [a, b]</param>
+            /// <returns></returns>
+            public double MethodOfTrapezoids(string function, double a, double b)
+            {
+                double h = (b - a) / n;
+                for (double i = a; i < b + h; i += h)
+                    S += (CalcMethods.ParseFunction(function, i) + CalcMethods.ParseFunction(function, (i + h))) * h / 2;
+                return S;
             }
         }
     }
