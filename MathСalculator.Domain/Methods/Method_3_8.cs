@@ -47,7 +47,7 @@ namespace MathСalculator.Domain.Methods
             {
                 double h = (b - a) / (3 * n);
                 S = CalcMethods.ParseFunction(function, a) + CalcMethods.ParseFunction(function, b);
-                int m = 3 * -1;
+                int m = 3 *n -1;
                 double x;
                 for (int i = 1; i <= m; i++)
                 {
