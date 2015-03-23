@@ -195,6 +195,7 @@
     <Compile Include="Models\ChordModel.cs" />
     <Compile Include="Models\GausModel.cs" />
     <Compile Include="Models\GCDModel.cs" />
+    <Compile Include="Models\NumericalIntegration.cs" />
     <Compile Include="Models\SimpleIterationModel.cs" />
     <Compile Include="Models\UsersLogin.cs" />
     <Compile Include="Models\UsersRegister.cs" />
@@ -231,6 +232,8 @@
     <Content Include="Views\Users\ChangeUsersPassword.cshtml" />
     <Content Include="Views\Methods\Error404.cshtml" />
     <Content Include="Views\Methods\Error404.Mobile.cshtml" />
+    <Content Include="Views\Methods\Simpson.cshtml" />
+    <Content Include="Views\Methods\Trapezoids.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
