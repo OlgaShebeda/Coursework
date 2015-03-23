@@ -411,5 +411,11 @@ namespace MathСalculator.WebUI.Controllers
             }
             return View(model);
         }
+
+        [HttpGet]
+        public ActionResult Graph()
+        {
+            return View();
+        }
     }
 }
