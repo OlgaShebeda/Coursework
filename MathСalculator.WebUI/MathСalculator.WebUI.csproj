@@ -133,6 +133,7 @@
     <Content Include="Content\fon1.jpg" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\grapt.css" />
     <Content Include="Content\hq-wallpapers_ru_funny_13844_1920x1200.jpg" />
     <Content Include="Content\imafe3.jpg" />
     <Content Include="Content\jquery-1.10.2.min.js" />
@@ -164,7 +165,6 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\error404.js" />
-    <Content Include="Scripts\flowplayer.audio-3.2.11.swf" />
     <Content Include="Scripts\ie-emulation-modes-warning.js" />
     <Content Include="Scripts\imageScript.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -196,6 +196,7 @@
     <Compile Include="Models\ChordModel.cs" />
     <Compile Include="Models\GausModel.cs" />
     <Compile Include="Models\GCDModel.cs" />
+    <Compile Include="Models\NumericalIntegration.cs" />
     <Compile Include="Models\SimpleIterationModel.cs" />
     <Compile Include="Models\UsersLogin.cs" />
     <Compile Include="Models\UsersRegister.cs" />
@@ -232,6 +233,9 @@
     <Content Include="Views\Users\ChangeUsersPassword.cshtml" />
     <Content Include="Views\Methods\Error404.cshtml" />
     <Content Include="Views\Methods\Error404.Mobile.cshtml" />
+    <Content Include="Views\Methods\Simpson.cshtml" />
+    <Content Include="Views\Methods\Trapezoids.cshtml" />
+    <Content Include="Views\Methods\Graph.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -23,8 +23,6 @@ namespace MathСalculator.WebUI.Controllers
     {
 
         private IUserRepository _userRepos;
-        private int PostsPerPage = 3;
-
 
         //
         // GET: /Methods/
@@ -35,32 +33,38 @@ namespace MathСalculator.WebUI.Controllers
         }
 
         [HttpGet]
+        public ViewResult Error404()
+        {
+            return View();
+        }
+
+        [HttpGet]
         public ActionResult MathCalc()
         {
             return View();
         }
 
+        public FileResult GetFile(string path)
+        {
 
+            string file_path = Server.MapPath("~/Content/" + path);
+            string file_type = "application/msword";
+            return File(file_path, file_type, path);
+        }
+
+        public FileResult Download(string path)
+        {
+            string actualPath = Server.MapPath("~/Content/" + path);
+            return File(actualPath, "application/pdf", Server.UrlEncode(path));
+        }
+
+        #region Методы решения СЛАУ
 
         [HttpGet]
         public ActionResult Gaus()
         {
             ViewBag.flag1 = true;
             return View();
-        }
-
-        public FileResult GetFile(string path)
-        {
-   
-            string file_path = Server.MapPath("~/Content/" + path);
-            string file_type = "application/msword";
-            return File(file_path, file_type, path);
-        }
-
-        public FileResult download(string path)
-        {
-            string actualPath = Server.MapPath("~/Content/" + path);
-            return File(actualPath, "application/pdf", Server.UrlEncode(path));
         }
 
         [HttpPost]
@@ -74,12 +78,12 @@ namespace MathСalculator.WebUI.Controllers
             }
             if (ints != null)
             {
-                double[] Matr = { };
+                double[] Matr = {};
                 double[,] Matrix = new double[model1.countRows, model1.countVariable];
-                var count = ints.Count() / model1.countRows;
+                var count = ints.Count()/model1.countRows;
                 for (int i = 0; i < model1.countRows; i++)
                 {
-                    Matr = ints.Skip(i * Matr.Length).Take(count).ToArray();
+                    Matr = ints.Skip(i*Matr.Length).Take(count).ToArray();
                     for (int j = 0; j < model1.countVariable; j++)
                     {
 
@@ -98,7 +102,7 @@ namespace MathСalculator.WebUI.Controllers
         [NonAction]
         private double[] GausResult(double[,] matrix, double[] mas, int n)
         {
-            var row = (uint)n;
+            var row = (uint) n;
             var answer = new double[row];
             var solution = new GausMethod(row, row);
             for (var i = 0; i < row; i++)
@@ -114,6 +118,10 @@ namespace MathСalculator.WebUI.Controllers
                 answer[i] = solution.Answer[i];
             return answer;
         }
+
+        #endregion
+
+        #region Итерационные методы
 
         [HttpGet]
         public ViewResult SimpleIteration()
@@ -132,7 +140,8 @@ namespace MathСalculator.WebUI.Controllers
         {
             if (!ModelState.IsValid)
             {
-                ModelState.AddModelError("", Resources.MethodsController_Newton_Пожалуйста_введите_корректно_начальные_данные);
+                ModelState.AddModelError("",
+                    Resources.MethodsController_Newton_Пожалуйста_введите_корректно_начальные_данные);
                 return View(model);
             }
             string resultTxt = string.Empty;
@@ -142,7 +151,8 @@ namespace MathСalculator.WebUI.Controllers
                 model.Result = method.OfSecantsMethod(model.Fuctions, model.X0, model.X1, model.Epsilon, ref resultTxt);
                 if (model.Result.Equals(Double.NaN))
                 {
-                    ModelState.AddModelError("", Resources.MethodsController_Chord_Решение_не_найдено__Произошло_деление_на_ноль_);
+                    ModelState.AddModelError("",
+                        Resources.MethodsController_Chord_Решение_не_найдено__Произошло_деление_на_ноль_);
                     return View(model);
                 }
             }
@@ -152,7 +162,8 @@ namespace MathСalculator.WebUI.Controllers
                 return View(model);
             }
             if (!String.IsNullOrEmpty(model.Equation))
-                ViewBag.Adress = "http://www.wolframalpha.com/input/?i=" + Server.UrlEncode("solve(" + model.Equation + ")");
+                ViewBag.Adress = "http://www.wolframalpha.com/input/?i=" +
+                                 Server.UrlEncode("solve(" + model.Equation + ")");
             CreateSampleDocument(resultTxt, "Метод секущих", "Secants.doc");
             return View(model);
         }
@@ -174,7 +185,8 @@ namespace MathСalculator.WebUI.Controllers
         {
             if (!ModelState.IsValid)
             {
-                ModelState.AddModelError("", Resources.MethodsController_Newton_Пожалуйста_введите_корректно_начальные_данные);
+                ModelState.AddModelError("",
+                    Resources.MethodsController_Newton_Пожалуйста_введите_корректно_начальные_данные);
                 return View(model);
             }
             CChordMethod method = new CChordMethod();
@@ -184,7 +196,8 @@ namespace MathСalculator.WebUI.Controllers
                 model.Result = method.ChordMethod(model.Fuctions, model.X0, model.X1, model.Epsilon, ref resultTxt);
                 if (model.Result.Equals(Double.NaN))
                 {
-                    ModelState.AddModelError("", Resources.MethodsController_Chord_Решение_не_найдено__Произошло_деление_на_ноль_);
+                    ModelState.AddModelError("",
+                        Resources.MethodsController_Chord_Решение_не_найдено__Произошло_деление_на_ноль_);
                     return View(model);
                 }
             }
@@ -194,7 +207,8 @@ namespace MathСalculator.WebUI.Controllers
                 return View(model);
             }
             if (!String.IsNullOrEmpty(model.Equation))
-                ViewBag.Adress = "http://www.wolframalpha.com/input/?i=" + Server.UrlEncode("solve(" + model.Equation + ")");
+                ViewBag.Adress = "http://www.wolframalpha.com/input/?i=" +
+                                 Server.UrlEncode("solve(" + model.Equation + ")");
             CreateSampleDocument(resultTxt, "Метод хорд", "Chord.doc");
             return View(model);
         }
@@ -206,18 +220,20 @@ namespace MathСalculator.WebUI.Controllers
         {
             if (!ModelState.IsValid)
             {
-                ModelState.AddModelError("", Resources.MethodsController_Newton_Пожалуйста_введите_корректно_начальные_данные);
+                ModelState.AddModelError("",
+                    Resources.MethodsController_Newton_Пожалуйста_введите_корректно_начальные_данные);
                 return View(model);
             }
             CNewtonsMethod method = new CNewtonsMethod();
             string resultTxt = "";
             try
             {
-                model.Result = method.NewtonsMethod(model.Fuctions, model.X0, model.Epsilon,ref resultTxt);
-              
+                model.Result = method.NewtonsMethod(model.Fuctions, model.X0, model.Epsilon, ref resultTxt);
+
                 if (model.Result.Equals(Double.NaN))
                 {
-                    ModelState.AddModelError("", Resources.MethodsController_Chord_Решение_не_найдено__Произошло_деление_на_ноль_);
+                    ModelState.AddModelError("",
+                        Resources.MethodsController_Chord_Решение_не_найдено__Произошло_деление_на_ноль_);
                     return View(model);
                 }
             }
@@ -229,9 +245,10 @@ namespace MathСalculator.WebUI.Controllers
             }
             if (!String.IsNullOrEmpty(model.equation))
             {
-                ViewBag.Adress = "http://www.wolframalpha.com/input/?i=" + Server.UrlEncode("solve(" + model.equation + ")");
+                ViewBag.Adress = "http://www.wolframalpha.com/input/?i=" +
+                                 Server.UrlEncode("solve(" + model.equation + ")");
             }
-            
+
             CreateSampleDocument(resultTxt, "Метод Ньютона", "Newton.doc");
             return View(model);
         }
@@ -242,7 +259,8 @@ namespace MathСalculator.WebUI.Controllers
         {
             if (!ModelState.IsValid)
             {
-                ModelState.AddModelError("", Resources.MethodsController_Newton_Пожалуйста_введите_корректно_начальные_данные);
+                ModelState.AddModelError("",
+                    Resources.MethodsController_Newton_Пожалуйста_введите_корректно_начальные_данные);
                 return View(model);
             }
             SimpleIterationMethod method = new SimpleIterationMethod();
@@ -252,11 +270,12 @@ namespace MathСalculator.WebUI.Controllers
                 model.Result = method.MethodOfSimpleIteration(model.Fuctions, model.X0, model.Epsilon, ref resultTxt);
                 if (model.Result.Equals(Double.NaN))
                 {
-                    ModelState.AddModelError("", Resources.MethodsController_Chord_Решение_не_найдено__Произошло_деление_на_ноль_);
+                    ModelState.AddModelError("",
+                        Resources.MethodsController_Chord_Решение_не_найдено__Произошло_деление_на_ноль_);
                     return View(model);
                 }
                 CreateSampleDocument(resultTxt, "Метод простой итерации", "MPI.doc");
-             
+
             }
             catch (Exception)
             {
@@ -267,14 +286,17 @@ namespace MathСalculator.WebUI.Controllers
 
             if (!String.IsNullOrEmpty(model.equation))
             {
-                ViewBag.Adress = "http://www.wolframalpha.com/input/?i=" + Server.UrlEncode("solve(" + model.equation + ")");
+                ViewBag.Adress = "http://www.wolframalpha.com/input/?i=" +
+                                 Server.UrlEncode("solve(" + model.equation + ")");
             }
-            
+
             return View(model);
         }
 
+        #endregion
+
         [NonAction]
-        public void CreateSampleDocument(string paraOne, string headlineText,string path)
+        public void CreateSampleDocument(string paraOne, string headlineText, string path)
         {
             string path1 = Server.MapPath("~/Content/" + path);
             // Modify to suit your machine:
@@ -305,7 +327,93 @@ namespace MathСalculator.WebUI.Controllers
         }
 
         [HttpGet]
-        public ViewResult Error404()
+        public ActionResult Simpson()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ViewResult Simpson(NumericalIntegration model)
+        {
+            if (!ModelState.IsValid)
+            {
+                ModelState.AddModelError("",
+                    Resources.MethodsController_Newton_Пожалуйста_введите_корректно_начальные_данные);
+                return View(model);
+            }
+            NumericalMethods method = new NumericalMethods();
+            try
+            {
+                model.Result = method.MethodSimpsona(model.Function, model.A, model.B);
+
+                if (model.Result.Equals(Double.NaN))
+                {
+                    ModelState.AddModelError("",
+                        Resources.MethodsController_Chord_Решение_не_найдено__Произошло_деление_на_ноль_);
+                    return View(model);
+                }
+            }
+            catch (Exception)
+            {
+
+                ModelState.AddModelError("", Resources.MethodsController_Chord_Метод_расходится);
+                return View(model);
+            }
+
+            if (!String.IsNullOrEmpty(model.Function))
+            {
+                ViewBag.Adress = "http://www.wolframalpha.com/input/?i=" +
+                                 Server.UrlEncode("integrate sqrt("+model.Function+")dx Simpson's rule x="+model.A+".."+model.B);
+            }
+            return View(model);
+        }
+
+
+
+            [HttpGet]
+        public ActionResult Trapezoids()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ViewResult Trapezoids(NumericalIntegration model)
+        {
+            if (!ModelState.IsValid)
+            {
+                ModelState.AddModelError("",
+                    Resources.MethodsController_Newton_Пожалуйста_введите_корректно_начальные_данные);
+                return View(model);
+            }
+            NumericalMethods method = new NumericalMethods();
+            try
+            {
+                model.Result = method.MethodOfTrapezoids(model.Function, model.A, model.B);
+
+                if (model.Result.Equals(Double.NaN))
+                {
+                    ModelState.AddModelError("",
+                        Resources.MethodsController_Chord_Решение_не_найдено__Произошло_деление_на_ноль_);
+                    return View(model);
+                }
+            }
+            catch (Exception)
+            {
+
+                ModelState.AddModelError("", Resources.MethodsController_Chord_Метод_расходится);
+                return View(model);
+            }
+
+            if (!String.IsNullOrEmpty(model.Function))
+            {
+                ViewBag.Adress = "http://www.wolframalpha.com/input/?i=" +
+                                 Server.UrlEncode("integrate sqrt(" + model.Function + ")dx trapezoidal rule x=" + model.A + ".." + model.B);
+            }
+            return View(model);
+        }
+
+        [HttpGet]
+        public ActionResult Graph()
         {
             return View();
         }
