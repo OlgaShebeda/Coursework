@@ -10,9 +10,6 @@ namespace MathСalculator.Domain.Methods
     {
         public class CMethodSimpsona
         {
-            int n = 1000;
-            double S = 0;
-
             /// <summary>
             /// метод парабол/симпсона
             /// </summary>
@@ -20,17 +17,20 @@ namespace MathСalculator.Domain.Methods
             /// <param name="a">начало отрезка [a, b]</param>
             /// <param name="b">конец отрезка [a, b]</param>
             /// <returns></returns>
-            public double MethodSimpsona(string function, double a, double b)
+            public double MethodSimpsona(string function, double a, double b, int n)
             {
-                double h = (a - b) / n;
-                double x0 = a;
-                double x1 = x0 + h;
+                double S = 0;
+                double h = (b - a) / n;
 
-                for (int i = 0; i <= n - 1; i++)
+                for (int i = 0; i <= n; i++)
                 {
-                    S += CalcMethods.ParseFunction(function, x0) + 4 * CalcMethods.ParseFunction(function, (x0 + h / 2)) + CalcMethods.ParseFunction(function, x1);
-                    x0 = x1;
-                    x1 += h;
+                    if (i == 0 || i == n)
+                        S = S + ((CalcMethods.ParseFunction(function, (a + i * h)))) * h / 2;
+                    else
+                        if (i % 2 == 0)
+                            S = S + (2 * CalcMethods.ParseFunction(function, (a + i * h))) * h / 3;
+                        else
+                            S = S + (4 * CalcMethods.ParseFunction(function, (a + i * h))) * h / 3;
                 }
 
                 return S;
@@ -67,11 +67,18 @@ namespace MathСalculator.Domain.Methods
             /// <param name="a">начало отрезка [a, b]</param>
             /// <param name="b">конец отрезка [a, b]</param>
             /// <returns></returns>
-            public double MethodOfTrapezoids(string function, double a, double b)
+            public double MethodOfTrapezoids(string function, double a, double b, int n)
             {
+                double S = 0;
                 double h = (b - a) / n;
-                for (double i = a; i < b + h; i += h)
-                    S += (CalcMethods.ParseFunction(function, i) + CalcMethods.ParseFunction(function, (i + h))) * h / 2;
+                double x = a;
+                for (double i = 0; i < n + 1; i++)
+                {
+                    if (i == 0 || i == n)
+                        S = S + ((CalcMethods.ParseFunction(function, (x + i * h)))) * h / 2;
+                    else
+                        S = S + ((CalcMethods.ParseFunction(function, (x + i * h)))) * h;
+                }
                 return S;
             }
         }
