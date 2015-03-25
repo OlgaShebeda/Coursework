@@ -42,10 +42,10 @@ namespace MathСalculator.Domain.Methods
             /// <param name="a">начало отрезка [a, b]</param>
             /// <param name="b">конец отрезка [a, b]</param>
             /// <returns></returns>
-            public double Method_3_8(string function, double a, double b)
+            public double Method_3_8(string function, double a, double b, int n)
             {
                 double h = (b - a) / (3 * n);
-                S = CalcMethods.ParseFunction(function, a) + CalcMethods.ParseFunction(function, b);
+               double S = CalcMethods.ParseFunction(function, a) + CalcMethods.ParseFunction(function, b);
                 int m = 3 *n -1;
                 double x;
                 for (int i = 1; i <= m; i++)

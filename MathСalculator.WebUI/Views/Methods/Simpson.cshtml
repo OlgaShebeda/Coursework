@@ -3,80 +3,80 @@
     ViewBag.Title = "Метод Симпсона";
 }
 
-    <h2 style="font-size: 18px; font-family: Verdana, Arial, Helvetica, sans-serif; padding: 25px 10px; color: rgb(50, 50, 46); text-align: center;">Метод парабол (Симпсона)</h2>
+<h2 style="font-size: 18px; font-family: Verdana, Arial, Helvetica, sans-serif; padding: 25px 10px; color: rgb(50, 50, 46); text-align: center;">Метод парабол (Симпсона)</h2>
 
-    <p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">Пусть функция&nbsp;<i>y = f(x)</i>&nbsp;непрерывна на отрезке&nbsp;<i>[a; b]</i>&nbsp;и нам требуется вычислить определенный интеграл&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/001.png" style="vertical-align: middle;" />.</p>
+<p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">Пусть функция&nbsp;<i>y = f(x)</i>&nbsp;непрерывна на отрезке&nbsp;<i>[a; b]</i>&nbsp;и нам требуется вычислить определенный интеграл&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/001.png" style="vertical-align: middle;" />.</p>
 
-    <p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">Разобьем отрезок&nbsp;<i>[a; b]</i>&nbsp;на&nbsp;<i>n</i>&nbsp;элементарных отрезков&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/002.png" style="vertical-align: middle;" />&nbsp;длины&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/003.png" style="vertical-align: middle;" />точками&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/004.png" style="vertical-align: middle;" />. Пусть точки&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/005.png" style="vertical-align: middle;" />&nbsp;являются серединами отрезков&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/002.png" style="vertical-align: middle;" />&nbsp;соответственно. В этом случае все &quot;узлы&quot; определяются из равенства&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/006.png" style="vertical-align: middle;" />.</p>
+<p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">Разобьем отрезок&nbsp;<i>[a; b]</i>&nbsp;на&nbsp;<i>n</i>&nbsp;элементарных отрезков&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/002.png" style="vertical-align: middle;" />&nbsp;длины&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/003.png" style="vertical-align: middle;" />точками&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/004.png" style="vertical-align: middle;" />. Пусть точки&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/005.png" style="vertical-align: middle;" />&nbsp;являются серединами отрезков&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/002.png" style="vertical-align: middle;" />&nbsp;соответственно. В этом случае все &quot;узлы&quot; определяются из равенства&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/006.png" style="vertical-align: middle;" />.</p>
 
-    <h3 style="font-size: 16px; font-family: Verdana, Arial, Helvetica, sans-serif; padding: 15px 10px; color: rgb(50, 50, 46); text-align: center;">Суть метода парабол.</h3>
+<h3 style="font-size: 16px; font-family: Verdana, Arial, Helvetica, sans-serif; padding: 15px 10px; color: rgb(50, 50, 46); text-align: center;">Суть метода парабол.</h3>
 
-    <p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">На каждом интервале&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/002.png" style="vertical-align: middle;" />&nbsp;подынтегральная функция приближается квадратичной параболой&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/007.png" style="vertical-align: middle;" />, проходящей через точки&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/008.png" style="vertical-align: middle;" />. Отсюда и название метода - метод парабол.</p>
+<p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">На каждом интервале&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/002.png" style="vertical-align: middle;" />&nbsp;подынтегральная функция приближается квадратичной параболой&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/007.png" style="vertical-align: middle;" />, проходящей через точки&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/008.png" style="vertical-align: middle;" />. Отсюда и название метода - метод парабол.</p>
 
-    <p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">Это делается для того, чтобы в качестве приближенного значения определенного интеграла&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/009.png" style="vertical-align: middle;" />&nbsp;взять&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/010.png" style="vertical-align: middle;" />, который мы можем вычислить по формуле Ньютона-Лейбница. В этом и заключается&nbsp;<strong>суть метода парабол</strong>.</p>
+<p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">Это делается для того, чтобы в качестве приближенного значения определенного интеграла&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/009.png" style="vertical-align: middle;" />&nbsp;взять&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/010.png" style="vertical-align: middle;" />, который мы можем вычислить по формуле Ньютона-Лейбница. В этом и заключается&nbsp;<strong>суть метода парабол</strong>.</p>
 
-    <p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">Геометрически это выглядит так:</p>
+<p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">Геометрически это выглядит так:</p>
+
+<div class="pict" style="color: rgb(50, 50, 46); font-family: Verdana, Arial, Helvetica, sans-serif;">
+    <p class="pict" style="font-size: 14px; line-height: 1.5; text-align: center;"><img alt="изображение" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/pict001.png" style="vertical-align: middle;" /></p>
+
+    <h3 style="font-size: 16px; font-family: Verdana, Arial, Helvetica, sans-serif; padding: 15px 10px; color: rgb(50, 50, 46); text-align: center;">Графическая иллюстрация метода парабол (Симпсона)</h3>
+
+    <p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">Красной линией изображен график функции&nbsp;<i>y=f(x)</i>, синей линией показано приближение графика функции&nbsp;<i>y=f(x)</i>&nbsp;квадратичными параболами на каждом элементарном отрезке разбиения.</p>
 
     <div class="pict" style="color: rgb(50, 50, 46); font-family: Verdana, Arial, Helvetica, sans-serif;">
-        <p class="pict" style="font-size: 14px; line-height: 1.5; text-align: center;"><img alt="изображение" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/pict001.png" style="vertical-align: middle;" /></p>
+        <p class="pict" style="font-size: 14px; line-height: 1.5; text-align: center;"><img alt="изображение" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/pict003.png" style="vertical-align: middle;" title="графическая илюстрация метода Симпсона (парабол)" /></p>
 
-        <h3 style="font-size: 16px; font-family: Verdana, Arial, Helvetica, sans-serif; padding: 15px 10px; color: rgb(50, 50, 46); text-align: center;">Графическая иллюстрация метода парабол (Симпсона)</h3>
+        <h3 style="font-size: 16px; font-family: Verdana, Arial, Helvetica, sans-serif; padding: 15px 10px; color: rgb(50, 50, 46); text-align: center;">Вывод формулы метода Симпсона (парабол)</h3>
 
-        <p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">Красной линией изображен график функции&nbsp;<i>y=f(x)</i>, синей линией показано приближение графика функции&nbsp;<i>y=f(x)</i>&nbsp;квадратичными параболами на каждом элементарном отрезке разбиения.</p>
+        <p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">В силу пятого&nbsp;<a href="http://www.cleverstudents.ru/definite_integral/definite_integral_properties.html" style="color: rgb(50, 50, 46);">свойства определенного интеграла</a>&nbsp;имеем&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/011.png" style="vertical-align: middle;" />.</p>
+
+        <p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">Для получения формулы метода парабол (Симпсона) нам осталось вычислить&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/010.png" style="vertical-align: middle;" />.</p>
+
+        <p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">Пусть&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/012.png" style="vertical-align: middle;" />&nbsp;(мы всегда можем к этому прийти, проведя соответствующее геометрическое преобразования сдвига для любого&nbsp;<i>i = 1, 2, ..., n</i>).</p>
+
+        <p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">Сделаем чертеж.</p>
 
         <div class="pict" style="color: rgb(50, 50, 46); font-family: Verdana, Arial, Helvetica, sans-serif;">
-            <p class="pict" style="font-size: 14px; line-height: 1.5; text-align: center;"><img alt="изображение" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/pict003.png" style="vertical-align: middle;" title="графическая илюстрация метода Симпсона (парабол)" /></p>
-
-            <h3 style="font-size: 16px; font-family: Verdana, Arial, Helvetica, sans-serif; padding: 15px 10px; color: rgb(50, 50, 46); text-align: center;">Вывод формулы метода Симпсона (парабол)</h3>
-
-            <p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">В силу пятого&nbsp;<a href="http://www.cleverstudents.ru/definite_integral/definite_integral_properties.html" style="color: rgb(50, 50, 46);">свойства определенного интеграла</a>&nbsp;имеем&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/011.png" style="vertical-align: middle;" />.</p>
-
-            <p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">Для получения формулы метода парабол (Симпсона) нам осталось вычислить&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/010.png" style="vertical-align: middle;" />.</p>
-
-            <p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">Пусть&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/012.png" style="vertical-align: middle;" />&nbsp;(мы всегда можем к этому прийти, проведя соответствующее геометрическое преобразования сдвига для любого&nbsp;<i>i = 1, 2, ..., n</i>).</p>
-
-            <p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">Сделаем чертеж.</p>
-
-            <div class="pict" style="color: rgb(50, 50, 46); font-family: Verdana, Arial, Helvetica, sans-serif;">
-                <p class="pict" style="font-size: 14px; line-height: 1.5; text-align: center;"><img alt="изображение" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/pict002.png" style="vertical-align: middle;" /></p>
-            </div>
-
-            <p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">Покажем, что через точки&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/008.png" style="vertical-align: middle;" />&nbsp;проходит только одна квадратичная парабола&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/007.png" style="vertical-align: middle;" />. Другими словами, докажем, что коэффициенты&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/013.png" style="vertical-align: middle;" />&nbsp;определяются единственным образом.</p>
-
-            <p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">
-                Так как&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/008.png" style="vertical-align: middle;" />&nbsp;- точки параболы, то справедливо каждое из уравнений системы<br />
-                <img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/014.png" style="vertical-align: middle;" />
-            </p>
-
-            <p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">Записанная система уравнений есть система линейных алгебраических уравнений относительно неизвестных переменных&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/013.png" style="vertical-align: middle;" />. Определителем основной матрицы этой системы уравнений является определитель Вандермонда&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/015.png" style="vertical-align: middle;" />, а он отличен от нуля для несовпадающих точек&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/016.png" style="vertical-align: middle;" />. Это указывает на то, что система уравнений имеет единственное решение (об этом говорится в статье&nbsp;<a href="http://www.cleverstudents.ru/system_of_equations/solving_systems_of_linear_equations.html" style="color: rgb(50, 50, 46);">решение систем линейных алгебраических уравнений</a>), то есть, коэффициенты&nbsp;<img alt="формула" src="http://cleverstudents.ru/definite_integral/images/method_of_parabolas/013.png" style="vertical-align: middle;" />&nbsp;определяются единственным образом, и через точки&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/008.png" style="vertical-align: middle;" />&nbsp;проходит единственная квадратичная парабола.</p>
-
-            <p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">Перейдем к нахождению интеграла&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/010.png" style="vertical-align: middle;" />.</p>
-
-            <p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">
-                Очевидно:<br />
-                <img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/017.png" style="vertical-align: middle;" />
-            </p>
-
-            <p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">
-                Используем эти равенства, чтобы осуществить последний переход в следующей цепочке равенств:<br />
-                <img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/018.png" style="vertical-align: middle;" />
-            </p>
-
-            <p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">
-                Таким образом, можно получить формулу метода парабол:<br />
-                <img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/019.png" style="vertical-align: middle;" />
-            </p>
-
-            <p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">
-                <strong>Формула метода Симпсона (парабол)</strong>&nbsp;имеет вид<br />
-                <img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/020.png" style="vertical-align: middle;" title="формула метода Симпсона (парабол)" />.
-            </p>
-
-            <h3 style="font-size: 16px; font-family: Verdana, Arial, Helvetica, sans-serif; padding: 15px 10px; color: rgb(50, 50, 46); text-align: center;">Оценка абсолютной погрешности метода Симпсона.</h3>
-
-            <p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;"><strong>Абсолютная погрешность метода Симпсона</strong>&nbsp;оценивается как&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/021.png" style="vertical-align: middle;" title="оценка абсолютной погрешности метода Симпсона" />.</p>
+            <p class="pict" style="font-size: 14px; line-height: 1.5; text-align: center;"><img alt="изображение" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/pict002.png" style="vertical-align: middle;" /></p>
         </div>
+
+        <p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">Покажем, что через точки&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/008.png" style="vertical-align: middle;" />&nbsp;проходит только одна квадратичная парабола&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/007.png" style="vertical-align: middle;" />. Другими словами, докажем, что коэффициенты&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/013.png" style="vertical-align: middle;" />&nbsp;определяются единственным образом.</p>
+
+        <p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">
+            Так как&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/008.png" style="vertical-align: middle;" />&nbsp;- точки параболы, то справедливо каждое из уравнений системы<br />
+            <img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/014.png" style="vertical-align: middle;" />
+        </p>
+
+        <p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">Записанная система уравнений есть система линейных алгебраических уравнений относительно неизвестных переменных&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/013.png" style="vertical-align: middle;" />. Определителем основной матрицы этой системы уравнений является определитель Вандермонда&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/015.png" style="vertical-align: middle;" />, а он отличен от нуля для несовпадающих точек&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/016.png" style="vertical-align: middle;" />. Это указывает на то, что система уравнений имеет единственное решение (об этом говорится в статье&nbsp;<a href="http://www.cleverstudents.ru/system_of_equations/solving_systems_of_linear_equations.html" style="color: rgb(50, 50, 46);">решение систем линейных алгебраических уравнений</a>), то есть, коэффициенты&nbsp;<img alt="формула" src="http://cleverstudents.ru/definite_integral/images/method_of_parabolas/013.png" style="vertical-align: middle;" />&nbsp;определяются единственным образом, и через точки&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/008.png" style="vertical-align: middle;" />&nbsp;проходит единственная квадратичная парабола.</p>
+
+        <p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">Перейдем к нахождению интеграла&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/010.png" style="vertical-align: middle;" />.</p>
+
+        <p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">
+            Очевидно:<br />
+            <img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/017.png" style="vertical-align: middle;" />
+        </p>
+
+        <p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">
+            Используем эти равенства, чтобы осуществить последний переход в следующей цепочке равенств:<br />
+            <img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/018.png" style="vertical-align: middle;" />
+        </p>
+
+        <p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">
+            Таким образом, можно получить формулу метода парабол:<br />
+            <img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/019.png" style="vertical-align: middle;" />
+        </p>
+
+        <p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">
+            <strong>Формула метода Симпсона (парабол)</strong>&nbsp;имеет вид<br />
+            <img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/020.png" style="vertical-align: middle;" title="формула метода Симпсона (парабол)" />.
+        </p>
+
+        <h3 style="font-size: 16px; font-family: Verdana, Arial, Helvetica, sans-serif; padding: 15px 10px; color: rgb(50, 50, 46); text-align: center;">Оценка абсолютной погрешности метода Симпсона.</h3>
+
+        <p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;"><strong>Абсолютная погрешность метода Симпсона</strong>&nbsp;оценивается как&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_parabolas/021.png" style="vertical-align: middle;" title="оценка абсолютной погрешности метода Симпсона" />.</p>
     </div>
+</div>
 
 
 <h2 class="myh2"><strong>Вычислить онлайн</strong></h2>
@@ -85,7 +85,7 @@
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 
-<div class="alert alert-info" role="alert">
+<div class="alert alert-link" role="alert">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
     Пример ввода операторов и функций:
     <br />
@@ -104,67 +104,79 @@
 </div>
 
 
-<div class="panel panel-primary">
-    <div class="panel-heading">
-        <h3 class="panel-title">Введите начальные данные</h3>
-        <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
-    </div>
 
-    <center>
-        <div class="panel-body">
-            @using (Html.BeginForm("Simpson", "Methods", FormMethod.Post, new { @class = "form-horizontal" }))
-            {
-       
-                
-                <p class="texterror">
-                    @Html.ValidationSummary(true, "Вы что-то сделали не так. Возможные проблемы: ")
-                </p>
-                @Html.Label("Введите функцию")
-                <br />
-                @Html.TextBoxFor(x => x.Function, new { @placeholder = "x^2*cos(x)" })
-                <br />
-                @Html.LabelFor(x=>x.A)
-                <br />
 
-                @Html.TextBoxFor(x => x.A, new { @placeholder = "0" })
-                <br />
-    @Html.LabelFor(x => x.B)
-                <br />
-                @Html.TextBoxFor(x => x.B, new { @placeholder = "1" })
-                <br />
-                <br />
-                <br />
-                <div>
-                    <input type="submit" class="btn btn-primary" value="Вычислить интеграл" />
+    <div style="margin-left: 22%;">
+        <div class="col-lg-9 col-md-10 col-sm-2 col-xs-11">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Введите начальные данные</h3>
                 </div>
-            }
+                <center>
+                    <div class="panel-body">
+                        @using (Html.BeginForm("Simpson", "Methods", FormMethod.Post, new { @class = "form-horizontal" }))
+                        {
+                            <p class="texterror">
+                                @Html.ValidationSummary(true, "Вы что-то сделали не так. Возможные проблемы: ")
+                            </p>
+                            @Html.Label("Введите функцию")
+                            <br />
+                            @Html.TextBoxFor(x => x.B, new { @placeholder = "1", @id = "myInput" })
+                            <br />
+                            <span>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/German_integral.gif/65px-German_integral.gif" />
+                                @Html.TextBoxFor(x => x.Function, new { @placeholder = "x^2*cos(x)" })  dx
+                            </span>
+                            <br />
+                            @Html.TextBoxFor(x => x.A, new { @placeholder = "0", @id = "myInput1" })
+                            <br/>
+    <br />
+                            @Html.LabelFor(x => x.N)
+                            <br />
+                            @Html.TextBoxFor(x => x.N, new { @placeholder = "1000" })
+                            <br />
+                            <br />
+                            <div>
+                                <input type="submit" class="btn btn-primary" value="Вычислить интеграл" />
+                            </div>
+                        }
 
+                    </div>
 
-        </div>
-    </center>
-    <div class="panel-footer">
-      
-       @Html.Label("Результат")
-        @Html.TextBoxFor(x => x.Result)
+                </center>
+<div class="panel-footer">
 
-        @if (User.Identity.IsAuthenticated)
-        {
+    @Html.Label("Результат")
+    @Html.TextBoxFor(x => x.Result)
 
+    @if (User.Identity.IsAuthenticated)
+    {
 
-            <span class="glyphicon glyphicon-download-alt"></span>   @Html.ActionLink("Скачать решение в .doc", "GetFile", new { path = "MPI.doc" })
-
-            <a style="margin-left: 20px;" href="@ViewBag.Adress" target="_blank"><span class="glyphicon glyphicon-export"></span>Проверить решение</a>
-        }
-    </div>
-
-
+        <a style="margin-left: 20px;" href="@ViewBag.Adress" target="_blank"><span class="glyphicon glyphicon-export"></span>Проверить решение</a>
+    }
 </div>
-
-
+            </div>
+        </div>
+    </div>
 
 
 <style>
     body {
-    background-color:#CECDD5;
+        background-color: #CECDD5;
+    }
+
+    #myInput {
+        width: 20px; /* Ширина поля в пикселах */
+        margin-right: 180px;
+        /*margin-top: 100px;*/
+    }
+
+    #myInput1 {
+        width: 20px; /* Ширина поля в пикселах */
+        margin-right: 180px;
+    }
+
+    body panel. {
+        width: 600px;
     }
 </style>

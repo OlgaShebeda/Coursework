@@ -344,7 +344,7 @@ namespace MathСalculator.WebUI.Controllers
             NumericalMethods method = new NumericalMethods();
             try
             {
-                model.Result = method.MethodSimpsona(model.Function, model.A, model.B);
+                model.Result = method.MethodSimpsona(model.Function, model.A, model.B,model.N);
 
                 if (model.Result.Equals(Double.NaN))
                 {
@@ -388,7 +388,7 @@ namespace MathСalculator.WebUI.Controllers
             NumericalMethods method = new NumericalMethods();
             try
             {
-                model.Result = method.MethodOfTrapezoids(model.Function, model.A, model.B);
+                model.Result = method.MethodOfTrapezoids(model.Function, model.A, model.B,model.N);
 
                 if (model.Result.Equals(Double.NaN))
                 {

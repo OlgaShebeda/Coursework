@@ -17,6 +17,8 @@ namespace MathСalculator.WebUI.Models
         [Display(Name = "Введите конец отрезка интегрирования [a,b]")]
         public double B { get; set; }
 
+        [Display(Name = "Введите число разбиения отрезка")]
+        public int N { get; set; }
         public double Result { get; set; }
     }
 }

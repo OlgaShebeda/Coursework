@@ -1,0 +1,758 @@
+﻿.calc01 div.derivative-box {
+    padding-top: 20px;
+}
+
+.calc01 .orders-differentiation, .calc01 .input-expression,
+.calc01 .boundary-top, .calc01 .boundary-bottom, .calc01 .input-definite-integrals-expression,
+.calc01 .limit-bottom, .calc01 .input-limit-expression {
+    width: 21px;
+    color: black;
+    margin: 0 1%;
+    padding: 0;
+    height: 23px;
+    font-size: 14px;
+}
+
+.calc01 .input-expression, .calc01 .input-definite-integrals-expression, .calc01 .input-limit-expression {
+    width: 30%;
+    margin-bottom: 60px;
+    text-align: left;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 5px;
+}
+
+.orders-differentiation-panel, .orders-integral-panel, .render-integral {
+    display: inline-block;
+    width: 50px;
+    height: 76px;
+    background: url(../images/orders-differentiation.png) repeat-y;
+}
+
+.orders-integral-panel {
+    background: url(../images/render.png) no-repeat;
+    width: 30px;
+    height: 77px;
+}
+
+.render-integral {
+    width: 35px;
+    height: 25px;
+    background: url(../images/render1.png) no-repeat;
+    margin-bottom: 23px;
+}
+
+.calc01 .expression-integral .input-expression {
+    margin: 0 2px 67px -3px;
+}
+
+.expression-differentiation, .expression-integral, .definite-integrals {
+    height: 76px;
+    margin: 1% 0 2% 0;
+}
+
+.calc01 .btn-calculate-differentiation {
+    margin-bottom: 62px;
+    width: 190px;
+    margin-left: 5%;
+    background-image: url(../images/button-calculate-differentiation.png);
+}
+
+.input-validation-functions {
+    margin: 5% 0 3% 0;
+}
+
+.calc01 .wrap .differentiation-examples {
+    padding-bottom: 0;
+}
+
+.differentiation-examples .em-example {
+    font: 14px/18px "Trebuchet MS", Arial, sans-serif;
+    padding-top: 5px;
+}
+
+.integral-examples .em-example, .definite-integral-examples .em-example, .limits-examples .em-example {
+    font: 14px/18px "Trebuchet MS", Arial, sans-serif;
+}
+
+.differentiation-examples a, .integral-examples a, .definite-integral-examples a, .limits-examples a {
+    display: inline-block;
+    border-bottom: 1px dashed #275D9F;
+    height: 41px;
+}
+
+    .differentiation-examples a:hover, .integral-examples a:hover, .definite-integral-examples a:hover, .limits-examples a:hover {
+        border-bottom: 1px dashed #C61E20;
+    }
+
+    .differentiation-examples a span, .integral-examples a span, .definite-integral-examples a span, .limits-examples a span {
+        display: block;
+    }
+
+    .differentiation-examples a.simple-example-1 span {
+        background: url(../images/differentiation-example-1.png) no-repeat;
+        width: 115px;
+        height: 35px;
+    }
+
+    .differentiation-examples a.simple-example-1:hover span {
+        background-position: center -35px;
+    }
+
+
+    .differentiation-examples a.simple-example-2 span {
+        background: url(../images/differentiation-example-2.png) no-repeat;
+        width: 94px;
+        height: 41px;
+    }
+
+    .differentiation-examples a.simple-example-2:hover span {
+        background-position: center -41px;
+    }
+
+    .differentiation-examples a.simple-example-3 span {
+        background: url(../images/differentiation-example-3.png) no-repeat;
+        width: 140px;
+        height: 35px;
+    }
+
+    .differentiation-examples a.simple-example-3:hover span {
+        background-position: center -35px;
+    }
+
+    .integral-examples a.simple-example-1 span {
+        background: url(../images/integral-example-1.png) no-repeat;
+        width: 126px;
+        height: 37px;
+    }
+
+    .integral-examples a.simple-example-2 span {
+        background: url(../images/integral-example-2.png) no-repeat;
+        width: 114px;
+        height: 37px;
+    }
+
+    .integral-examples a.simple-example-3 span {
+        background: url(../images/integral-example-3.png) no-repeat;
+        width: 100px;
+        height: 37px;
+    }
+
+    .integral-examples a.simple-example-1:hover span, .integral-examples a.simple-example-2:hover span, .integral-examples a.simple-example-3:hover span {
+        background-position: center -37px;
+    }
+
+.integral-examples em.em-example {
+    margin: 10px 0 0 0 !important;
+}
+
+.definite-integral-examples em.em-example {
+    margin: 12px 0 0 0 !important;
+}
+
+.definite-integral-examples a.simple-example-1 span {
+    background: url(../images/definite-integral-example-1.png) no-repeat;
+    width: 116px;
+    height: 42px;
+}
+
+.definite-integral-examples a.simple-example-2 span {
+    background: url(../images/definite-integral-example-2.png) no-repeat;
+    width: 115px;
+    height: 41px;
+}
+
+.definite-integral-examples a.simple-example-3 span {
+    background: url(../images/definite-integral-example-3.png) no-repeat;
+    width: 144px;
+    height: 43px;
+}
+
+.definite-integral-examples a.simple-example-1:hover span {
+    background-position: center -42px;
+}
+
+.definite-integral-examples a.simple-example-2:hover span {
+    background-position: center -41px;
+}
+
+.definite-integral-examples a.simple-example-3:hover span {
+    background-position: center -43px;
+}
+
+.definite-integral-examples a {
+    height: 46px;
+}
+
+#solve_dif {
+    clear: both;
+    position: relative;
+    top: 0px;
+    margin-bottom: 12px;
+}
+
+.calc01 .calculator {
+    padding: 0;
+}
+
+.calc01 div.calculator {
+    margin: 0 0 0px;
+}
+
+.calc01 .main-box {
+    width: auto;
+}
+
+.calculator fieldset {
+    padding: 0 !important;
+}
+
+.area {
+    margin: 0 0 10px;
+    width: 96%;
+}
+
+.calc01 .btn-integral {
+    margin-bottom: 68px;
+}
+
+.big-text {
+    font-size: 16px;
+}
+
+.definite-integrals-boundary {
+    height: 127px;
+    width: 25px;
+    display: inline-block;
+    position: relative;
+}
+
+.definite-integrals {
+    height: 130px;
+    margin: 3% 0 2% 0;
+}
+
+.calc01 .boundary-top {
+    margin: 0 0 5px 21px;
+}
+
+.calc01 .boundary-bottom, .calc01 .boundary-top, .calc01 .limit-bottom {
+    width: 32px;
+    text-align: left;
+    padding-left: 3px;
+}
+
+.calc01 .boundary-bottom {
+    margin-top: 5px;
+    margin-left: -2px;
+}
+
+.calc01 .input-definite-integrals-expression {
+    margin-bottom: 103px;
+}
+
+.definite-integrals .render-integral {
+    margin-bottom: 41px;
+}
+
+.calc01 .definite-integrals .btn-integral {
+    margin-bottom: 103px;
+}
+
+.limit-icon {
+    background-image: url(../images/limit-icon.png);
+    width: 43px;
+    height: 24px;
+}
+
+.limits-left-panel {
+    display: inline-block;
+    width: 43px;
+}
+
+.limit-x {
+    background: url(../images/limit-x.png) no-repeat 0 5px;
+    width: 115px;
+    height: 25px;
+    margin-top: 20px;
+}
+
+.calc01 .limit-bottom {
+    margin-left: 53px;
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+.limits-main-panel {
+    height: 70px;
+    margin-top: 3%;
+}
+
+.calc01 .input-limit-expression {
+    margin-bottom: 95px;
+}
+
+.limits-main-panel .form-btn {
+    background: url(../images/button-resolve.png) no-repeat;
+    width: 160px;
+    margin-left: 5%;
+    margin-bottom: 95px;
+}
+
+.limits-examples a.simple-example-1 span {
+    background: url(../images/limit-example-1.png) no-repeat;
+    width: 116px;
+    height: 41px;
+}
+
+.limits-examples a.simple-example-2 span {
+    background: url(../images/limit-example-2.png) no-repeat;
+    width: 66px;
+    height: 35px;
+}
+
+.limits-examples a.simple-example-3 span {
+    background: url(../images/limit-example-3.png) no-repeat;
+    width: 135px;
+    height: 38px;
+}
+
+.limits-examples a.simple-example-1:hover span {
+    background-position: center -41px;
+}
+
+.limits-examples a.simple-example-2:hover span {
+    background-position: center -35px;
+}
+
+.limits-examples a.simple-example-3:hover span {
+    background-position: center -38px;
+}
+
+.limits-examples a {
+    height: 43px;
+}
+
+.limits-examples em.em-example {
+    margin: 12px 0 0 0 !important;
+}
+
+.calc01 .input-validation-functions .select-area {
+    float: none;
+    width: 133px !important;
+    font-size: 14px !important;
+    display: inline-block;
+    top: 7px;
+    margin: 0 5px;
+}
+
+.limit-calculator .jcfcalc a {
+    font-size: 14px !important;
+}
+
+.validation-limits {
+    margin: 3% 0 3% 0;
+}
+
+.plus-infinity, .minus-infinity {
+    background: url(../images/plus-infinity.png) no-repeat 0 2px;
+    width: 45px;
+    height: 21px;
+    margin-left: 56px;
+    display: none;
+}
+
+.minus-infinity {
+    background: url(../images/minus-infinity.png) no-repeat 0 2px;
+}
+
+.fraction-compare, .fraction-compare-more, .fraction-compare-less, .fraction-compare-equal {
+    background: url(../images/fraction-compare.png) no-repeat center;
+    height: 80px;
+    width: 45px;
+    float: left;
+}
+
+.fraction-compare-more {
+    background: url(../images/fraction-more.png) no-repeat center;
+}
+
+.fraction-compare-less {
+    background: url(../images/fraction-less.png) no-repeat center;
+}
+
+.fraction-compare-equal {
+    background: url(../images/fraction-equal.png) no-repeat center;
+}
+
+.fraction-compare-panel-btn {
+    padding: 15px 0 30px 117px;
+}
+
+.clear-fix:before,
+.clear-fix:after {
+    content: "";
+    display: table;
+}
+
+.clear-fix:after {
+    clear: both;
+}
+/* For IE 6/7 (trigger hasLayout) */
+.clear-fix {
+    zoom: 1;
+}
+
+.left-bracket, .right-bracket {
+    float: left;
+    width: 12px;
+    height: 103px;
+    background: url(../images/left-bracket.png) no-repeat center;
+    margin-top: 12px;
+}
+
+.right-bracket {
+    background: url(../images/right-bracket.png) no-repeat center;
+}
+
+.fraction-power div.f-element {
+    margin-top: 25px;
+}
+
+.power {
+    float: left;
+}
+
+    .power .boundary-top {
+        margin: 0px 20px 0 3px;
+    }
+
+.fraction-power .btn-equal {
+    margin-top: 52px;
+}
+
+.bracket {
+    float: left;
+    font-size: 24px;
+    font-family: Verdana;
+    padding-top: 6px;
+}
+
+.fr-power {
+    float: left;
+    margin-top: -3px;
+}
+
+.p-dt {
+    font-size: 11px;
+    position: relative;
+    top: -5px;
+    left: 1px;
+}
+
+.fraction-power .result {
+    padding: 39px 0 0 8px;
+}
+
+.fractions .operation, .fractions dl {
+    height: 37px;
+}
+
+.compare-info {
+    text-align: center;
+    padding: 10px 0;
+}
+
+    .compare-info div {
+        display: inline-block;
+    }
+
+.minus-operator {
+    font-size: 18px !important;
+}
+
+.history .operation {
+    min-width: 25px;
+    width: auto;
+}
+
+.result .operation {
+    width: auto;
+}
+
+.solve_integral iframe, .solve_limit iframe, .solve_dif iframe, .solver_derivative iframe {
+    width: 100%;
+    height: 500px;
+    border: 1px solid silver;
+    margin-bottom: 10px;
+}
+
+/*numbers operations css*/
+
+.numbers-operations .input-elements input[type="text"] {
+    width: 130px;
+    float: none;
+    margin: 0;
+    padding: 0px;
+    font-size: 18px;
+    text-align: center;
+    height: 31px;
+}
+
+.numbers-operations .input-elements {
+    text-align: center;
+}
+
+    .numbers-operations .input-elements .select-area {
+        float: none;
+        height: 31px;
+        width: 135px !important;
+        display: inline-block;
+        vertical-align: middle;
+        background: #ffffff;
+        background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2VmZWZlZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+        background: -moz-linear-gradient(top, #ffffff 0%, #efefef 50%, #ffffff 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(50%,#efefef), color-stop(100%,#ffffff));
+        background: -webkit-linear-gradient(top, #ffffff 0%,#efefef 50%,#ffffff 100%);
+        background: -o-linear-gradient(top, #ffffff 0%,#efefef 50%,#ffffff 100%);
+        background: -ms-linear-gradient(top, #ffffff 0%,#efefef 50%,#ffffff 100%);
+        background: linear-gradient(to bottom, #ffffff 0%,#efefef 50%,#ffffff 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 );
+        border: 1px solid #c8c8bd;
+        border-radius: 5px;
+        margin: 0 5%;
+    }
+
+        .numbers-operations .input-elements .select-area:hover {
+            background: #ffffff;
+            background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2Y0ZjRmNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+            background: -moz-linear-gradient(top, #ffffff 0%, #f4f4f4 50%, #ffffff 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(50%,#f4f4f4), color-stop(100%,#ffffff));
+            background: -webkit-linear-gradient(top, #ffffff 0%,#f4f4f4 50%,#ffffff 100%);
+            background: -o-linear-gradient(top, #ffffff 0%,#f4f4f4 50%,#ffffff 100%);
+            background: -ms-linear-gradient(top, #ffffff 0%,#f4f4f4 50%,#ffffff 100%);
+            background: linear-gradient(to bottom, #ffffff 0%,#f4f4f4 50%,#ffffff 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 );
+        }
+
+        .numbers-operations .input-elements .select-area:active {
+            background: #ffffff;
+            background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2VlZWVlZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+            background: -moz-linear-gradient(top, #ffffff 0%, #eeeeee 50%, #ffffff 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(50%,#eeeeee), color-stop(100%,#ffffff));
+            background: -webkit-linear-gradient(top, #ffffff 0%,#eeeeee 50%,#ffffff 100%);
+            background: -o-linear-gradient(top, #ffffff 0%,#eeeeee 50%,#ffffff 100%);
+            background: -ms-linear-gradient(top, #ffffff 0%,#eeeeee 50%,#ffffff 100%);
+            background: linear-gradient(to bottom, #ffffff 0%,#eeeeee 50%,#ffffff 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 );
+        }
+
+            .numbers-operations .input-elements .select-area .center,
+            .numbers-operations .input-elements .select-area:hover .center,
+            .numbers-operations .input-elements .select-area:active .center {
+                background: none;
+                height: 31px;
+                line-height: 24px;
+                font-size: 14px;
+				left: 10px;
+            }
+
+            .numbers-operations .input-elements .select-area .select-opener,
+            .numbers-operations .input-elements .select-area:hover .select-opener,
+            .numbers-operations .input-elements .select-area:active .select-opener {
+                background: url(../images/select-arrow.png) no-repeat 0px center;
+                height: 31px;
+            }
+
+.numbers-operations .btn-panel {
+    text-align: center;
+    margin: 35px 0 0 0;
+}
+
+.numbers-operations .main-box .row {
+    margin: 0;
+}
+
+.numbers-operations ul.example li > a {
+    margin-top: 10px;
+    border-bottom: 1px dashed #275d9f;
+    display: inline-block;
+}
+
+    .numbers-operations ul.example li > a:hover {
+        text-decoration: none;
+    }
+
+    .numbers-operations ul.example li > a span {
+        color: #275d9f;
+    }
+
+        .numbers-operations ul.example li > a span:nth-of-type(2) {
+            padding: 0 8px;
+        }
+
+.numbers-operations .example li {
+    font-size: 13px;
+}
+
+.numbers-operations-result {
+    text-align: left;
+    height: 300px;
+    overflow: auto;
+    border: 1px solid #888;
+    background-color: #eee;
+    padding: 5px;
+    margin: 20px 0;
+    display: none;
+}
+
+.green-btn {
+    color: #fff;
+    height: 38px;
+    background: #60c160;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzYwYzE2MCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM1MWE0NTEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top, #60c160 0%, #51a451 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#60c160), color-stop(100%,#51a451));
+    background: -webkit-linear-gradient(top, #60c160 0%,#51a451 100%);
+    background: -o-linear-gradient(top, #60c160 0%,#51a451 100%);
+    background: -ms-linear-gradient(top, #60c160 0%,#51a451 100%);
+    background: linear-gradient(to bottom, #60c160 0%,#51a451 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#60c160', endColorstr='#51a451',GradientType=0 );
+    border: 1px solid #52a552;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 0 12px;
+    font-size: 16px;
+}
+
+    .green-btn:hover {
+        background: #51a351;
+    }
+
+    .green-btn:active {
+        background-color: #51a351;
+        outline: 0;
+        -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
+        -moz-box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
+        box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
+    }
+
+    .green-btn[disabled] {
+        cursor: default;
+        opacity: 0.6;
+    }
+/*scalar operation css*/
+.scalar-operations .input-elements h2 {
+    font: 16px "Trebuchet MS", Arial, sans-serif !important;
+}
+
+.scalar-operations .main-box {
+    padding-top: 0;
+}
+
+.scalar-operations .input-elements {
+    border-bottom: 1px solid #bbb7aa;
+    padding-bottom: 15px;
+}
+
+.scalar-operations .main-box .row {
+    margin: 0;
+}
+
+.scalar-operations .dimension .select-area,
+.scalar-operations .submission .select-area {
+    float: none;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    font: 14px/18px "Trebuchet MS", Arial, sans-serif !important;
+}
+
+.scalar-operations .submission .select-area {
+    width: 130px !important;
+    margin-left: 15px;
+}
+
+.scalar-operations .input-vectors {
+    border-top: 1px solid white;
+    padding-top: 20px;
+}
+
+.scalar-operations input[type="text"] {
+    float: none;
+    width: 55px;
+    margin: 0 10px;
+}
+
+.scalar-operations .input-vectors .alpha,
+.scalar-operations .input-vectors .beta,
+.scalar-operations .input-vectors .right-parenthesis,
+.scalar-operations .input-vectors .semicolon,
+.scalar-operations .points .points-a,
+.scalar-operations .points .points-b,
+.scalar-operations .points .points-c,
+.scalar-operations .points .points-d {
+    display: inline-block;
+    height: 36px;
+    width: 80px;
+    background: url(../images/scalar-operations-sprite.jpg) no-repeat;
+    vertical-align: middle;
+}
+
+.scalar-operations .input-vectors .beta {
+    background-position: 0 -37px;
+}
+
+.scalar-operations .input-vectors .right-parenthesis {
+    background-position: 0 -77px;
+    width: 15px;
+}
+
+.scalar-operations .input-vectors .semicolon {
+    background-position: 0 -114px;
+    width: 12px;
+}
+
+.scalar-operations .points .points-a {
+    background-position: 0 -160px;
+}
+
+.scalar-operations .points .points-b {
+    background-position: 0 -206px;
+}
+
+.scalar-operations .points .points-c {
+    background-position: 0 -246px;
+}
+
+.scalar-operations .points .points-d {
+    background-position: 0 -290px;
+}
+
+.scalar-operations .input-vectors .vector-margin {
+    margin-top: 20px !important;
+}
+
+
+.scalar-operations .btn-panel {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.scalar-operations .points-vectors {
+    display: none;
+}
+
+.rvector {
+    display: inline;
+    text-decoration: overline;
+}
+
+.rformula {
+    display: inline;
+}
+
+.scalar-operations-result {
+    font-size: 16px;
+    line-height: 28px;
+}

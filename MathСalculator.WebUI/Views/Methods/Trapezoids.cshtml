@@ -78,7 +78,7 @@
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 
-<div class="alert alert-info" role="alert">
+<div class="alert alert-link" role="alert">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
     Пример ввода операторов и функций:
     <br />
@@ -97,68 +97,80 @@
 </div>
 
 
-<div class="panel panel-primary">
-    <div class="panel-heading">
-        <h3 class="panel-title">Введите начальные данные</h3>
-        <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
-    </div>
-
-    <center>
-        <div class="panel-body">
-            @using (Html.BeginForm("Trapezoids", "Methods", FormMethod.Post, new { @class = "form-horizontal" }))
-            {
 
 
-                <p class="texterror">
-                    @Html.ValidationSummary(true, "Вы что-то сделали не так. Возможные проблемы: ")
-                </p>
-                @Html.Label("Введите функцию")
-                <br />
-                @Html.TextBoxFor(x => x.Function, new { @placeholder = "x^2*cos(x)" })
-                <br />
-                @Html.LabelFor(x => x.A)
-                <br />
+<div style="margin-left: 22%;">
+    <div class="col-lg-9 col-md-10 col-sm-2 col-xs-11">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                    <h3 class="panel-title">Введите начальные данные</h3>
+               
+            </div>
+            <center>
+                <div class="panel-body">
+                    @using (Html.BeginForm("Trapezoids", "Methods", FormMethod.Post, new { @class = "form-horizontal" }))
+                    {
+                        <p class="texterror">
+                            @Html.ValidationSummary(true, "Вы что-то сделали не так. Возможные проблемы: ")
+                        </p>
+                        @Html.Label("Введите функцию")
+                        <br />
+                        @Html.TextBoxFor(x => x.B, new { @placeholder = "1", @id = "myInput" })
+                        <br />
+                        <span>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/German_integral.gif/65px-German_integral.gif" />
+                            @Html.TextBoxFor(x => x.Function, new { @placeholder = "x^2*cos(x)" })  dx
+                        </span>
+                        <br />
+                        @Html.TextBoxFor(x => x.A, new { @placeholder = "0", @id = "myInput1" })
+                        <br/>
+    <br />
+                        @Html.LabelFor(x => x.N)
+                        <br />
+                        @Html.TextBoxFor(x => x.N, new { @placeholder = "1000" })
+                        <br />
+                        <br />
+                        <div>
+                            <input type="submit" class="btn btn-primary" value="Вычислить интеграл" />
+                        </div>
+                    }
 
-                @Html.TextBoxFor(x => x.A, new { @placeholder = "0" })
-                <br />
-                @Html.LabelFor(x => x.B)
-                <br />
-                @Html.TextBoxFor(x => x.B, new { @placeholder = "1" })
-                <br />
-                <br />
-                <br />
-                <div>
-                    <input type="submit" class="btn btn-primary" value="Вычислить интеграл" />
                 </div>
-            }
 
+            </center>
+            <div class="panel-footer">
 
+                @Html.Label("Результат")
+                @Html.TextBoxFor(x => x.Result)
+
+                @if (User.Identity.IsAuthenticated)
+                {
+
+                    <a style="margin-left: 20px;" href="@ViewBag.Adress" target="_blank"><span class="glyphicon glyphicon-export"></span>Проверить решение</a>
+                }
+            </div>
         </div>
-    </center>
-    <div class="panel-footer">
-
-        @Html.Label("Результат")
-        @Html.TextBoxFor(x => x.Result)
-
-        @if (User.Identity.IsAuthenticated)
-        {
-
-
-            <span class="glyphicon glyphicon-download-alt"></span>   @Html.ActionLink("Скачать решение в .doc", "GetFile", new { path = "MPI.doc" })
-
-            <a style="margin-left: 20px;" href="@ViewBag.Adress" target="_blank"><span class="glyphicon glyphicon-export"></span>Проверить решение</a>
-        }
     </div>
-
-
 </div>
-
-
 
 
 <style>
     body {
         background-color: #CECDD5;
     }
-</style>
 
+    #myInput {
+        width: 20px; /* Ширина поля в пикселах */
+        margin-right: 180px;
+        /*margin-top: 100px;*/
+    }
+
+    #myInput1 {
+        width: 20px; /* Ширина поля в пикселах */
+        margin-right: 180px;
+    }
+
+    body panel. {
+        width: 600px;
+    }
+</style>
