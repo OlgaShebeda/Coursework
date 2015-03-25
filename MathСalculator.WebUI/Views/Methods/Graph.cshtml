@@ -1,31 +1,57 @@
 ﻿
 @{
-    ViewBag.Title = "Graph";
+    ViewBag.Title = "График функции онлайн";
 }
 <link href="~/Content/grapt.css" rel="stylesheet" />
-<br/><br /><br />
+<br/><br/><br/>
+
 <center>
     <div id="top">
 
         f(x) = <input type="text" value="(x+4)^2*(x-6)+60sinx" id="input"/><input type="button" value="Graph" id="simplify"/>
     </div>
-    <br /><br />
+    <br/><br/>
     <div id="wrapper">
         <div id="result"></div>
 
     </div>
+    @*<div id="monster" onclick="game.tap.call();">
+        <div class="antena" id="antena_d">
+            <div class="antena_up"></div>
+            <div class="antena_body"></div>
+        </div>
+        <div class="antena" id="antena_e">
+            <div class="antena_up"></div>
+            <div class="antena_body"></div>
+        </div>
+        <div id="body">
+            <div id="eye">
+                <div id="iris"></div>
+            </div>
+
+            <div id="tooth">
+                <div class="teeth"></div>
+                <div class="teeth"></div>
+            </div>
+
+            <div id="mouth"></div>
+        </div>
+        <div class="shadow"></div>
+    </div>*@
 
 </center>
-
+<link href="~/Content/Style3.css" rel="stylesheet" />
 
 <style>
-    body {
-        background-image: url('../../Content/fon1.jpg');
-        -moz-background-size: 100%; /* Firefox 3.6+ */
-        -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
-        -o-background-size: 100%; /* Opera 9.6+ */
-        background-size: 100%; /* Современные браузеры */
-    }
+    
+
+     body {
+         background-image: url('../../Content/fon1.jpg');
+         -moz-background-size: 100%; /* Firefox 3.6+ */
+         -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+         -o-background-size: 100%; /* Opera 9.6+ */
+         background-size: 100%; /* Современные браузеры */
+     }
 </style>
 
 <script src="~/Scripts/imageScript.js"></script>
