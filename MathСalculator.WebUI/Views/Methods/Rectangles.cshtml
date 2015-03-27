@@ -1,0 +1,193 @@
+﻿@model  MathСalculator.WebUI.Models.RectanglesIntegration
+@{
+    ViewBag.Title = "Метод прямоугольников";
+}
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; text-align: center; background-color: rgb(255, 255, 255);"><span style="font-size:24px;"><b>Метод прямоугольников</b>&nbsp;</span></p>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; text-align: center; background-color: rgb(255, 255, 255);">&mdash; метод&nbsp;<a href="https://ru.wikipedia.org/wiki/%D0%A7%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%BD%D0%BE%D0%B5_%D0%B8%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5" style="text-decoration: none; color: rgb(11, 0, 128); background: none;" title="Численное интегрирование">численного интегрирования</a>&nbsp;функции одной переменной, заключающийся в замене подынтегральной функции на многочлен нулевой степени, то есть константу, на каждом элементарном отрезке. Если рассмотреть график подынтегральной функции, то метод будет заключаться в приближённом вычислении площади под графиком суммированием площадей конечного числа прямоугольников, ширина которых будет определяться расстоянием между соответствующими соседними узлами интегрирования, а высота&nbsp;&mdash; значением подынтегральной функции в этих узлах.&nbsp;<a href="https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%B5%D0%B1%D1%80%D0%B0%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D0%BF%D0%BE%D1%80%D1%8F%D0%B4%D0%BE%D0%BA_%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D1%81%D1%82%D0%B8_%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%B0" style="text-decoration: none; color: rgb(11, 0, 128); background: none;" title="Алгебраический порядок точности численного метода">Алгебраический порядок точности</a>&nbsp;равен 0. (Для формулы средних прямоугольников равен 1).</p>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">Если отрезок&nbsp;<img alt="\left[ a, b \right]\,\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/6/1/9/619595383f34b9fa837ae761c351bac7.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;является элементарным и не подвергается дальнейшему разбиению, значение интеграла можно найти по</p>
+
+<ol style="line-height: 1.5em; margin: 0.3em 0px 0px 3.2em; padding: 0px; list-style-image: none; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">
+    <li style="margin-bottom: 0.1em;"><b>Формуле левых прямоугольников</b>:&nbsp;<img alt="\int^b_a f(x)\,dx \approx f(a) (b - a)." class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/3/0/c/30cc81f4a288a2df971d3f35600a5a14.png" style="border: none; vertical-align: middle; display: inline-block;" /></li>
+    <li style="margin-bottom: 0.1em;"><b>Формуле правых прямоугольников</b>:&nbsp;<img alt="\int^b_a f(x)\,dx \approx f(b) (b - a)." class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/e/d/8/ed8dadb8a8d490ffe588ecf9d37526de.png" style="border: none; vertical-align: middle; display: inline-block;" /></li>
+    <li style="margin-bottom: 0.1em;"><b>Формуле прямоугольников</b>&nbsp;(средних):&nbsp;<img alt="\int^b_a f(x)\,dx \approx f\left(\frac{a + b}{2}\right) (b - a)." class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/4/b/a/4ba8b789942d61716702b72f147e0717.png" style="border: none; vertical-align: middle; display: inline-block;" /></li>
+</ol>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">&nbsp;</p>
+
+<h2 style="font-weight: normal; margin: 1em 0px 0.25em; overflow: hidden; padding: 0px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(170, 170, 170); font-family: 'Linux Libertine', Georgia, Times, serif; line-height: 1.3; text-align: center; background: none rgb(255, 255, 255);"><span style="font-size:24px;"><span class="mw-headline" id=".D0.A1.D0.BE.D1.81.D1.82.D0.B0.D0.B2.D0.BD.D1.8B.D0.B5_.D0.BA.D0.B2.D0.B0.D0.B4.D1.80.D0.B0.D1.82.D1.83.D1.80.D0.BD.D1.8B.D0.B5_.D1.84.D0.BE.D1.80.D0.BC.D1.83.D0.BB.D1.8B">Составные квадратурные формулы</span></span></h2>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">В случае разбиения отрезка интегрирования на&nbsp;<img alt="n\,\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/b/a/a/baa52b85c066dbd5eeff3c078a69205b.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;элементарных отрезков приведённые выше формулы применяются на каждом из этих элементарных отрезков между двумя соседними узлами. В результате, получаются&nbsp;<i>составные квадратурные формулы</i></p>
+
+<ol style="line-height: 1.5em; margin: 0.3em 0px 0px 3.2em; padding: 0px; list-style-image: none; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">
+    <li style="margin-bottom: 0.1em;">Для&nbsp;<b>левых прямоугольников</b>:&nbsp;<img alt="\int^b_a f(x)\,dx \approx \sum_{i=0}^{n-1} f(x_i) (x_{i+1} - x_i)." class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/3/9/9/399d8e4a5f407fd6dd6bb43ea2a1b943.png" style="border: none; vertical-align: middle; display: inline-block;" /></li>
+    <li style="margin-bottom: 0.1em;">Для&nbsp;<b>правых прямоугольников</b>:&nbsp;<img alt="\int^b_a f(x)\,dx \approx \sum_{i=1}^n f(x_i) (x_i - x_{i-1})." class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/3/6/0/36062e4bad156aa07b284d90a94194c1.png" style="border: none; vertical-align: middle; display: inline-block;" /></li>
+    <li style="margin-bottom: 0.1em;">Для средних прямоугольников:&nbsp;<img alt="\int^b_a f(x)\,dx \approx \sum_{i=0}^{n-1} f\left(\frac{x_i + x_{i+1}}{2}\right) (x_{i+1} - x_i) = \sum_{i=1}^n f\left(\frac{x_{i-1} + x_i}{2}\right) (x_i - x_{i-1})." class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/1/2/5/125b763c3eba18ab024b6523a6446f40.png" style="border: none; vertical-align: middle; display: inline-block;" /></li>
+</ol>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">Формулу с вычислением значения в средней между двумя узлами точке можно применять лишь тогда, когда подынтегральная функция задана аналитически, либо каким-нибудь иным способом, допускающим вычисление значения в произвольной точке. В задачах, где функция задана таблицей значений остаётся лишь вычислять среднее значение между интегралами, посчитанными по формулам левых и правых прямоугольников соответственно, что приводит к&nbsp;<a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D1%82%D1%80%D0%B0%D0%BF%D0%B5%D1%86%D0%B8%D0%B9" style="text-decoration: none; color: rgb(11, 0, 128); background: none;" title="Метод трапеций">составной квадратурной формуле трапеций</a>.</p>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">Поскольку составные квадратурные формулы являются ни чем иным, как суммами, входящими в определение&nbsp;<a href="https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B0%D0%BB_%D0%A0%D0%B8%D0%BC%D0%B0%D0%BD%D0%B0" style="text-decoration: none; color: rgb(11, 0, 128); background: none;" title="Интеграл Римана">интеграла Римана</a>, при&nbsp;<img alt="n \to \infty\,\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/0/f/9/0f9beece906dbc69141b878c5a769930.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;они сходятся к точному значению интеграла. Соответственно, с увеличением&nbsp;<img alt="n\,\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/b/a/a/baa52b85c066dbd5eeff3c078a69205b.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;точность получаемого по приближённым формулам результата возрастает.</p>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">&nbsp;</p>
+
+<div class="thumb tright" style="clear: right; float: right; margin: 0.5em 0px 0.8em 1.4em; width: auto; border: none; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; line-height: 22.3999996185303px; background-color: rgb(255, 255, 255);">
+    <div class="thumbinner" style="border: 1px solid rgb(204, 204, 204); padding: 3px; font-size: 13.1599998474121px; text-align: center; overflow: hidden; width: 222px; background-color: rgb(249, 249, 249);">
+        <a class="image" href="https://commons.wikimedia.org/wiki/File:MidRiemann.png?uselang=ru" style="text-decoration: none; color: rgb(11, 0, 128); background: none;"><img alt="" class="thumbimage" data-file-height="409" data-file-width="419" height="215" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/MidRiemann.png/220px-MidRiemann.png" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/8/8e/MidRiemann.png/330px-MidRiemann.png 1.5x, //upload.wikimedia.org/wikipedia/commons/8/8e/MidRiemann.png 2x" style="border: 1px solid rgb(204, 204, 204); vertical-align: middle; background-color: rgb(255, 255, 255);" width="220" /></a>
+
+        <div class="thumbcaption" style="border: none; line-height: 1.4em; padding: 3px; font-size: 12.370400428772px; text-align: left;">
+            <div class="magnify" style="float: right; margin-left: 3px; margin-right: 0px;">&nbsp;</div>
+            Метод средних прямоугольников
+        </div>
+    </div>
+</div>
+
+<h2 style="font-weight: normal; margin: 1em 0px 0.25em; overflow: hidden; padding: 0px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(170, 170, 170); font-family: 'Linux Libertine', Georgia, Times, serif; line-height: 1.3; text-align: center; background: none rgb(255, 255, 255);"><span class="mw-headline" id=".D0.A1.D0.BE.D1.81.D1.82.D0.B0.D0.B2.D0.BD.D1.8B.D0.B5_.D1.84.D0.BE.D1.80.D0.BC.D1.83.D0.BB.D1.8B_.D0.B4.D0.BB.D1.8F_.D1.80.D0.B0.D0.B2.D0.BD.D0.BE.D0.BC.D0.B5.D1.80.D0.BD.D1.8B.D1.85_.D1.81.D0.B5.D1.82.D0.BE.D0.BA">Составные формулы для равномерных сеток</span></h2>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">Равномерную сетку можно описать следующим набором формул:</p>
+
+<dl style="margin-top: 0.2em; margin-bottom: 0.5em; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; line-height: 22.3999996185303px; background-color: rgb(255, 255, 255);">
+    <dd style="line-height: 1.5em; margin-left: 1.6em; margin-bottom: 0.1em; margin-right: 0px;"><img alt="x_i = a + i h, \qquad h = \frac{b - a}{n}," class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/c/1/8/c18f868f5f884e21339e1d30ec5e33d4.png" style="border: none; vertical-align: middle; display: inline-block;" /></dd>
+</dl>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">где&nbsp;<img alt="h\,\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/5/9/b/59b3bd08af3b29104d0e34068ad1b4ef.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;&mdash; шаг сетки.</p>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">Для равномерных сеток формулы прямоугольников можно записать в виде следующих&nbsp;<i>формул Котеса</i>:</p>
+
+<ol style="line-height: 1.5em; margin: 0.3em 0px 0px 3.2em; padding: 0px; list-style-image: none; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">
+    <li style="margin-bottom: 0.1em;">Составная формула&nbsp;<b>левых прямоугольников</b>:&nbsp;<img alt="\int^b_a f(x)\,dx \approx h \sum_{i=0}^{n-1} f_i = h (f_0 + f_1 + \ldots + f_{n-1})." class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/5/3/8/53815457b1a3c81c1e605d34c90fbeab.png" style="border: none; vertical-align: middle; display: inline-block;" /></li>
+    <li style="margin-bottom: 0.1em;">Составная формула&nbsp;<b>правых прямоугольников</b>:&nbsp;<img alt="\int^b_a f(x)\,dx \approx h \sum_{i=1}^{n} f_i = h (f_1 + f_2 + \ldots + f_{n})." class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/5/5/3/553fe68c5068c874f290f5ad84e4bc01.png" style="border: none; vertical-align: middle; display: inline-block;" /></li>
+    <li style="margin-bottom: 0.1em;">Составная формула&nbsp;<b>средних прямоугольников</b>&nbsp;если нет возможности изменять точки в которых вычисляется значение функции выглядит так&nbsp;<img alt="\int^b_a f(x)\,dx \approx h (\frac{f_0}{2} + f_1 + \ldots + f_{n-1}+\frac{f_{n}}{2})." class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/d/a/4/da48f5154262e95bf4313db00789cc7b.png" style="border: none; vertical-align: middle; display: inline-block;" />&nbsp;Т.е. (с точностью до рисунка) превращается в формулу трапеций. Если же есть возможность выбирать точки в которых задано значение функции, то&nbsp;<a class="external autonumber" href="http://onosan.narod.ru/gos_exams/17.pdf" rel="nofollow" style="text-decoration: none; color: rgb(102, 51, 102); padding-right: 18px !important; background-image: url(https://upload.wikimedia.org/wikipedia/commons/2/23/Icons-mini-file_acrobat.gif) !important; background-attachment: initial !important; background-color: initial !important; background-size: initial !important; background-origin: initial !important; background-clip: initial !important; background-position: 100% 50%; background-repeat: no-repeat !important;">[1]</a>&nbsp;<img alt="\int^b_a f(x)\,dx \approx h \sum_{i=1}^{n} f(x_i-h/2) ." class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/b/2/6/b26bf01821739a5cebbe8d9b1584c331.png" style="border: none; vertical-align: middle; display: inline-block;" /></li>
+</ol>
+
+<h2 style="font-weight: normal; margin: 1em 0px 0.25em; overflow: hidden; padding: 0px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(170, 170, 170); font-family: 'Linux Libertine', Georgia, Times, serif; line-height: 1.3; text-align: center; background: none rgb(255, 255, 255);"><span class="mw-headline" id=".D0.9F.D0.BE.D0.B3.D1.80.D0.B5.D1.88.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.BC.D0.B5.D1.82.D0.BE.D0.B4.D0.B0">Погрешность метода</span></h2>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">Для формул правых и левых прямоугольников погрешность составляет</p>
+
+<dl style="margin-top: 0.2em; margin-bottom: 0.5em; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; line-height: 22.3999996185303px; background-color: rgb(255, 255, 255);">
+    <dd style="line-height: 1.5em; margin-left: 1.6em; margin-bottom: 0.1em; margin-right: 0px;"><img alt="E(f) = \frac{f'(\xi)}{2n} (b - a)^2." class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/f/e/0/fe0a6d5df1d5a891efebac5b1d1db599.png" style="border: none; vertical-align: middle; display: inline-block;" /></dd>
+</dl>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">Для формулы прямоугольников (средних)</p>
+
+<dl style="margin-top: 0.2em; margin-bottom: 0.5em; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; line-height: 22.3999996185303px; background-color: rgb(255, 255, 255);">
+    <dd style="line-height: 1.5em; margin-left: 1.6em; margin-bottom: 0.1em; margin-right: 0px;"><img alt="E(f) = \frac{f''(\xi)}{24n} (b - a)^3." class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/e/d/0/ed07bbb0d89e54eee76d3a5b6904c14c.png" style="border: none; vertical-align: middle; display: inline-block;" /></dd>
+</dl>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">Для составных формул правых и левых прямоугольников на равномерной сетке:</p>
+
+<dl style="margin-top: 0.2em; margin-bottom: 0.5em; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; line-height: 22.3999996185303px; background-color: rgb(255, 255, 255);">
+    <dd style="line-height: 1.5em; margin-left: 1.6em; margin-bottom: 0.1em; margin-right: 0px;"><img alt="E(f) = \frac{f'(\xi)}{2} (b - a) h." class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/6/0/2/6020b2e1fc65e1c91ec29b19e64541cb.png" style="border: none; vertical-align: middle; display: inline-block;" /></dd>
+</dl>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">Для составной формулы прямоугольников:</p>
+
+<dl style="margin-top: 0.2em; margin-bottom: 0.5em; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; line-height: 22.3999996185303px; background-color: rgb(255, 255, 255);">
+    <dd style="line-height: 1.5em; margin-left: 1.6em; margin-bottom: 0.1em; margin-right: 0px;"><img alt="E(f) = \frac{f''(\xi)}{24} (b - a) h^2." class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/1/f/b/1fbe66af8f66f5680390ab2116d19b75.png" style="border: none; vertical-align: middle; display: inline-block;" /></dd>
+</dl>
+
+<h2 class="myh2"><strong>Вычислить онлайн</strong></h2>
+
+<div class="alert alert-success" role="alert">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    Пример ввода операторов и функций:
+    <br />
+    +, -, *, /, ^, %
+    <br />
+    sqrt, sin, cos, tan, atan, acos, asin, acotan, exp, ln, log, sinh, cosh, tanh, abs, ceil, floor, fac, sfac, round, fpart
+    <br />
+    !, ==, !=, ||, &&, >, < , >=, <=
+    <br />
+    Константы
+    <br />
+    PI (value of System.Math.PI),
+    Euler (value of System.Math.E) true (1.0),
+    false (0.0),
+    infinity (value of Double.PositiveInfinity),
+</div>
+
+<div style="margin-left: 22%;">
+    <div class="col-lg-9 col-md-10 col-sm-2 col-xs-11">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Введите начальные данные</h3>
+
+            </div>
+        </div>
+        <center>
+            <div class="panel-body">
+                @using (Html.BeginForm("Rectangles", "Methods", FormMethod.Post, new { @class = "form-horizontal" }))
+                {
+                    <p class="texterror">
+                        @Html.ValidationSummary(true, "Вы что-то сделали не так. Возможные проблемы: ")
+                    </p>
+                    @Html.Label("Введите функцию")
+                    <br />
+                    @Html.TextBoxFor(x => x.B, new { @placeholder = "1", @id = "myInput" })
+                    <br />
+                    <span>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/German_integral.gif/65px-German_integral.gif" />
+                        @Html.TextBoxFor(x => x.Function, new { @placeholder = "x^2*cos(x)" })  dx
+                    </span>
+                    <br />
+                    @Html.TextBoxFor(x => x.A, new { @placeholder = "0", @id = "myInput1" })
+                    <br />
+                    <br />
+                    @Html.LabelFor(x => x.N)
+                    <br />
+                    @Html.TextBoxFor(x => x.N, new { @placeholder = "1000" })
+                    <br/>
+    <br />
+                    @Html.RadioButtonFor(model => model.Method, "Right", true) @Html.Label("Правых    ") 
+                    @Html.RadioButtonFor(model => model.Method, "Midle", false) @Html.Label("Средних   ")
+                    @Html.RadioButtonFor(model => model.Method, "Left", false) @Html.Label("Левых   ")
+                    <br/>
+    <br />
+                    <div>
+                        <input type="submit" class="btn btn-primary" value="Вычислить интеграл" />
+                    </div>
+                }
+
+            </div>
+
+        </center>
+        <div class="panel-footer">
+
+            @Html.Label("Результат")
+            @Html.TextBoxFor(x => x.Result)
+
+            @*@if (User.Identity.IsAuthenticated)
+            {
+
+                <a style="margin-left: 20px;" href="@ViewBag.Adress" target="_blank"><span class="glyphicon glyphicon-export"></span>Проверить решение</a>
+            }*@
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<style>
+    /*body {
+        background-color: #CECDD5;
+    }*/
+
+    #myInput {
+        width: 20px; /* Ширина поля в пикселах */
+        margin-right: 180px;
+        /*margin-top: 100px;*/
+    }
+
+    #myInput1 {
+        width: 20px; /* Ширина поля в пикселах */
+        margin-right: 180px;
+    }
+
+    body panel. {
+        width: 600px;
+    }
+</style>
+

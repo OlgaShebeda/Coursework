@@ -1,0 +1,158 @@
+﻿@model MathСalculator.WebUI.Models.SimpleIterationModel
+@{
+    ViewBag.Title = "Метод Ньютона";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@{Html.EnableClientValidation();}
+@{Html.EnableUnobtrusiveJavaScript();}
+
+<h1 class="firstHeading" id="firstHeading" lang="ru" style="font-weight: normal; margin: 0px 0px 0.25em; overflow: visible; padding: 0px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(170, 170, 170); font-size: 1.8em; line-height: 1.3; font-family: 'Linux Libertine', Georgia, Times, serif; text-align: center; background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;">Метод Ньютона</h1>
+
+<div class="mw-body-content" id="bodyContent" style="position: relative; line-height: 1.6; font-size: 0.875em; z-index: 0; color: rgb(37, 37, 37); font-family: sans-serif;">
+    &nbsp;
+    <div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="ru" style="direction: ltr;">
+        <p style="margin: 0.5em 0px; line-height: inherit;"><b>Метод Ньютона</b>&nbsp;&mdash; это итерационный&nbsp;<a class="mw-redirect" href="https://ru.wikipedia.org/wiki/%D0%A7%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D1%8B" style="text-decoration: none; color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;" title="Численные методы">численный метод</a>&nbsp;нахождения корня (<a href="https://ru.wikipedia.org/wiki/%D0%9D%D1%83%D0%BB%D1%8C_%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8" style="text-decoration: none; color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;" title="Нуль функции">нуля</a>) заданной&nbsp;<a href="https://ru.wikipedia.org/wiki/%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F_(%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0)" style="text-decoration: none; color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;" title="Функция (математика)">функции</a>. Метод был впервые предложен английским&nbsp;<a href="https://ru.wikipedia.org/wiki/%D0%A4%D0%B8%D0%B7%D0%B8%D0%BA" style="text-decoration: none; color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;" title="Физик">физиком</a>,&nbsp;<a class="mw-redirect" href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA" style="text-decoration: none; color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;" title="Математик">математиком</a>&nbsp;и&nbsp;<a href="https://ru.wikipedia.org/wiki/%D0%90%D1%81%D1%82%D1%80%D0%BE%D0%BD%D0%BE%D0%BC" style="text-decoration: none; color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;" title="Астроном">астрономом</a>&nbsp;<a href="https://ru.wikipedia.org/wiki/%D0%9D%D1%8C%D1%8E%D1%82%D0%BE%D0%BD,_%D0%98%D1%81%D0%B0%D0%B0%D0%BA" style="text-decoration: none; color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;" title="Ньютон, Исаак">Исааком Ньютоном</a>&nbsp;(<a class="mw-redirect" href="https://ru.wikipedia.org/wiki/1643" style="text-decoration: none; color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;" title="1643">1643</a>&mdash;<a class="mw-redirect" href="https://ru.wikipedia.org/wiki/1727" style="text-decoration: none; color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;" title="1727">1727</a>). Поиск решения осуществляется путём построения последовательных приближений и основан на принципах&nbsp;<a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%BF%D1%80%D0%BE%D1%81%D1%82%D0%BE%D0%B9_%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%B8" style="text-decoration: none; color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;" title="Метод простой итерации">простой итерации</a>. Метод обладает квадратичной&nbsp;<a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BA%D0%BE%D1%80%D0%BE%D1%81%D1%82%D1%8C_%D1%81%D1%85%D0%BE%D0%B4%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D0%B8" style="text-decoration: none; color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;" title="Скорость сходимости">сходимостью</a>. Улучшением метода является&nbsp;<a class="mw-redirect" href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D1%85%D0%BE%D1%80%D0%B4_%D0%B8_%D0%BA%D0%B0%D1%81%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D1%85" style="text-decoration: none; color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;" title="Метод хорд и касательных">метод хорд и касательных</a>. Также метод Ньютона может быть использован для решения&nbsp;<a class="mw-redirect" href="https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0_%D0%BE%D0%BF%D1%82%D0%B8%D0%BC%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8" style="text-decoration: none; color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;" title="Задача оптимизации">задач оптимизации</a>, в которых требуется определить нуль первой&nbsp;<a href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D0%BD%D0%B0%D1%8F_%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8" style="text-decoration: none; color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;" title="Производная функции">производной</a>&nbsp;либо<a href="https://ru.wikipedia.org/wiki/%D0%93%D1%80%D0%B0%D0%B4%D0%B8%D0%B5%D0%BD%D1%82" style="text-decoration: none; color: rgb(11, 0, 128); background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;" title="Градиент">градиента</a>&nbsp;в случае многомерного пространства.</p>
+
+        <hr />
+        <h2 style="font-weight: normal; margin: 1em 0px 0.25em; overflow: hidden; padding: 0px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(170, 170, 170); font-family: 'Linux Libertine', Georgia, Times, serif; line-height: 1.3; text-align: center; background: none rgb(255, 255, 255);"><span class="mw-headline" id=".D0.9E.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BC.D0.B5.D1.82.D0.BE.D0.B4.D0.B0">Описание метода</span></h2>
+
+        <h3 style="margin: 0.3em 0px 0px; overflow: hidden; padding-top: 0.5em; padding-bottom: 0px; border-bottom-style: none; line-height: 1.6; font-family: sans-serif; background: none rgb(255, 255, 255);"><a aria-hidden="true" class="mw-headline-anchor" href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%9D%D1%8C%D1%8E%D1%82%D0%BE%D0%BD%D0%B0#.D0.9E.D0.B1.D0.BE.D1.81.D0.BD.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5" style="text-decoration: none; color: rgb(136, 136, 136); font-weight: normal; margin-left: -20px; width: 20px; opacity: 0; position: absolute; text-align: center; -webkit-user-select: none; margin-right: 0px; background: none;" title="Ссылка на этот раздел">&sect;</a><span class="mw-headline" id=".D0.9E.D0.B1.D0.BE.D1.81.D0.BD.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5">Обоснование</span></h3>
+
+        <p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">Чтобы численно решить уравнение&nbsp;<img alt="f(x)=0\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/a/4/4/a44381668a96e4e78974380823f0293a.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;<a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%BF%D1%80%D0%BE%D1%81%D1%82%D0%BE%D0%B9_%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%B8" style="text-decoration: none; color: rgb(11, 0, 128); background: none;" title="Метод простой итерации">методом простой итерации</a>, его необходимо привести к следующей форме:&nbsp;<img alt="x=\varphi(x)\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/b/a/3/ba369c1520766b1fa887ee7ad8f0cfd8.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />, где&nbsp;<img alt="\varphi\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/a/5/5/a558f6cabcaad27b2b9795219af2141f.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;&mdash;&nbsp;<a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B6%D0%B8%D0%BC%D0%B0%D1%8E%D1%89%D0%B5%D0%B5_%D0%BE%D1%82%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5" style="text-decoration: none; color: rgb(11, 0, 128); background: none;" title="Сжимающее отображение">сжимающее отображение</a>.</p>
+
+        <p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">Для наилучшей&nbsp;<a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BA%D0%BE%D1%80%D0%BE%D1%81%D1%82%D1%8C_%D1%81%D1%85%D0%BE%D0%B4%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D0%B8" style="text-decoration: none; color: rgb(11, 0, 128); background: none;" title="Скорость сходимости">сходимости</a>&nbsp;метода в точке очередного приближения&nbsp;<img alt="x^*\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/7/f/5/7f51fdcd3894b13930944aa06bee1b25.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;должно выполняться условие&nbsp;<img alt="\varphi'(x^*)=0\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/0/5/a/05ab7d4e95431835ea7664522dae9443.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />. Решение данного уравнения ищут в виде&nbsp;<img alt="\varphi(x)=x+\alpha(x)f(x)\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/e/9/f/e9f2e6d65ffd4b8730aa32ca3d32e2b7.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />, тогда:</p>
+
+        <dl style="margin-top: 0.2em; margin-bottom: 0.5em; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; line-height: 22.3999996185303px; background-color: rgb(255, 255, 255);">
+            <dd style="line-height: 1.5em; margin-left: 1.6em; margin-bottom: 0.1em; margin-right: 0px;"><img alt="\varphi'(x^*)=1+\alpha'(x^*)f(x^*)+\alpha(x^*) f'(x^*)=0.\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/a/1/b/a1b2d0d7f8fbed6669ccdadbbedcd34a.png" style="border: none; vertical-align: middle; display: inline-block;" /></dd>
+        </dl>
+
+        <p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">В предположении, что точка приближения &laquo;достаточно близка&raquo; к корню&nbsp;<img alt="\tilde{x}\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/a/1/a/a1afb783e7111f12f68814f461d06d59.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />, и что заданная функция<a href="https://ru.wikipedia.org/wiki/%D0%9D%D0%B5%D0%BF%D1%80%D0%B5%D1%80%D1%8B%D0%B2%D0%BD%D0%BE%D0%B5_%D0%BE%D1%82%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5" style="text-decoration: none; color: rgb(11, 0, 128); background: none;" title="Непрерывное отображение">непрерывна</a>&nbsp;<img alt="(f(x^*)\approx f(\tilde{x})=0)\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/1/7/6/1763b6423f78f4ba9359e56216931a20.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />, окончательная формула для&nbsp;<img alt="\alpha(x)\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/9/5/e/95eeceb6d86d9958ed1497e0894267b5.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;такова:</p>
+
+        <dl style="margin-top: 0.2em; margin-bottom: 0.5em; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; line-height: 22.3999996185303px; background-color: rgb(255, 255, 255);">
+            <dd style="line-height: 1.5em; margin-left: 1.6em; margin-bottom: 0.1em; margin-right: 0px;"><img alt="\alpha(x)=-\frac{1}{f'(x)}.\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/1/d/9/1d95ed17f4bc4f7fdf89c77bbf3f3145.png" style="border: none; vertical-align: middle; display: inline-block;" /></dd>
+        </dl>
+
+        <p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">С учётом этого&nbsp;<a href="https://ru.wikipedia.org/wiki/%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F_(%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)" style="text-decoration: none; color: rgb(11, 0, 128); background: none;" title="Функция (программирование)">функция</a>&nbsp;<img alt="\varphi(x)\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/e/f/5/ef561da9dcaa2d3f74ab3ffda2d7725a.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;определяется:</p>
+
+        <dl style="margin-top: 0.2em; margin-bottom: 0.5em; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; line-height: 22.3999996185303px; background-color: rgb(255, 255, 255);">
+            <dd style="line-height: 1.5em; margin-left: 1.6em; margin-bottom: 0.1em; margin-right: 0px;"><img alt="\varphi(x)=x-\frac{f(x)}{f'(x)}.\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/7/4/e/74e315f20c68c2073295f27c457a4a62.png" style="border: none; vertical-align: middle; display: inline-block;" /></dd>
+        </dl>
+
+        <p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">При некоторых условиях эта функция в окрестности корня осуществляет сжимающее отображение<sup class="reference" id="cite_ref-1" style="line-height: 1em; unicode-bidi: -webkit-isolate;"><a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%9D%D1%8C%D1%8E%D1%82%D0%BE%D0%BD%D0%B0#cite_note-1" style="text-decoration: none; color: rgb(11, 0, 128); background: none;">[1]</a></sup>, и алгоритм нахождения численного решения уравнения&nbsp;<img alt="f(x)=0\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/a/4/4/a44381668a96e4e78974380823f0293a.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;сводится к итерационной процедуре вычисления:</p>
+
+        <dl style="margin-top: 0.2em; margin-bottom: 0.5em; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; line-height: 22.3999996185303px; background-color: rgb(255, 255, 255);">
+            <dd style="line-height: 1.5em; margin-left: 1.6em; margin-bottom: 0.1em; margin-right: 0px;"><img alt="x_{n+1}=x_{n}-\frac{f(x_n)}{f'(x_n)}.\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/d/a/e/daeb41d5ff249a5a6b059181c3e18607.png" style="border: none; vertical-align: middle; display: inline-block;" /></dd>
+        </dl>
+
+        <p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">По&nbsp;<a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%BF%D1%80%D0%BE%D1%81%D1%82%D0%BE%D0%B9_%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%B8" style="text-decoration: none; color: rgb(11, 0, 128); background: none;" title="Метод простой итерации">теореме Банаха</a>&nbsp;последовательность приближений стремится к корню уравнения&nbsp;<img alt="f(x)=0\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/a/4/4/a44381668a96e4e78974380823f0293a.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />.</p>
+
+        <hr />
+        <h3 style="margin: 0.3em 0px 0px; overflow: hidden; padding-top: 0.5em; padding-bottom: 0px; border-bottom-style: none; line-height: 1.6; font-family: sans-serif; text-align: center; background: none rgb(255, 255, 255);"><span class="mw-headline" id=".D0.93.D0.B5.D0.BE.D0.BC.D0.B5.D1.82.D1.80.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B0.D1.8F_.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D0.BF.D1.80.D0.B5.D1.82.D0.B0.D1.86.D0.B8.D1.8F">Геометрическая интерпретация</span></h3>
+
+        <p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">Основная идея метода заключается в следующем: задаётся начальное приближение вблизи предположительного корня, после чего строится касательная к исследуемой функции в точке приближения, для которой находится пересечение с осью абсцисс. Эта точка и берётся в качестве следующего приближения. И так далее, пока не будет достигнута необходимая точность.</p>
+
+        <p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">Пусть&nbsp;<img alt="f(x)\colon[a,\;b]\to\R\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/c/a/5/ca560f1b2661bb38ccc655ef7e8c0480.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;&mdash; определённая на отрезке&nbsp;<img alt="[a,\;b]" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/1/8/6/186c5c676bac5b18c4105688c2eb69d2.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;и&nbsp;<a href="https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D1%80%D1%83%D0%B5%D0%BC%D0%B0%D1%8F_%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F" style="text-decoration: none; color: rgb(11, 0, 128); background: none;" title="Дифференцируемая функция">дифференцируемая</a>&nbsp;на нём вещественнозначная функция. Тогда формула итеративного исчисления приближений может быть выведена следующим образом:</p>
+
+        <dl style="margin-top: 0.2em; margin-bottom: 0.5em; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; line-height: 22.3999996185303px; background-color: rgb(255, 255, 255);">
+            <dd style="line-height: 1.5em; margin-left: 1.6em; margin-bottom: 0.1em; margin-right: 0px;"><img alt="f'(x_n)=\mathrm{tg}\,\alpha=\frac{\Delta y}{\Delta x}=\frac{f( x_n)-0}{x_n-x_{n+1}}=\frac{0-f(x_n)}{x_{n+1}-x_n},\,\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/0/f/7/0f7d1e43307afedbd34f74e12eaf0960.png" style="border: none; vertical-align: middle; display: inline-block;" /></dd>
+        </dl>
+
+        <p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">где&nbsp;<img alt="\alpha" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/b/c/c/bccfc7022dfb945174d9bcebad2297bb.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;&mdash; угол наклона касательной в точке&nbsp;<img alt="x_n\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/7/e/c/7ec7a9ae70af1e33d7fe7fe325b05c48.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />.</p>
+
+        <p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">Следовательно искомое выражение для&nbsp;<img alt="x_{n+1}\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/e/b/b/ebb7943402ea8482c1fb783c39e48773.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;имеет вид:</p>
+
+        <dl style="margin-top: 0.2em; margin-bottom: 0.5em; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; line-height: 22.3999996185303px; background-color: rgb(255, 255, 255);">
+            <dd style="line-height: 1.5em; margin-left: 1.6em; margin-bottom: 0.1em; margin-right: 0px;"><img alt="x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}.\,\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/e/3/e/e3ed0ed85e155f78e3b1ccee03d190fe.png" style="border: none; vertical-align: middle; display: inline-block;" /></dd>
+        </dl>
+
+        <p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">Итерационный процесс начинается с некоего начального приближения&nbsp;<img alt="x_0" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/0/b/2/0b21a666a81629962ade8afd967826ed.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;(чем ближе к корню, тем лучше, но если предположения о его нахождении отсутствуют, методом проб и ошибок можно сузить область возможных значений, применив&nbsp;<a class="mw-redirect" href="https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BE%D1%80%D0%B5%D0%BC%D0%B0_%D0%BE_%D0%BF%D1%80%D0%BE%D0%BC%D0%B5%D0%B6%D1%83%D1%82%D0%BE%D1%87%D0%BD%D1%8B%D1%85_%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D1%8F%D1%85" style="text-decoration: none; color: rgb(11, 0, 128); background: none;" title="Теорема о промежуточных значениях">теорему о промежуточных значениях</a>).</p>
+
+        <h3 style="margin: 0.3em 0px 0px; overflow: hidden; padding-top: 0.5em; padding-bottom: 0px; border-bottom-style: none; line-height: 1.6; font-family: sans-serif; text-align: center; background: none rgb(255, 255, 255);"><a aria-hidden="true" class="mw-headline-anchor" href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%9D%D1%8C%D1%8E%D1%82%D0%BE%D0%BD%D0%B0#.D0.90.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC" style="text-decoration: none; color: rgb(136, 136, 136); font-weight: normal; margin-left: -20px; width: 20px; opacity: 0; position: absolute; text-align: center; -webkit-user-select: none; margin-right: 0px; background: none;" title="Ссылка на этот раздел">&sect;</a><span class="mw-headline" id=".D0.90.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC">Алгоритм</span></h3>
+
+        <hr />
+        <ol style="line-height: 1.5em; margin: 0.3em 0px 0px 3.2em; padding: 0px; list-style-image: none; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">
+            <li style="margin-bottom: 0.1em;">Задается начальное приближение&nbsp;<img alt="x_0" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/0/b/2/0b21a666a81629962ade8afd967826ed.png" style="border: none; vertical-align: middle; display: inline-block;" />.</li>
+            <li style="margin-bottom: 0.1em;">Пока не выполнено условие остановки, в качестве которого можно взять&nbsp;<img alt="|x_{n+1}-x_n|&lt;\varepsilon\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/5/4/6/546b716d37494c0a5776514f09da93c3.png" style="border: none; vertical-align: middle; display: inline-block;" />&nbsp;или&nbsp;<img alt="|f(x_{n+1})|&lt;\varepsilon\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/4/c/e/4ce63325fc6817fda0c05c28c2cdbc1e.png" style="border: none; vertical-align: middle; display: inline-block;" />&nbsp;(то есть погрешность в нужных пределах), вычисляют новое приближение:&nbsp;<img alt="x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/7/e/6/7e61aacaa2d8632d7ae19b2d6dc52d0f.png" style="border: none; vertical-align: middle; display: inline-block;" />.</li>
+        </ol>
+
+        <h2 style="font-weight: normal; margin: 1em 0px 0.25em; overflow: hidden; padding: 0px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(170, 170, 170); font-family: 'Linux Libertine', Georgia, Times, serif; line-height: 1.3; text-align: center; background: none rgb(255, 255, 255);"><a aria-hidden="true" class="mw-headline-anchor" href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%9D%D1%8C%D1%8E%D1%82%D0%BE%D0%BD%D0%B0#PHP" style="font-family: sans-serif; line-height: 1.6; font-size: 0.875em; text-decoration: none; color: rgb(136, 136, 136); margin-left: -20px; width: 20px; opacity: 0; position: absolute; -webkit-user-select: none; margin-right: 0px; display: inline !important; background: none;" title="Ссылка на этот раздел">&sect;</a></h2>
+
+        <h3 style="margin: 0.3em 0px 0px; overflow: hidden; padding-top: 0.5em; padding-bottom: 0px; border-bottom-style: none; line-height: 1.6; font-family: sans-serif; background: none rgb(255, 255, 255);">&nbsp;</h3>
+    </div>
+</div>
+
+<h2 class="myh2"><strong>Решение</strong></h2>
+
+<hr />
+
+<div class="alert alert-success" role="alert">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    Пример ввода операторов и функций:
+    <br />
+    +, -, *, /, ^, %
+    <br />
+    sqrt, sin, cos, tan, atan, acos, asin, acotan, exp, ln, log, sinh, cosh, tanh, abs, ceil, floor, fac, sfac, round, fpart
+    <br />
+    !, ==, !=, ||, &&, >, < , >=, <=
+    <br />
+    Константы
+    <br />
+    PI (value of System.Math.PI),
+    Euler (value of System.Math.E) true (1.0),
+    false (0.0),
+    infinity (value of Double.PositiveInfinity),
+</div>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Введите начальные данные</h3>
+        <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+    </div>
+    <div class="panel-body">
+        <center>
+            @using (Html.BeginForm("Newton", "Iteration", FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+                <p class="texterror">
+                    @Html.ValidationSummary(true, "Вы что-то сделали не так. Возможные проблемы: ")
+            </p>
+                    @Html.Label("Введите уравнение")
+  <br />
+                                @Html.TextBoxFor(x => x.equation, new { @placeholder= "f(x) = 0" })
+                                <br />
+                @Html.LabelFor(x => x.Fuctions)
+                <br />
+
+                @Html.TextBoxFor(x => x.Fuctions, new { @placeholder = "x = f(x)" })
+                <br />
+                @Html.Label("Введите eps")
+                <br />
+                @Html.TextBoxFor(x => x.Epsilon,new { @placeholder = "0,00001" })
+                <br />
+                @Html.Label("Введите начальное приближение х0")
+                <br />
+                @Html.TextBoxFor(x => x.X0, new { @placeholder = "0" })
+                <br />
+                <br />
+
+                <div>
+                    <input type="submit" class="btn btn-primary" value="Решить" />
+                </div>
+            }
+        </center>
+    </div>
+    <div class="panel-footer">
+        @Html.LabelFor(x => x.Result)
+        @Html.TextBoxFor(x => x.Result)
+
+        @if (User.Identity.IsAuthenticated)
+        {
+            <span class="glyphicon glyphicon-download-alt"></span>  @Html.ActionLink("Скачать решение в .doc", "GetFile", new { path = "Newton.doc" })
+    <a style="margin-left: 20px;" href="@ViewBag.Adress" target="_blank">Проверить решение</a>
+
+        }
+    </div>
+</div>
+

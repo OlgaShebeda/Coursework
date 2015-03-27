@@ -22,13 +22,13 @@
     <div class="col-lg-4">
         <h2>Метод простой итерации</h2>
         <p>Один из простейших численных методов  решения уравнений . Метод основан на принципе сжимающего отображения , который применительно к численным методам в общем виде также может называться методом простой итерации или методом последовательных приближений</p>
-        <p><a class="btn btn-primary" href="@Url.Action("SimpleIteration", "Methods")" role="button">Подробнее &raquo;</a></p>
+        <p><a class="btn btn-primary" href="@Url.Action("SimpleIteration", "Iteration")" role="button">Подробнее &raquo;</a></p>
     </div>
 
     <div class=" col-lg-4">
         <h2>Метод Ньютона</h2>
         <p>Метод Ньютона — это итерационный численный метод нахождения корня (нуля) заданной функции.Поиск решения осуществляется путём построения последовательных приближений и основан на принципах простой итерации.</p>
-        <p><a href="@Url.Action("Newton", "Methods")" class="btn btn-primary" role="button">Подробнее &raquo;</a></p>
+        <p><a href="@Url.Action("Newton", "Iteration")" class="btn btn-primary" role="button">Подробнее &raquo;</a></p>
     </div><!--/.col-xs-6.col-lg-4-->
 </div>
 
@@ -42,7 +42,7 @@
     }
     else
     {
-        <a href="@Url.Action("Login", "Users")" class="btn btn-primary " role="button">Изменить пароль</a>
+        <a href="@Url.Action("ChangeUsersPassword", "Users")" class="btn btn-primary " role="button">Изменить пароль</a>
         <a href="@Url.Action("Logout", "Users")" class="btn btn-primary " role="button">Выйти</a>
         <hr />
     }

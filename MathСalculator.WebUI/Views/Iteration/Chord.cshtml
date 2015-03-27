@@ -1,0 +1,156 @@
+﻿@model MathСalculator.WebUI.Models.ChordModel
+@{
+    ViewBag.Title = "Метод хорд";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="firstHeading" id="firstHeading" lang="ru" style="font-weight: normal; margin: 0px 0px 0.25em; overflow: visible; padding: 0px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(170, 170, 170); font-size: 1.8em; line-height: 1.3; font-family: 'Linux Libertine', Georgia, Times, serif; text-align: center; background-image: none; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;">Метод хорд</h1>
+
+<p><b style="color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; line-height: 22.3999996185303px; background-color: rgb(255, 255, 255);">Метод хорд</b><span style="color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; line-height: 22.3999996185303px; background-color: rgb(255, 255, 255);">&nbsp;&mdash; итерационный&nbsp;</span><a class="mw-redirect" href="https://ru.wikipedia.org/wiki/%D0%A7%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4" style="text-decoration: none; color: rgb(11, 0, 128); font-family: sans-serif; font-size: 14px; line-height: 22.3999996185303px; background: none rgb(255, 255, 255);" title="Численный метод">численный метод</a><span style="color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; line-height: 22.3999996185303px; background-color: rgb(255, 255, 255);">&nbsp;</span><a class="mw-redirect" href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%B8%D0%B1%D0%BB%D0%B8%D0%B6%D1%91%D0%BD%D0%BD%D1%8B%D0%B5_%D0%B2%D1%8B%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" style="text-decoration: none; color: rgb(11, 0, 128); font-family: sans-serif; font-size: 14px; line-height: 22.3999996185303px; background: none rgb(255, 255, 255);" title="Приближённые вычисления">приближённого</a><span style="color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; line-height: 22.3999996185303px; background-color: rgb(255, 255, 255);">&nbsp;</span><a href="https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F" style="text-decoration: none; color: rgb(11, 0, 128); font-family: sans-serif; font-size: 14px; line-height: 22.3999996185303px; background: none rgb(255, 255, 255);" title="Решение уравнения">нахождения</a><span style="color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; line-height: 22.3999996185303px; background-color: rgb(255, 255, 255);">&nbsp;</span><a class="mw-redirect" href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D1%80%D0%B5%D0%BD%D1%8C_%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F" style="text-decoration: none; color: rgb(11, 0, 128); font-family: sans-serif; font-size: 14px; line-height: 22.3999996185303px; background: none rgb(255, 255, 255);" title="Корень уравнения">корня</a><span style="color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; line-height: 22.3999996185303px; background-color: rgb(255, 255, 255);">&nbsp;уравнения.</span></p>
+
+<h2 style="font-weight: normal; margin: 1em 0px 0.25em; overflow: hidden; padding: 0px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(170, 170, 170); font-family: 'Linux Libertine', Georgia, Times, serif; line-height: 1.3; text-align: center; background: none rgb(255, 255, 255);"><span class="mw-headline" id=".D0.90.D0.BB.D0.B3.D0.B5.D0.B1.D1.80.D0.B0.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BC.D0.B5.D1.82.D0.BE.D0.B4.D0.B0_.D1.81.D0.B5.D0.BA.D1.83.D1.89.D0.B8.D1.85">Алгебраическое описание метода секущих</span></h2>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">Пусть&nbsp;<img alt="x_1, x_2" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/9/8/6/9865b118af4cfc107929ec116ab9eb80.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;&mdash; абсциссы концов хорды,&nbsp;<img alt="y=kx+b" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/1/0/a/10afe20a154e668773a425e2b93af4cc.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;&mdash; уравнение секущей, содержащей хорду. Найдем коэффициенты&nbsp;<img alt="k" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/8/c/e/8ce4b16b22b58894aa86c421e8759df3.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;и&nbsp;<img alt="b" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/9/2/e/92eb5ffee6ae2fec3ad71c777531578f.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;из системы уравнений:</p>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">
+    <img alt="
+     \left\{
+     \begin{array}{rcl}
+      f(x_1) &amp; = &amp; kx_1+b,\\
+      f(x_2) &amp; = &amp; kx_2+b. \\
+     \end{array}
+     \right.
+  " class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/c/5/8/c584af79cbb6709950e466b92205713e.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />.
+</p>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">Вычтем из первого уравнения второе:</p>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);"><img alt="f(x_1)-f(x_2)=k(x_1-x_2)" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/e/c/f/ecfd702b4f6703e6b66567130abe3f14.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />, затем найдем коэффициенты&nbsp;<img alt="k" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/8/c/e/8ce4b16b22b58894aa86c421e8759df3.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;и&nbsp;<img alt="b" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/9/2/e/92eb5ffee6ae2fec3ad71c777531578f.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />:</p>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);"><img alt="k=\frac{f(x_2)-f(x_1)}{x_2-x_1}" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/4/4/9/449fafa509a406a23bb7ae042e836a85.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />, тогда</p>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);"><img alt="b=f(x_1)-\frac{(f(x_2)-f(x_1))x_1}{x_2-x_1}" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/9/9/e/99e711175f34a76aa82e37c9081b708a.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />.</p>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">Уравнение принимает вид:</p>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);"><img alt="y=\frac{f(x_2)-f(x_1)}{x_2-x_1}(x-x_1)+f(x_1)" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/3/c/9/3c9c9ab49984c5f08447a75cb88ae28b.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" /></p>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">Таким образом, теперь можем найти первое приближение к корню, полученное методом секущих:</p>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);"><img alt="x_3=x_1-\frac{(x_2-x_1)f(x_1)}{f(x_2)-f(x_1)}" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/e/1/1/e11df7586e34b632ef4dc80c65b2b223.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" /></p>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">Теперь возьмем координаты&nbsp;<img alt="x_2" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/8/f/4/8f43fce8dbdf3c4f8d0ac91f0de1d43d.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;и&nbsp;<img alt="x_3" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/a/4/f/a4f66ba447cf765d4612169b07207e8d.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;и повторим все проделанные операции, найдя новое приближение к корню. Таким образом, итерационная формула метода секущих имеет вид:</p>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);"><b><img alt=" x_{i+1}=x_{i-1}-\dfrac{f(x_{i-1})\cdot (x_i-x_{i-1})}{f(x_i)-f(x_{i-1})}" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/6/f/2/6f26585299bc45c02140baa3e36e9059.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" /></b>.</p>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">Повторять операцию следует до тех пор, пока&nbsp;<img alt="|x_i-x_{i-1}|" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/e/e/2/ee26de9df5c17974f00b654d5d80c485.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;не станет меньше или равно заданному значению погрешности.</p>
+
+<h2 style="font-weight: normal; margin: 1em 0px 0.25em; overflow: hidden; padding: 0px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(170, 170, 170); font-family: 'Linux Libertine', Georgia, Times, serif; line-height: 1.3; text-align: center; background: none rgb(255, 255, 255);"><span class="mw-headline" id=".D0.9C.D0.B5.D1.82.D0.BE.D0.B4_.D1.81.D0.B5.D0.BA.D1.83.D1.89.D0.B8.D1.85">Метод хорд</span></h2>
+
+<div class="thumb tright" style="clear: right; float: right; margin: 0.5em 0px 0.8em 1.4em; width: auto; border: none; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; line-height: 22.3999996185303px; background-color: rgb(255, 255, 255);">
+    <div class="thumbinner" style="border: 1px solid rgb(204, 204, 204); padding: 3px; font-size: 13.1599998474121px; text-align: center; overflow: hidden; width: 302px; background-color: rgb(249, 249, 249);">
+        <a class="image" href="https://commons.wikimedia.org/wiki/File:Metodo_delle_secanti.gif?uselang=ru" style="text-decoration: none; color: rgb(11, 0, 128); background: none;"><img alt="" class="thumbimage" data-file-height="400" data-file-width="550" height="218" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Metodo_delle_secanti.gif/300px-Metodo_delle_secanti.gif" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/b/be/Metodo_delle_secanti.gif/450px-Metodo_delle_secanti.gif 1.5x, //upload.wikimedia.org/wikipedia/commons/b/be/Metodo_delle_secanti.gif 2x" style="border: 1px solid rgb(204, 204, 204); vertical-align: middle; background-color: rgb(255, 255, 255);" width="300" /></a>
+
+        <div class="thumbcaption" style="border: none; line-height: 1.4em; padding: 3px; font-size: 12.370400428772px; text-align: left;">
+            <div class="magnify" style="float: right; margin-left: 3px; margin-right: 0px;">&nbsp;</div>
+            Первые три итерации метода хорд. Синим нарисована функция f(x), красными проводятся хорды.
+        </div>
+    </div>
+</div>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">Иногда методом секущих называют метод с итерационной формулой</p>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);"><b><img alt=" x_{i+1}=x_{i}-\dfrac{f(x_{i})\cdot (x_i-x_0)}{f(x_i)-f(x_0)}" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/2/a/6/2a6c023dda8ce2b53cdf91503ff32709.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" /></b>.</p>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">Этот метод можно считать разновидностью метода простой итерации, и он имеет меньшую скорость сходимости. Далее для определённости этот метод будем называть методом хорд, а метод, описанный в предыдущем разделе, методом секущих.</p>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">&nbsp;</p>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">&nbsp;</p>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">&nbsp;</p>
+
+
+
+<h2 style="font-weight: normal; margin: 1em 0px 0.25em; overflow: hidden; padding: 0px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(170, 170, 170); font-family: 'Linux Libertine', Georgia, Times, serif; line-height: 1.3; text-align: center; background: none rgb(255, 255, 255);"><span class="mw-headline" id=".D0.9A.D1.80.D0.B8.D1.82.D0.B5.D1.80.D0.B8.D0.B9_.D0.B8_.D1.81.D0.BA.D0.BE.D1.80.D0.BE.D1.81.D1.82.D1.8C_.D1.81.D1.85.D0.BE.D0.B4.D0.B8.D0.BC.D0.BE.D1.81.D1.82.D0.B8_.D0.BC.D0.B5.D1.82.D0.BE.D0.B4.D0.B0_.D1.85.D0.BE.D1.80.D0.B4">Критерий и скорость сходимости метода хорд</span></h2>
+
+<p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">
+    Если&nbsp;<img alt="~f(x)" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/3/4/0/34011b3bc2b49dd22d3ae6d4bbcb92fc.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;&mdash; дважды непрерывно дифференцируемая функция, и знак&nbsp;<img alt="~f''(x)" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/d/7/b/d7b6f446350b9b4d9dc395ea8e864559.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;сохраняется на рассматриваемом промежутке, то полученные приближения будут сходиться к корню монотонно. Если корень&nbsp;<img alt="~\xi" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/c/2/1/c2146c48078d6621082c6fc193330f24.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;уравнения&nbsp;<img alt="~f(\xi)=0" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/6/0/5/6051339ccfa2d07a6d4ce48ec90b0024.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;находится на отрезке&nbsp;<img alt="~[a,b]" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/6/c/6/6c65a55c2c8bd6c3e10388d6087e1439.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />, производные&nbsp;<img alt="~f'(x)" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/5/a/e/5ae6597b2dec0829640eeabc51c98698.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;и&nbsp;<img alt="~f''(x)" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/d/7/b/d7b6f446350b9b4d9dc395ea8e864559.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;на этом промежутке непрерывны и сохраняют постоянные знаки и&nbsp;<img alt="~f''(b)f(b)&gt;0" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/3/8/6/3867a52f597cc8aa286fecd69afde853.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />, то можно доказать<sup class="reference" id="cite_ref-1" style="line-height: 1em; unicode-bidi: -webkit-isolate;"><a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D1%85%D0%BE%D1%80%D0%B4#cite_note-1" style="text-decoration: none; color: rgb(11, 0, 128); background: none;">[1]</a></sup>, что погрешность приближенного решения стремится к нулю при&nbsp;<img alt="n\rightarrow\infty" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/e/f/4/ef448529bb0fd823fa4aa6239bbab922.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />, то есть метод сходится и сходится со скоростью геометрической прогрессии (при этом говорят, что он имеет линейную&nbsp;<a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BA%D0%BE%D1%80%D0%BE%D1%81%D1%82%D1%8C_%D1%81%D1%85%D0%BE%D0%B4%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D0%B8" style="text-decoration: none; color: rgb(11, 0, 128); background: none;" title="Скорость сходимости">скорость сходимости</a>).
+</p>
+
+<h2 class="myh2"><strong>Решение</strong></h2>
+
+<hr />
+
+<div class="alert alert-success" role="alert">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    Пример ввода операторов и функций:
+    <br />
+    +, -, *, /, ^, %
+    <br />
+    sqrt, sin, cos, tan, atan, acos, asin, acotan, exp, ln, log, sinh, cosh, tanh, abs, ceil, floor, fac, sfac, round, fpart
+    <br />
+    !, ==, !=, ||, &&, >, < , >=, <=
+    <br />
+    Константы
+    <br />
+    PI (value of System.Math.PI),
+    Euler (value of System.Math.E) true (1.0),
+    false (0.0),
+    infinity (value of Double.PositiveInfinity),
+</div>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Введите начальные данные</h3>
+        <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+    </div>
+    <div class="panel-body">
+        <center>
+            @using (Html.BeginForm("Chord", "Iteration", FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+                <p class="texterror">
+                    @Html.ValidationSummary(true, "Вы что-то сделали не так. Возможные проблемы: ")
+                </p>
+                @Html.Label("Введите уравнение")
+                <br />
+                @Html.TextBoxFor(x => x.Equation, new { @placeholder = "f(x) = 0" })
+                <br />
+                @Html.LabelFor(x => x.Fuctions)
+                <br />
+
+                @Html.TextBoxFor(x => x.Fuctions, new { @placeholder = "x = f(x)" })
+                <br />
+                @Html.Label("Введите eps")
+                <br />
+                @Html.TextBoxFor(x => x.Epsilon, new { @placeholder = "0,000001" })
+                <br />
+                @Html.Label("Введите начальное приближение х0")
+                <br />
+                @Html.TextBoxFor(x => x.X0)
+                <br />
+
+                @Html.Label("Введите начальное приближение х1")
+                <br />
+                @Html.TextBoxFor(x => x.X1)
+                <br />
+                <br />
+
+                <div>
+                    <input type="submit" class="btn btn-primary" value="Решить" />
+                </div>
+            }
+        </center>
+    </div>
+    <div class="panel-footer">
+        @Html.LabelFor(x => x.Result)
+        @Html.TextBoxFor(x => x.Result)
+
+        @if (User.Identity.IsAuthenticated)
+        {
+            <span class="glyphicon glyphicon-download-alt"></span>  @Html.ActionLink("Скачать решение в .doc", "GetFile", new { path = "Chord.doc" })
+            <a style="margin-left: 20px;" href="@ViewBag.Adress" target="_blank">Проверить решение</a>
+        }
+    </div>
+</div>
+

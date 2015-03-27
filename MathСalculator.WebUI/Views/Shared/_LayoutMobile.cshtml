@@ -46,119 +46,42 @@
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                
-                
+             
                     <ul class="nav navbar-nav">
-                       <li class="dropdown1">
+                        <li class="dropdown1">
                             <a href="#" class="dropdown-toggle mytitle" data-toggle="dropdown">Методы решения СЛАУ <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="@Url.Action("Gaus", "Methods")">Метод Гаусса</a></li>
                                 <li><a href="#">LU - разложение</a></li>
                                 <li><a href="#">Метод квадратного корня</a></li>
-                                
+
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle mytitle" data-toggle="dropdown">Итерационные методы<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="@Url.Action("SimpleIteration", "Methods")">Метод простой итерации</a></li>
-                                <li><a href="@Url.Action("Chord", "Methods")">Метод хорд</a></li>
-                                <li><a href="@Url.Action("Newton", "Methods")">Метод Ньютона</a></li>
-                                <li><a href="@Url.Action("Secants", "Methods")">Метод секущих</a></li>
+                                <li><a href="@Url.Action("SimpleIteration", "Iteration")">Метод простой итерации</a></li>
+                                <li><a href="@Url.Action("Chord", "Iteration")">Метод хорд</a></li>
+                                <li><a href="@Url.Action("Newton", "Iteration")">Метод Ньютона</a></li>
+                                <li><a href="@Url.Action("Secants", "Iteration")">Метод секущих</a></li>
                             </ul>
                         </li>
 
-                  
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle mytitle" data-toggle="dropdown">Численное интегрирование<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="@Url.Action("Rectangles", "Methods")">Метод прямоугольников</a></li>
+                                <li><a href="@Url.Action("Trapezoids", "Methods")">Метод трапеций</a></li>
+                                <li><a href="@Url.Action("Simpson", "Methods")">Метод парабол (метод Симпсона)</a></li>
+                                <li class="divider"></li>
+                            </ul>
+                        </li>
+
                     </ul>
-                    @*<center><div class="mytitle">Методы решения СЛАУ</div> </center>
-                    <a class="myli" href="@Url.Action("Gaus", "Methods")"> 1.Метод Гаусса</a>
-                    <br/>
-                    <a class="myli" href="#"> 2.LU - разложение</a>
-                    <br />
-                    <a class="myli" href="#"> 3.Метод квадратного корня</a>
-                    <p class="divider"></p>
-                    <center><div class="mytitle">Итерационные методы</div> </center>
-                    <a class="myli" href="@Url.Action("SimpleIteration", "Methods")"> 1.Метод простой итерации</a><br />
-                    <a class="myli" href="@Url.Action("Chord", "Methods")"> 2.Метод хорд</a><br />
-                    <a class="myli" href="@Url.Action("Newton", "Methods")"> 3.Метод Ньютона</a><br />
-                    <a class="myli" href="@Url.Action("Secants", "Methods")"> 4.Метод секущих</a><br />*@
-                    @*
-                    <p><a href="@Url.Action("Gaus", "Methods")">Метод Гаусса</a></p>
-                    <p><a href="#">LU - разложение</a></p>
-                    <p><a href="#">Метод квадратного корня</a></p>
-                    <p class="divider"></p>
-                    <p class="dropdown-header">Итерационные методы</p>
-                    <p><a href="@Url.Action("SimpleIteration", "Methods")">Метод простой итерации</a></p>
-                    <p><a href="@Url.Action("Chord", "Methods")">Метод хорд</a></p>
-                    <p><a href="@Url.Action("Newton", "Methods")">Метод Ньютона</a></p>
-                    <p><a href="@Url.Action("Secants", "Methods")">Метод секущих</a></p>*@
 
 
-                    @*@*<li class="dropdown dropdown-large">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Методы<b class="caret"></b></a>
 
-                            <ul class="dropdown-menu dropdown-menu-large row">*@
-                    @*<li class="col-sm-3">
-                                    <ul>
-                                        <li class="dropdown-header">Методы решения СЛАУ</li>
-                                        <li><a href="@Url.Action("Gaus", "Methods")">Метод Гаусса</a></li>
-                                        <li><a href="#">LU - разложение</a></li>
-                                        <li><a href="#">Метод квадратного корня</a></li>
-                                        <li class="divider"></li>
-                                        <li class="dropdown-header">Итерационные методы</li>
-                                        <li><a href="@Url.Action("SimpleIteration", "Methods")">Метод простой итерации</a></li>
-                                        <li><a href="@Url.Action("Chord", "Methods")">Метод хорд</a></li>
-                                        <li><a href="@Url.Action("Newton", "Methods")">Метод Ньютона</a></li>
-                                        <li><a href="@Url.Action("Secants", "Methods")">Метод секущих</a></li>
-
-                                    </ul>*@
-                    @*</li>
-                                <li class="col-sm-3">
-                                    <ul>
-                                        <li class="dropdown-header">Численное интегрирование</li>
-                                        <li><a href="@Url.Action("MathCalc", "Methods")">Метод прямоугольников</a></li>
-                                        <li><a href="#">Метод трапеций</a></li>
-                                        <li><a href="#">Метод парабол (метод Симпсона)</a></li>
-                                        <li><a href="#">Метод 3/8</a></li>
-
-                                        <li class="divider"></li>
-                                        <li class="dropdown-header">Онлайн сервисы</li>
-                                        <li><a href="@Url.Action("MathCalc", "Methods")">Калькулятор</a></li>
-                                    </ul>
-                                </li>
-                                <li class="col-sm-3">
-                                    <ul>
-                                        <li class="dropdown-header">Input groups</li>
-                                        <li><a href="#">Basic example</a></li>
-                                        <li><a href="#">Sizing</a></li>
-                                        <li><a href="#">Checkboxes and radio addons</a></li>
-                                        <li class="divider"></li>
-                                        <li class="dropdown-header">Navs</li>
-                                        <li><a href="#">Tabs</a></li>
-                                        <li><a href="#">Pills</a></li>
-                                        <li><a href="#">Justified</a></li>
-                                    </ul>
-                                </li>
-                                <li class="col-sm-3">
-                                    <ul>
-                                        <li class="dropdown-header">Navbar</li>
-                                        <li><a href="#">Default navbar</a></li>
-                                        <li><a href="#">Buttons</a></li>
-                                        <li><a href="#">Text</a></li>
-                                        <li><a href="#">Non-nav links</a></li>
-                                        <li><a href="#">Component alignment</a></li>
-                                        <li><a href="#">Fixed to top</a></li>
-                                        <li><a href="#">Fixed to bottom</a></li>
-                                        <li><a href="#">Static top</a></li>
-                                        <li><a href="#">Inverted navbar</a></li>
-                                    </ul>
-                                </li>
-                            </ul>*@
-
-                    @*</li>*@
-
-              
-                
-            </div><!-- /.nav-collapse -->
+</div><!-- /.nav-collapse -->
 
         </div><!-- /.container -->
     </nav><!-- /.navbar -->

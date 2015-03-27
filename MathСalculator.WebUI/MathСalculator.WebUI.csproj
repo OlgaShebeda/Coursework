@@ -148,6 +148,7 @@
     <Content Include="Content\style404.css" />
     <Content Include="Content\styleForm.css" />
     <Content Include="Content\StyleSheet1.css" />
+    <Content Include="Content\styleStudent.css" />
     <Content Include="Content\TextFile1.txt" />
     <Content Include="Content\ZvqE2wp2kw-1680x1050.jpg" />
     <Content Include="Global.asax" />
@@ -168,6 +169,7 @@
     <Content Include="Scripts\error404.js" />
     <Content Include="Scripts\ie-emulation-modes-warning.js" />
     <Content Include="Scripts\imageScript.js" />
+    <Content Include="Scripts\indexStudent.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -187,6 +189,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\IterationController.cs" />
     <Compile Include="Controllers\MethodsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
@@ -198,6 +201,7 @@
     <Compile Include="Models\GausModel.cs" />
     <Compile Include="Models\GCDModel.cs" />
     <Compile Include="Models\NumericalIntegration.cs" />
+    <Compile Include="Models\RectanglesIntegration.cs" />
     <Compile Include="Models\SimpleIterationModel.cs" />
     <Compile Include="Models\UsersLogin.cs" />
     <Compile Include="Models\UsersRegister.cs" />
@@ -217,20 +221,18 @@
     <Content Include="Views\Users\Account.cshtml" />
     <Content Include="Views\Methods\Index.cshtml" />
     <Content Include="Views\Methods\Gaus.cshtml" />
-    <Content Include="Views\Methods\SimpleIteration.cshtml" />
+    <Content Include="Views\Iteration\SimpleIteration.cshtml" />
     <Content Include="Views\Methods\MathCalc.cshtml" />
-    <Content Include="Views\Methods\Newton.cshtml" />
-    <Content Include="Views\Methods\Chord.cshtml" />
-    <Content Include="Views\Methods\Secants.cshtml" />
+    <Content Include="Views\Iteration\Newton.cshtml" />
+    <Content Include="Views\Iteration\Secants.cshtml" />
     <Content Include="Views\Methods\Index.Mobile.cshtml" />
     <Content Include="Views\Shared\_LayoutMobile.cshtml" />
-    <Content Include="Views\Methods\SimpleIteration.Mobile.cshtml" />
     <Content Include="Views\Methods\Gaus.Mobile.cshtml" />
-    <Content Include="Views\Methods\Newton.Mobile.cshtml" />
+    <Content Include="Views\Iteration\Newton.Mobile.cshtml" />
     <Content Include="Views\Users\Login.Mobile.cshtml" />
     <Content Include="Views\Users\Register.Mobile.cshtml" />
-    <Content Include="Views\Methods\Secants.Mobile.cshtml" />
-    <Content Include="Views\Methods\Chord.Mobile.cshtml" />
+    <Content Include="Views\Iteration\Secants.Mobile.cshtml" />
+    <Content Include="Views\Iteration\Chord.Mobile.cshtml" />
     <Content Include="Views\Users\ChangeUsersPassword.cshtml" />
     <Content Include="Views\Methods\Error404.cshtml" />
     <Content Include="Views\Methods\Error404.Mobile.cshtml" />
@@ -238,7 +240,16 @@
     <Content Include="Views\Methods\Trapezoids.cshtml" />
     <Content Include="Views\Methods\Graph.cshtml" />
     <Content Include="Views\Methods\NumericIntegr.cshtml" />
-    <Content Include="Views\Methods\Iteration.cshtml" />
+    <Content Include="Views\Iteration\Iteration.cshtml" />
+    <Content Include="Views\Methods\Rectangles.cshtml" />
+    <Content Include="Views\Iteration\Chord.cshtml" />
+    <Content Include="Views\Iteration\SimpleIteration.Mobile.cshtml" />
+    <Content Include="Views\Methods\Rectangles.Mobile.cshtml" />
+    <Content Include="Views\Iteration\Iteration.Mobile.cshtml" />
+    <Content Include="Views\Methods\Simpson.Mobile.cshtml" />
+    <Content Include="Views\Methods\Trapezoids.Mobile.cshtml" />
+    <Content Include="Views\Users\ChangeUsersPassword.Mobile.cshtml" />
+    <Content Include="Views\Methods\About.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
