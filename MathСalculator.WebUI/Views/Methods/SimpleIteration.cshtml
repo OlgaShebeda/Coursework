@@ -319,8 +319,7 @@
                     
                                         @if (User.Identity.IsAuthenticated)
                                         {
-
-                                            @*<a href="@Path.GetFullPath(path1)">Скачать решение в .doc</a>*@
+                                            
     <span class="glyphicon glyphicon-download-alt"></span>   @Html.ActionLink("Скачать решение в .doc", "GetFile", new { path = "MPI.doc" })
 
     <a style="margin-left: 20px;" href="@ViewBag.Adress" target="_blank"><span class="glyphicon glyphicon-export"></span>Проверить решение</a>

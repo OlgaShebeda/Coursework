@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Итерационные методы";
+}
+
+<h1 align="center" style="font-size: 16px; text-decoration: underline; background-color: rgb(255, 255, 255);">Введение</h1>
+
+<p align="left" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);">Нахождение точных корней&nbsp;<em>алгебраического</em>&nbsp;или&nbsp;<em>трансцендентного&nbsp;</em>уравнения (т.е. уравнения неалгебраического, например, тригонометрического, логарифмического или иррационального) является зачастую достаточно сложной задачей, не решаемой аналитически с помощью конечных формул. Кроме того, иногда на практике уравнение содержит коэффициенты, значения которых заданы приблизительно, так что говорить о точном решении уравнений в таких случаях вообще не имеет смысла. Поэтому задачи<em>приближенного</em>&nbsp;определения корней уравнения и соответствующей оценки их точности имеют важное значение и в наши дни.&nbsp;</p>
+
+<p align="left" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);">Приближенные методы решения уравнений можно условно разделить на&nbsp;<a href="http://www.bymath.net/studyguide/fun/sec/fun10.htm" style="color: blue; text-decoration: none;"><em>графические</em></a>&nbsp;и&nbsp;<em>численные</em>. Мы ограничимся рассмотрением численных методов решения.</p>
+
+<p align="left" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);">Рассмотрим уравнение:</p>
+
+<p align="center" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);"><img align="middle" height="26" src="http://www.simumath.net/library/materials/Alg_Equations_introduction/images/Eqn001.png" width="80" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1)</p>
+
+<p align="left" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);">где функция&nbsp;<em>F</em>(&nbsp;<em>x</em>&nbsp;) &ndash; непрерывна и определена на некотором интервале&nbsp;<img align="middle" height="23" src="http://www.simumath.net/library/materials/Alg_Equations_introduction/images/Eqn002.png" width="80" /></p>
+
+<p align="left" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);">
+    В ряде случаев потребуется существование и непрерывность первой и второй производных этой функции:&nbsp;<img align="middle" height="26" src="http://www.simumath.net/library/materials/Alg_Equations_introduction/images/Eqn003.png" width="120" />, что каждый раз будет оговариваться особо.&nbsp;<br />
+    Всякое значение&nbsp;<img align="middle" height="26" src="http://www.simumath.net/library/materials/Alg_Equations_introduction/images/Eqn004.png" width="16" />&nbsp;, при котором&nbsp;<em>F</em>(&nbsp;<em>x</em>&nbsp;) обращается в нуль:
+</p>
+
+<p align="center" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);"><img align="middle" height="26" src="http://www.simumath.net/library/materials/Alg_Equations_introduction/images/Eqn005.png" width="82" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)<u>&nbsp;</u></p>
+
+<p align="left" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);">называется&nbsp;<em>корнем уравнения</em>&nbsp;(1) или&nbsp;<em>нулем функции</em>&nbsp;<em>F</em>(&nbsp;<em>x</em>&nbsp;).&nbsp;</p>
+
+<p align="left" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);">Будем считать, что уравнение (1) имеет только&nbsp;<em>изолированные</em>&nbsp;корни, т.е. для каждого корня уравнения (1) существует окрестность, не содержащая других корней этого уравнения.&nbsp;</p>
+
+<p align="left" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);">Приближенное нахождение изолированных действительных корней выполняется в два этапа:</p>
+
+<p align="left" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);">1) Нахождение приближенного значения корня &ndash; так называемого&nbsp;<em>нулевого приближения</em>.</p>
+
+<p align="left" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);">2) Уточнение приближенного значения корня до тех пор, пока не будет достигнута заданная точность решения, путем&nbsp;<em>итераций</em>&nbsp;или<em>последовательных приближений</em>.</p>
+
+<p align="left" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);">Остановимся подробно на втором этапе, так как нахождение нулевого приближения является специфической задачей, решаемой обычно либо на основе физических соображений или конструктивных особенностей, либо путем&nbsp;<a href="http://www.bymath.net/studyguide/fun/sec/fun10.htm" style="color: blue; text-decoration: none;">графического решения уравнения</a>.</p>
+
+
+<center>
+    <h3><b>Методы</b></h3>
+</center>
+<div class="well">
+
+    <ul>
+        <li><a href="@Url.Action("SimpleIteration", "Methods")">Метод простой итерации</a></li>
+        <li><a href="@Url.Action("Chord", "Methods")">Метод хорд</a></li>
+        <li><a href="@Url.Action("Newton", "Methods")">Метод Ньютона</a></li>
+        <li><a href="@Url.Action("Secants", "Methods")">Метод секущих</a></li>
+    </ul>
+
+</div>

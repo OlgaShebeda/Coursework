@@ -237,6 +237,8 @@
     <Content Include="Views\Methods\Simpson.cshtml" />
     <Content Include="Views\Methods\Trapezoids.cshtml" />
     <Content Include="Views\Methods\Graph.cshtml" />
+    <Content Include="Views\Methods\NumericIntegr.cshtml" />
+    <Content Include="Views\Methods\Iteration.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
