@@ -114,6 +114,23 @@ namespace MathСalculator.Domain.Methods
                     S = S + h * (CalcMethods.ParseFunction(function, (a + i * h)));
                 return S;
             }
+
+            /// <summary>
+            /// Метод средних прямоугольников
+            /// </summary>
+            /// <param name="function">подинтегральная функция</param>
+            /// <param name="a">начало отрезка</param>
+            /// <param name="b">конец отрезка</param>
+            /// <param name="n">количество разбиений</param>
+            /// <returns></returns>
+            public double MidleRectangles(string function, double a, double b, int n)
+            {
+                double S = 0;
+                double h = (b - a) / n;
+                for (int i = 0; i < n; i++)
+                    S = S + h * (CalcMethods.ParseFunction(function, (a + (i + 1 / 2) * h)));
+                return S;
+            }
         }
     }
 
