@@ -80,6 +80,57 @@ namespace MathСalculator.Domain.Methods
                 }
                 return S;
             }
+
+            /// <summary>
+            /// Метод правых треугольников
+            /// </summary>
+            /// <param name="function">подинтергральная функция</param>
+            /// <param name="a">начало отрезка [a, b]</param>
+            /// <param name="b">конец отрезка [a, b]</param>
+            /// <param name="n">количество разбиений отрезка</param>
+            /// <returns></returns>
+            public double RightRectangles(string function, double a, double b, int n)
+            {
+                double S = 0;
+                double h = (b - a) / n;
+                for (int i = 0; i < n; i++)
+                    S = S + h * (CalcMethods.ParseFunction(function, (a + i * h)));
+                return S;
+            }
+
+            /// <summary>
+            /// метод левых прямоугольников
+            /// </summary>
+            /// <param name="function">подинтегральная функция</param>
+            /// <param name="a">начало отрезка [a, b]</param>
+            /// <param name="b">конец отрезка [a, b]</param>
+            /// <param name="n">количество разбиений отрезка</param>
+            /// <returns></returns>
+            public double LeftRectangles(string function, double a, double b, int n)
+            {
+                double S = 0;
+                double h = (b - a) / n;
+                for (int i = 1; i <= n; i++)
+                    S = S + h * (CalcMethods.ParseFunction(function, (a + i * h)));
+                return S;
+            }
+
+            /// <summary>
+            /// Метод средних прямоугольников
+            /// </summary>
+            /// <param name="function">подинтегральная функция</param>
+            /// <param name="a">начало отрезка</param>
+            /// <param name="b">конец отрезка</param>
+            /// <param name="n">количество разбиений</param>
+            /// <returns></returns>
+            public double MidleRectangles(string function, double a, double b, int n)
+            {
+                double S = 0;
+                double h = (b - a) / n;
+                for (int i = 0; i < n; i++)
+                    S = S + h * (CalcMethods.ParseFunction(function, (a + (i + 1 / 2) * h)));
+                return S;
+            }
         }
     }
 
