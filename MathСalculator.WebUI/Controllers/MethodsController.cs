@@ -124,6 +124,12 @@ namespace MathСalculator.WebUI.Controllers
         #region Итерационные методы
 
         [HttpGet]
+        public ViewResult Iteration()
+        {
+            return View();
+        }
+
+        [HttpGet]
         public ViewResult SimpleIteration()
         {
             return View();
@@ -328,6 +334,12 @@ namespace MathСalculator.WebUI.Controllers
 
         [HttpGet]
         public ActionResult Simpson()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ViewResult NumericIntegr()
         {
             return View();
         }

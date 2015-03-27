@@ -3,74 +3,52 @@
     ViewBag.Title = "Метод трапеций";
 }
 
-<h1 style="font-size: 22px; font-family: Verdana, Arial, Helvetica, sans-serif; padding: 10px 10px 20px; text-align: center; color: rgb(50, 50, 46);">Метод трапеций</h1>
 
-<p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;"><strong>Метод трапеций</strong>&nbsp;является одним из методов численного интегрирования. Он позволяет вычислять определенные интегралы с заранее заданной степенью точности.</p>
+<p align="center" style="font-size: 16px; text-decoration: underline; background-color: rgb(255, 255, 255);"><span style="font-size:24px;">Формула трапеций</span></p>
 
-<p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">Сначала опишем суть метода трапеций и выведем формулу трапеций. Далее запишем оценку абсолютной погрешности метода и подробно разберем решение характерных примеров. В заключении сравним метод трапеций с методом прямоугольников.</p>
+<p align="left" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);">Рассмотрим интеграл <img align="middle" height="59" src="http://www.simumath.net/library/materials/Num_Integr_introduction/images/Eqn007.png" style="font-size: 14px; line-height: 23.7999992370605px; text-align: -webkit-center; background-color: rgb(255, 255, 255);" width="109" />, представляющий собой,&nbsp;<u>как известно</u>, площадь под кривой&nbsp;<img align="middle" height="26" src="http://www.simumath.net/library/materials/Num_Integr_formula_trap/images/Eqn001.png" width="74" />на отрезке&nbsp;<img align="middle" height="23" src="http://www.simumath.net/library/materials/Num_Integr_formula_trap/images/Eqn002.png" width="74" />&nbsp;(рис. 1).</p>
 
-<hr />
-<h2 style="font-size: 18px; font-family: Verdana, Arial, Helvetica, sans-serif; padding: 25px 10px; color: rgb(50, 50, 46); text-align: center;">Суть метода трапеций</h2>
-
-<p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">Поставим перед собой следующую задачу: пусть нам требуется приближенно вычислить определенный интеграл&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_trapezoids/001.png" style="vertical-align: middle;" />, где подынтегральная функция&nbsp;<i>y=f(x)</i>&nbsp;непрерывна на отрезке<i>[a;b]</i>.</p>
-
-<p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">Разобьем отрезок&nbsp;<i>[a;b]</i>&nbsp;на&nbsp;<i>n</i>&nbsp;равных интервалов длины&nbsp;<i>h</i>&nbsp;точками&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_trapezoids/002.png" style="vertical-align: middle;" />. В этом случае шаг разбиения находим как&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_trapezoids/003.png" style="vertical-align: middle;" />&nbsp;и узлы определяем из равенства&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_trapezoids/004.png" style="vertical-align: middle;" />.</p>
-
-<p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">Рассмотрим подынтегральную функцию на элементарных отрезках&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_trapezoids/005.png" style="vertical-align: middle;" />.</p>
-
-<p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">Возможны четыре случая (на рисунке показаны простейшие из них, к которым все сводится при бесконечном увеличении&nbsp;<i>n</i>):</p>
-
-<div class="pict" style="color: rgb(50, 50, 46); font-family: Verdana, Arial, Helvetica, sans-serif;">
-    <p class="pict" style="font-size: 14px; line-height: 1.5; text-align: center;"><img alt="изображение" src="http://www.cleverstudents.ru/definite_integral/images/method_of_trapezoids/pict001.png" style="vertical-align: middle;" /></p>
-</div>
-
-<p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">На каждом отрезке&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_trapezoids/005.png" style="vertical-align: middle;" />&nbsp;заменим функцию&nbsp;<i>y=f(x)</i>&nbsp;отрезком прямой, проходящей через точки с координатами&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_trapezoids/006.png" style="vertical-align: middle;" />&nbsp;и&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_trapezoids/007.png" style="vertical-align: middle;" />. Изобразим их на рисунке синими линиями:</p>
-
-<div class="pict" style="color: rgb(50, 50, 46); font-family: Verdana, Arial, Helvetica, sans-serif;">
-    <p class="pict" style="font-size: 14px; line-height: 1.5; text-align: center;"><img alt="изображение" src="http://www.cleverstudents.ru/definite_integral/images/method_of_trapezoids/pict002.png" style="vertical-align: middle;" /></p>
-</div>
-
-<p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">В качестве приближенного значения интеграла&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_trapezoids/008.png" style="vertical-align: middle;" />&nbsp;возьмем выражение&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_trapezoids/009.png" style="vertical-align: middle;" />, то есть, примем&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_trapezoids/010.png" style="vertical-align: middle;" />.</p>
-
-<p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">Давайте выясним, что означает в геометрическом смысле записанное приближенное равенство. Это позволит понять, почему рассматриваемый метод численного интегрирования называется методом трапеций.</p>
-
-<p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">Мы знаем, что площадь трапеции находится как произведение полу суммы оснований на высоту. Следовательно, в первом случае площадь криволинейной трапеции приближенно равна площади трапеции с основаниями&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_trapezoids/011.png" style="vertical-align: middle;" />&nbsp;и высотой&nbsp;<i>h</i>, в последнем случае определенный интеграл&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_trapezoids/008.png" style="vertical-align: middle;" />&nbsp;приближенно равен площади трапеции с основаниями&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_trapezoids/012.png" style="vertical-align: middle;" />&nbsp;и высотой&nbsp;<i>h</i>, взятой со знаком минус. Во втором и третьем случаях приближенное значение определенного интеграла&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_trapezoids/008.png" style="vertical-align: middle;" />&nbsp;равно разности площадей красной и синей областей, изображенных на рисунке ниже.</p>
-
-<div class="pict" style="color: rgb(50, 50, 46); font-family: Verdana, Arial, Helvetica, sans-serif;">
-    <p class="pict" style="font-size: 14px; line-height: 1.5; text-align: center;"><img alt="изображение" src="http://www.cleverstudents.ru/definite_integral/images/method_of_trapezoids/pict003.png" style="vertical-align: middle;" /></p>
-</div>
-
-<p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">Таким образом, мы подошли к&nbsp;<strong>сути метода трапеций</strong>, которая состоит в представлении определенного&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_trapezoids/001.png" style="vertical-align: middle;" />&nbsp;интеграла в виде суммы интегралов вида&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_trapezoids/008.png" style="vertical-align: middle;" />&nbsp;на каждом элементарном отрезке и в последующей приближенной замене&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_trapezoids/010.png" style="vertical-align: middle;" />.</p>
-
-<hr />
-<h2 style="font-size: 18px; font-family: Verdana, Arial, Helvetica, sans-serif; padding: 25px 10px; color: rgb(50, 50, 46); text-align: center;">Формула метода трапеций</h2>
-
-<p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">В силу пятого&nbsp;<a href="http://www.cleverstudents.ru/definite_integral/definite_integral_properties.html" style="color: rgb(50, 50, 46);">свойства определенного интеграла</a>&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_trapezoids/013.png" style="vertical-align: middle;" />.</p>
-
-<p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">
-    Если вместо интегралов&nbsp;<img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_trapezoids/008.png" style="vertical-align: middle;" />&nbsp;подставить их приближенные значения, то получится<strong>формула метода трапеций</strong>:<br />
-    <img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_trapezoids/014.png" style="vertical-align: middle;" title="формула метода трапеций" />
+<p align="center" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);">
+    <img alt="Ris1_num_int.gif" height="438" src="http://www.simumath.net/library/materials/Num_Integr_formula_trap/Num_Integr_formula_trap_clip_image005.gif" width="474" />&nbsp;<br />
+    Рис. 1. Геометрическое представление численного интегрирования
 </p>
 
-<hr />
-<h2 style="font-size: 18px; font-family: Verdana, Arial, Helvetica, sans-serif; padding: 25px 10px; color: rgb(50, 50, 46); text-align: center;">Оценка абсолютной погрешности метода трапеций</h2>
+<p align="center" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);">&nbsp;</p>
 
-<p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">
-    <strong>Абсолютная погрешность метода трапеций</strong>&nbsp;оценивается как<br />
-    <img alt="формула" src="http://www.cleverstudents.ru/definite_integral/images/method_of_trapezoids/015.png" style="vertical-align: middle;" title="оценка абсолютной погрешности метода трапеций" />.
+<p align="left" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);">Разобьем теперь интервал интегрирования&nbsp; (<em>a</em>,&nbsp;<em>b</em>)&nbsp; на&nbsp;&nbsp;<em>n</em>&nbsp; равных частей длиной&nbsp;<img align="middle" height="26" src="http://www.simumath.net/library/materials/Num_Integr_formula_trap/images/Eqn003.png" width="107" />&nbsp;каждая (&nbsp;<em>h</em>&nbsp;называется&nbsp;<em>шагом интегрирования</em>).</p>
+
+<p align="left" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);">Рассмотрим один из этих интервалов (рис. 2).</p>
+
+<p align="center" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);">
+    <img alt="Ris2_num_int.gif" height="412" src="http://www.simumath.net/library/materials/Num_Integr_formula_trap/Num_Integr_formula_trap_clip_image008.gif" width="497" />&nbsp;<br />
+    Рис. 2. Один интервал численного интегрирования по методу трапеций
 </p>
 
-<hr />
-<h2 style="font-size: 18px; font-family: Verdana, Arial, Helvetica, sans-serif; padding: 25px 10px; color: rgb(50, 50, 46); text-align: center;">Графическая иллюстрация метода трапеций</h2>
+<p align="left" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);">&nbsp;</p>
 
-<p class="txt" style="font-size: 14px; color: rgb(50, 50, 46); line-height: 1.5; margin-left: 10px; margin-right: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;">Приведем&nbsp;<strong>графическую иллюстрацию метода трапеций</strong>:</p>
+<p align="left" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);">Площадь под кривой&nbsp;<img align="middle" height="26" src="http://www.simumath.net/library/materials/Num_Integr_formula_trap/images/Eqn004.png" width="74" />&nbsp;между&nbsp;<img align="middle" height="29" src="http://www.simumath.net/library/materials/Num_Integr_formula_trap/images/Eqn005.png" width="72" />&nbsp;равна:</p>
 
-<div class="pict" style="color: rgb(50, 50, 46); font-family: Verdana, Arial, Helvetica, sans-serif;">
-    <p class="pict" style="font-size: 14px; line-height: 1.5; text-align: center;"><img alt="изображение" src="http://www.cleverstudents.ru/definite_integral/images/method_of_trapezoids/pict004.png" style="vertical-align: middle;" title="графическая иллюстрация метода трапеций" /></p>
+<p align="center" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);"><img align="middle" height="64" src="http://www.simumath.net/library/materials/Num_Integr_formula_trap/images/Eqn006.png" width="122" /></p>
 
-    <hr />
-    <p>&nbsp;</p>
-</div>
+<p align="left" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);">Предположим, что шаг интегрирования&nbsp;&nbsp;<em>h&nbsp;</em>достаточно мал, тогда эту площадь без существенной погрешности можно приравнять к площади трапеции&nbsp;<em>ABCD</em>. Так как&nbsp;<img align="middle" height="29" src="http://www.simumath.net/library/materials/Num_Integr_formula_trap/images/Eqn007.png" width="208" />, получим:</p>
+
+<p align="center" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);"><img align="middle" height="50" src="http://www.simumath.net/library/materials/Num_Integr_formula_trap/images/Eqn008.png" width="130" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(*)</p>
+
+<p align="left" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);">
+    <br />
+    Поскольку интеграл от суммы равен сумме интегралов (свойство&nbsp;<em>аддитивности</em>), то
+</p>
+
+<p align="center" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);"><img align="middle" height="55" src="http://www.simumath.net/library/materials/Num_Integr_formula_trap/images/Eqn009.png" width="71" />,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(**)</p>
+
+<p align="left" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);">где&nbsp;<img align="middle" height="29" src="http://www.simumath.net/library/materials/Num_Integr_formula_trap/images/Eqn010.png" width="109" />.</p>
+
+<p align="left" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);">Подставляя (*) в (**), окончательно получим:</p>
+
+<p align="center" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);"><img align="middle" height="50" src="http://www.simumath.net/library/materials/Num_Integr_formula_trap/images/Eqn011.png" width="245" />. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+
+<p align="left" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);">Это и есть&nbsp;<em>формула трапеций</em>. Правило трапеций &ndash; один из простейших методов численного интегрирования, и хотя погрешности вычислений этим способом больше, чем в других методах, он пользуется большим спросом благодаря своей наглядности и простоте.</p>
+
 
 <h2 class="myh2"><strong>Вычислить онлайн</strong></h2>
 
@@ -78,7 +56,7 @@
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 
-<div class="alert alert-link" role="alert">
+<div class="alert alert-success" role="alert">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
     Пример ввода операторов и функций:
     <br />
@@ -101,10 +79,11 @@
 
 <div style="margin-left: 22%;">
     <div class="col-lg-9 col-md-10 col-sm-2 col-xs-11">
-        <div class="panel panel-default">
+        <div class="panel panel-primary">
             <div class="panel-heading">
                     <h3 class="panel-title">Введите начальные данные</h3>
-               
+                  
+                </div>
             </div>
             <center>
                 <div class="panel-body">
@@ -151,13 +130,13 @@
             </div>
         </div>
     </div>
-</div>
+
 
 
 <style>
-    body {
+    /*body {
         background-color: #CECDD5;
-    }
+    }*/
 
     #myInput {
         width: 20px; /* Ширина поля в пикселах */

@@ -51,22 +51,24 @@
                         <ul class="dropdown-menu dropdown-menu-large row">
                             <li class="col-sm-3">
                                 <ul>
-                                    <li class="dropdown-header">Методы решения СЛАУ</li>
+                                    <li class="dropdown-header"> Методы решения СЛАУ</li>
                                     <li><a href="@Url.Action("Gaus", "Methods")">Метод Гаусса</a></li>
                                     <li><a href="#">LU - разложение</a></li>
                                     <li><a href="#">Метод квадратного корня</a></li>
                                     <li class="divider"></li>
-                                    <li class="dropdown-header">Итерационные методы</li>
-                                    <li><a href="@Url.Action("SimpleIteration", "Methods")">Метод простой итерации</a></li>
-                                    <li><a href="@Url.Action("Chord", "Methods")">Метод хорд</a></li>
-                                    <li><a href="@Url.Action("Newton", "Methods")">Метод Ньютона</a></li>
-                                    <li><a href="@Url.Action("Secants", "Methods")">Метод секущих</a></li>
-                            
-                                </ul>
+                                    <a href="@Url.Action("Iteration", "Methods")">
+                                        <li class="dropdown-header">Итерационные методы</li>
+                                    </a>
+                                        <li><a href="@Url.Action("SimpleIteration", "Methods")">Метод простой итерации</a></li>
+                                        <li><a href="@Url.Action("Chord", "Methods")">Метод хорд</a></li>
+                                        <li><a href="@Url.Action("Newton", "Methods")">Метод Ньютона</a></li>
+                                        <li><a href="@Url.Action("Secants", "Methods")">Метод секущих</a></li>
+
+</ul>
                             </li>
                             <li class="col-sm-3">
                                 <ul>
-                                    <li class="dropdown-header">Численное интегрирование</li>
+                                    <a href="@Url.Action("NumericIntegr", "Methods")"><li class="dropdown-header">Численное интегрирование</li></a>
                                     <li><a href="@Url.Action("MathCalc", "Methods")">Метод прямоугольников</a></li>
                                     <li><a href="@Url.Action("Trapezoids", "Methods")">Метод трапеций</a></li>
                                     <li><a href="@Url.Action("Simpson", "Methods")">Метод парабол (метод Симпсона)</a></li>
