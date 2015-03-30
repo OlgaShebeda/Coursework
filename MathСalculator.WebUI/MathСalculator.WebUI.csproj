@@ -130,6 +130,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Error404.css" />
+    <Content Include="Content\favicon.ico" />
     <Content Include="Content\fon1.jpg" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
@@ -191,6 +192,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\IterationController.cs" />
     <Compile Include="Controllers\MethodsController.cs" />
+    <Compile Include="Controllers\NumericIntegralController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -199,7 +201,6 @@
     <Compile Include="Models\ChangePassword.cs" />
     <Compile Include="Models\ChordModel.cs" />
     <Compile Include="Models\GausModel.cs" />
-    <Compile Include="Models\GCDModel.cs" />
     <Compile Include="Models\NumericalIntegration.cs" />
     <Compile Include="Models\RectanglesIntegration.cs" />
     <Compile Include="Models\SimpleIterationModel.cs" />
@@ -236,20 +237,22 @@
     <Content Include="Views\Users\ChangeUsersPassword.cshtml" />
     <Content Include="Views\Methods\Error404.cshtml" />
     <Content Include="Views\Methods\Error404.Mobile.cshtml" />
-    <Content Include="Views\Methods\Simpson.cshtml" />
-    <Content Include="Views\Methods\Trapezoids.cshtml" />
+    <Content Include="Views\NumericIntegral\Simpson.cshtml" />
+    <Content Include="Views\NumericIntegral\Trapezoids.cshtml" />
     <Content Include="Views\Methods\Graph.cshtml" />
-    <Content Include="Views\Methods\NumericIntegr.cshtml" />
+    <Content Include="Views\NumericIntegral\NumericIntegr.cshtml" />
     <Content Include="Views\Iteration\Iteration.cshtml" />
-    <Content Include="Views\Methods\Rectangles.cshtml" />
+    <Content Include="Views\NumericIntegral\Rectangles.cshtml" />
     <Content Include="Views\Iteration\Chord.cshtml" />
     <Content Include="Views\Iteration\SimpleIteration.Mobile.cshtml" />
-    <Content Include="Views\Methods\Rectangles.Mobile.cshtml" />
+    <Content Include="Views\NumericIntegral\Rectangles.Mobile.cshtml" />
     <Content Include="Views\Iteration\Iteration.Mobile.cshtml" />
-    <Content Include="Views\Methods\Simpson.Mobile.cshtml" />
-    <Content Include="Views\Methods\Trapezoids.Mobile.cshtml" />
+    <Content Include="Views\NumericIntegral\Simpson.Mobile.cshtml" />
+    <Content Include="Views\NumericIntegral\Trapezoids.Mobile.cshtml" />
     <Content Include="Views\Users\ChangeUsersPassword.Mobile.cshtml" />
     <Content Include="Views\Methods\About.cshtml" />
+    <Content Include="Views\NumericIntegral\Method38.cshtml" />
+    <Content Include="Views\NumericIntegral\Method38.Mobile.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

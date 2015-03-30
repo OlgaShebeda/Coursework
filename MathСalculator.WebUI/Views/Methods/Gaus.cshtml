@@ -130,7 +130,7 @@ x_{j_1}+\widehat{\alpha}_{1j_2}x_{j_2}+\ldots+\widehat{\alpha}_{1j_r}x_{j_r}&amp
         for (int k = 0; k < Model.countRows * Model.countVariable; k++)
         {
 
-            @Html.TextBox("ints", "0")
+            @Html.TextBox("ints", "0", new { @id = "myInput1" })
             for (int j = 0; j < Model.countRows; j++)
             {
                 if (j != 0 && k == j * Model.countVariable - 1)
@@ -145,7 +145,7 @@ x_{j_1}+\widehat{\alpha}_{1j_2}x_{j_2}+\ldots+\widehat{\alpha}_{1j_r}x_{j_r}&amp
         <br />
         for (int k = 0; k < Model.countRows; k++)
         {
-            @Html.TextBoxFor(x => x.myArray)
+            @Html.TextBoxFor(x => x.myArray,new { @placeholder = "0", @id = "myInput1" })
 
             <br />
         }
@@ -171,3 +171,14 @@ x_{j_1}+\widehat{\alpha}_{1j_2}x_{j_2}+\ldots+\widehat{\alpha}_{1j_r}x_{j_r}&amp
     }
 }
 
+
+
+
+
+
+<style>
+    #myInput1 {
+        width: 100px; /* Ширина поля в пикселах */
+        /*margin-top: 100px;*/
+    }
+</style>

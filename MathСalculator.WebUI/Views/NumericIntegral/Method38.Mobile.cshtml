@@ -1,0 +1,72 @@
+﻿@model  MathСalculator.WebUI.Models.NumericalIntegration
+@{
+    ViewBag.Title = "Метод 3/8";
+}
+
+
+<h2 class="myh2"><strong>Вычислить онлайн</strong></h2>
+
+<div class="alert alert-success" role="alert">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    Пример ввода операторов и функций:
+    <br />
+    +, -, *, /, ^, %
+    <br />
+    sqrt, sin, cos, tan, atan, acos, asin, acotan, exp, ln, log, sinh, cosh, tanh, abs, ceil, floor, fac, sfac, round, fpart
+    <br />
+    !, ==, !=, ||, &&, >, < , >=, <=
+    <br />
+    Константы
+    <br />
+    PI (value of System.Math.PI),
+    Euler (value of System.Math.E) true (1.0),
+    false (0.0),
+    infinity (value of Double.PositiveInfinity),
+</div>
+
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Введите начальные данные</h3>
+        <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+    </div>
+    <div class="panel-body">
+        <center>
+            @using (Html.BeginForm("Method38", "NumericIntegral", FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+                <p class="texterror">
+                    @Html.ValidationSummary(true, "Вы что-то сделали не так. Возможные проблемы: ")
+                </p>
+                @Html.Label("Введите функцию")    <br />
+                <span>
+                    <img style="max-width: 25px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/German_integral.gif/65px-German_integral.gif" />
+                    @Html.TextBoxFor(x => x.Function, new { @placeholder = "x^2*cos(x)" }) dx
+                </span>
+
+                <br />
+                @Html.Label("Введите начало отрезка [a,b]")
+                @Html.TextBoxFor(x => x.A, new { @placeholder = "0", @id = "myInput" })
+                <br />
+                <br />
+                @Html.Label("Введите конец отрезка [a,b]")
+                @Html.TextBoxFor(x => x.B, new { @placeholder = "1", @id = "myInput1" })
+                <br />
+
+                @Html.LabelFor(x => x.N)
+                <br />
+                @Html.TextBoxFor(x => x.N, new { @placeholder = "1000" })
+                <br />
+                <br />
+                <div>
+                    <input type="submit" class="btn btn-primary" value="Вычислить интеграл" />
+                </div>
+            }
+        </center>
+    </div>
+    <div class="panel-footer">
+        @Html.LabelFor(x => x.Result)
+        @Html.TextBoxFor(x => x.Result)
+
+
+    </div>
+</div>

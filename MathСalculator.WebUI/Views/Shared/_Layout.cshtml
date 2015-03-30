@@ -3,6 +3,7 @@
 <html>
 <head>
 
+    <link rel="shortcut icon" href="~/Content/favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width"/>
     <meta name="google-site-verification" content="CRduMzF20yQo77LFEDcSqhKXzqvfVfxT7SzDLBvKvS4" />
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
@@ -60,11 +61,11 @@
                             </li>
                             <li class="col-sm-3">
                                 <ul>
-                                    <a href="@Url.Action("NumericIntegr", "Methods")"><li class="dropdown-header">Численное интегрирование</li></a>
-                                    <li><a href="@Url.Action("Rectangles", "Methods")">Метод прямоугольников</a></li>
-                                    <li><a href="@Url.Action("Trapezoids", "Methods")">Метод трапеций</a></li>
-                                    <li><a href="@Url.Action("Simpson", "Methods")">Метод парабол (метод Симпсона)</a></li>
-                                    <li><a href="#">Метод 3/8</a></li>
+                                    <a href="@Url.Action("NumericIntegr", "NumericIntegral")"><li class="dropdown-header">Численное интегрирование</li></a>
+                                    <li><a href="@Url.Action("Rectangles", "NumericIntegral")">Метод прямоугольников</a></li>
+                                    <li><a href="@Url.Action("Trapezoids", "NumericIntegral")">Метод трапеций</a></li>
+                                    <li><a href="@Url.Action("Simpson", "NumericIntegral")">Метод парабол (метод Симпсона)</a></li>
+                                    <li><a href="@Url.Action("Method38", "NumericIntegral")">Метод 3/8</a></li>
 
                                     <li class="divider"></li>
                                     <li class="dropdown-header">Онлайн сервисы</li>

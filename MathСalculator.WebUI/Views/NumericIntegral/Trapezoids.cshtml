@@ -1,0 +1,155 @@
+﻿@model  MathСalculator.WebUI.Models.NumericalIntegration
+@{
+    ViewBag.Title = "Метод трапеций";
+}
+
+
+<p align="center" style="font-size: 16px; text-decoration: underline; background-color: rgb(255, 255, 255);"><span style="font-size:24px;">Формула трапеций</span></p>
+
+<p align="left" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);">Рассмотрим интеграл <img align="middle" height="59" src="http://www.simumath.net/library/materials/Num_Integr_introduction/images/Eqn007.png" style="font-size: 14px; line-height: 23.7999992370605px; text-align: -webkit-center; background-color: rgb(255, 255, 255);" width="109" />, представляющий собой,&nbsp;<u>как известно</u>, площадь под кривой&nbsp;<img align="middle" height="26" src="http://www.simumath.net/library/materials/Num_Integr_formula_trap/images/Eqn001.png" width="74" />на отрезке&nbsp;<img align="middle" height="23" src="http://www.simumath.net/library/materials/Num_Integr_formula_trap/images/Eqn002.png" width="74" />&nbsp;(рис. 1).</p>
+
+<p align="center" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);">
+    <img alt="Ris1_num_int.gif" height="438" src="http://www.simumath.net/library/materials/Num_Integr_formula_trap/Num_Integr_formula_trap_clip_image005.gif" width="474" />&nbsp;<br />
+    Рис. 1. Геометрическое представление численного интегрирования
+</p>
+
+<p align="center" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);">&nbsp;</p>
+
+<p align="left" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);">Разобьем теперь интервал интегрирования&nbsp; (<em>a</em>,&nbsp;<em>b</em>)&nbsp; на&nbsp;&nbsp;<em>n</em>&nbsp; равных частей длиной&nbsp;<img align="middle" height="26" src="http://www.simumath.net/library/materials/Num_Integr_formula_trap/images/Eqn003.png" width="107" />&nbsp;каждая (&nbsp;<em>h</em>&nbsp;называется&nbsp;<em>шагом интегрирования</em>).</p>
+
+<p align="left" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);">Рассмотрим один из этих интервалов (рис. 2).</p>
+
+<p align="center" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);">
+    <img alt="Ris2_num_int.gif" height="412" src="http://www.simumath.net/library/materials/Num_Integr_formula_trap/Num_Integr_formula_trap_clip_image008.gif" width="497" />&nbsp;<br />
+    Рис. 2. Один интервал численного интегрирования по методу трапеций
+</p>
+
+<p align="left" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);">&nbsp;</p>
+
+<p align="left" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);">Площадь под кривой&nbsp;<img align="middle" height="26" src="http://www.simumath.net/library/materials/Num_Integr_formula_trap/images/Eqn004.png" width="74" />&nbsp;между&nbsp;<img align="middle" height="29" src="http://www.simumath.net/library/materials/Num_Integr_formula_trap/images/Eqn005.png" width="72" />&nbsp;равна:</p>
+
+<p align="center" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);"><img align="middle" height="64" src="http://www.simumath.net/library/materials/Num_Integr_formula_trap/images/Eqn006.png" width="122" /></p>
+
+<p align="left" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);">Предположим, что шаг интегрирования&nbsp;&nbsp;<em>h&nbsp;</em>достаточно мал, тогда эту площадь без существенной погрешности можно приравнять к площади трапеции&nbsp;<em>ABCD</em>. Так как&nbsp;<img align="middle" height="29" src="http://www.simumath.net/library/materials/Num_Integr_formula_trap/images/Eqn007.png" width="208" />, получим:</p>
+
+<p align="center" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);"><img align="middle" height="50" src="http://www.simumath.net/library/materials/Num_Integr_formula_trap/images/Eqn008.png" width="130" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(*)</p>
+
+<p align="left" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);">
+    <br />
+    Поскольку интеграл от суммы равен сумме интегралов (свойство&nbsp;<em>аддитивности</em>), то
+</p>
+
+<p align="center" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);"><img align="middle" height="55" src="http://www.simumath.net/library/materials/Num_Integr_formula_trap/images/Eqn009.png" width="71" />,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(**)</p>
+
+<p align="left" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);">где&nbsp;<img align="middle" height="29" src="http://www.simumath.net/library/materials/Num_Integr_formula_trap/images/Eqn010.png" width="109" />.</p>
+
+<p align="left" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);">Подставляя (*) в (**), окончательно получим:</p>
+
+<p align="center" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);"><img align="middle" height="50" src="http://www.simumath.net/library/materials/Num_Integr_formula_trap/images/Eqn011.png" width="245" />. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+
+<p align="left" style="line-height: 23.7999992370605px; font-size: 14px; background-color: rgb(255, 255, 255);">Это и есть&nbsp;<em>формула трапеций</em>. Правило трапеций &ndash; один из простейших методов численного интегрирования, и хотя погрешности вычислений этим способом больше, чем в других методах, он пользуется большим спросом благодаря своей наглядности и простоте.</p>
+
+
+<h2 class="myh2"><strong>Вычислить онлайн</strong></h2>
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+<div class="alert alert-success" role="alert">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    Пример ввода операторов и функций:
+    <br />
+    +, -, *, /, ^, %
+    <br />
+    sqrt, sin, cos, tan, atan, acos, asin, acotan, exp, ln, log, sinh, cosh, tanh, abs, ceil, floor, fac, sfac, round, fpart
+    <br />
+    !, ==, !=, ||, &&, >, < , >=, <=
+    <br />
+    Константы
+    <br />
+    PI (value of System.Math.PI),
+    Euler (value of System.Math.E) true (1.0),
+    false (0.0),
+    infinity (value of Double.PositiveInfinity),
+</div>
+
+
+
+
+<div style="margin-left: 22%;">
+    <div class="col-lg-9 col-md-10 col-sm-2 col-xs-11">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                    <h3 class="panel-title">Введите начальные данные</h3>
+                  
+                </div>
+            </div>
+            <center>
+                <div class="panel-body">
+                    @using (Html.BeginForm("Trapezoids", "NumericIntegral", FormMethod.Post, new { @class = "form-horizontal" }))
+                    {
+                        <p class="texterror">
+                            @Html.ValidationSummary(true, "Вы что-то сделали не так. Возможные проблемы: ")
+                        </p>
+                        @Html.Label("Введите функцию")
+                        <br />
+                        @Html.TextBoxFor(x => x.B, new { @placeholder = "1", @id = "myInput" })
+                        <br />
+                        <span>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/German_integral.gif/65px-German_integral.gif" />
+                            @Html.TextBoxFor(x => x.Function, new { @placeholder = "x^2*cos(x)" })  dx
+                        </span>
+                        <br />
+                        @Html.TextBoxFor(x => x.A, new { @placeholder = "0", @id = "myInput1" })
+                        <br/>
+    <br />
+                        @Html.LabelFor(x => x.N)
+                        <br />
+                        @Html.TextBoxFor(x => x.N, new { @placeholder = "1000" })
+                        <br />
+                        <br />
+                        <div>
+                            <input type="submit" class="btn btn-primary" value="Вычислить интеграл" />
+                        </div>
+                    }
+
+                </div>
+
+            </center>
+            <div class="panel-footer">
+
+                @Html.Label("Результат")
+                @Html.TextBoxFor(x => x.Result)
+
+                @if (User.Identity.IsAuthenticated)
+                {
+
+                    <a style="margin-left: 20px;" href="@ViewBag.Adress" target="_blank"><span class="glyphicon glyphicon-export"></span>Проверить решение</a>
+                }
+            </div>
+        </div>
+    </div>
+
+
+
+<style>
+    /*body {
+        background-color: #CECDD5;
+    }*/
+
+    #myInput {
+        width: 20px; /* Ширина поля в пикселах */
+        margin-right: 180px;
+        /*margin-top: 100px;*/
+    }
+
+    #myInput1 {
+        width: 20px; /* Ширина поля в пикселах */
+        margin-right: 180px;
+    }
+
+    body panel. {
+        width: 600px;
+    }
+</style>

@@ -8,18 +8,24 @@ namespace MathСalculator.WebUI.Models
 {
     public class GausModel
     {
+        [Required]
         [Display(Name = "Столбец свободных членов")]
         public double[] myArray { get; set; }
 
         public double[] answer { get; set; }
 
+        [Required]
         [Display(Name = "Матрица коэфициентов")]
         public double[,] Matrix { get; set; }
 
+        [Required]
         [Display(Name = "Количество переменных")]
         public int countVariable { get; set; }
 
+        [Required]
         [Display(Name = "Количество строк")]
         public int countRows { get; set; }
     }
 }
+
+
