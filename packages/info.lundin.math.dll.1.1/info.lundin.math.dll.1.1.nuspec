@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>info.lundin.math.dll</id>
+    <version>1.1</version>
+    <authors>Patrik Lundin</authors>
+    <owners>Patrik Lundin</owners>
+    <licenseUrl>http://www.microsoft.com/en-us/openness/licenses.aspx#MPL</licenseUrl>
+    <projectUrl>http://lundin.info/mathparser</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Math expression parser, evaluates a string mathematical expression and returns a double value.</description>
+    <releaseNotes />
+    <copyright>Copyright 2014 Patrik Lundin</copyright>
+    <tags>Math Expression Parser</tags>
+  </metadata>
+</package>
