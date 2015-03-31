@@ -70,32 +70,41 @@ namespace MathСalculator.WebUI.Controllers
         [HttpPost]
         public ActionResult Gaus(GausModel model1, IList<double> ints)
         {
-            if (!ModelState.IsValid || model1.myArray == null)
+
+            try
             {
-                ViewBag.flag = true;
-                ViewBag.flag1 = false;
+                if (model1.myArray == null)
+                {
+                    ViewBag.flag = true;
+                    ViewBag.flag1 = false;
+                    return View(model1);
+                }
+                if (ints != null)
+                {
+                    double[] Matr = {};
+                    double[,] Matrix = new double[model1.countRows, model1.countVariable];
+                    var count = ints.Count()/model1.countRows;
+                    for (int i = 0; i < model1.countRows; i++)
+                    {
+                        Matr = ints.Skip(i*Matr.Length).Take(count).ToArray();
+                        for (int j = 0; j < model1.countVariable; j++)
+                        {
+
+                            Matrix[i, j] = Matr[j];
+                        }
+
+                    }
+                    model1.Matrix = Matrix;
+                }
+                ViewBag.flag = false;
+                ViewBag.answer = true;
+                model1.answer = GausResult(model1.Matrix, model1.myArray, model1.countRows);
+            }
+            catch (Exception)
+            {
+                    ModelState.AddModelError("",",kf-,kf");
                 return View(model1);
             }
-            if (ints != null)
-            {
-                double[] Matr = {};
-                double[,] Matrix = new double[model1.countRows, model1.countVariable];
-                var count = ints.Count()/model1.countRows;
-                for (int i = 0; i < model1.countRows; i++)
-                {
-                    Matr = ints.Skip(i*Matr.Length).Take(count).ToArray();
-                    for (int j = 0; j < model1.countVariable; j++)
-                    {
-
-                        Matrix[i, j] = Matr[j];
-                    }
-
-                }
-                model1.Matrix = Matrix;
-            }
-            ViewBag.flag = false;
-            ViewBag.answer = true;
-            model1.answer = GausResult(model1.Matrix, model1.myArray, model1.countRows);
             return View(model1);
         }
 

@@ -2,7 +2,47 @@
 @{
     ViewBag.Title = "Метод 3/8";
 }
+<center>
+    <h4>Формула «трех восьмых»</h4>
+</center>
 
+<p style="box-sizing: border-box; margin: 0px 0px 10px; color: rgb(51, 51, 51); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; text-align: justify; background-color: rgb(255, 255, 255);">Она получается из формулы Ньютона-Котеса&nbsp;<img src="~/Content/1.png" style="box-sizing: border-box; border: 0px; vertical-align: middle;" />при n = 3, интерполирование выполняется для функции f(x) &nbsp;в точках&nbsp;<img height="48" src="~/Content/3.png" style="box-sizing: border-box; border: 0px; vertical-align: middle;" width="169" />,&nbsp; где&nbsp;<img height="20" src="~/Content/4.png" style="box-sizing: border-box; border: 0px; vertical-align: middle;" width="75" />.</p>
+
+<p style="box-sizing: border-box; margin: 0px 0px 10px; color: rgb(51, 51, 51); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; text-align: justify; background-color: rgb(255, 255, 255);">Формула будет следующей:</p>
+
+<p style="box-sizing: border-box; margin: 0px 0px 10px; color: rgb(51, 51, 51); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; text-align: center; background-color: rgb(255, 255, 255);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img height="60" src="~/Content/5.png" style="box-sizing: border-box; border: 0px; vertical-align: middle;" width="460" />. (1)</p>
+
+<p style="box-sizing: border-box; margin: 0px 0px 10px; color: rgb(51, 51, 51); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; text-align: justify; background-color: rgb(255, 255, 255);">Ее часто называют&nbsp;<em style="box-sizing: border-box;">формулой &laquo;трех восьмых&raquo;</em>. Можно показать, что погрешность формулы (1) может быть, если&nbsp;<img height="28" src="~/Content/6.png" style="box-sizing: border-box; border: 0px; vertical-align: middle;" width="32" />&nbsp;есть непрерывная и мало меняющаяся на [a,b]&nbsp;функция, представлена в виде</p>
+
+<p style="box-sizing: border-box; margin: 0px 0px 10px; color: rgb(51, 51, 51); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; text-align: center; background-color: rgb(255, 255, 255);">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img height="53" src="~/Content/8.png" style="box-sizing: border-box; border: 0px; vertical-align: middle;" width="173" />,&nbsp;<img height="23" src="~/Content/9.png" style="box-sizing: border-box; border: 0px; vertical-align: middle;" />. (2)<br style="box-sizing: border-box;" />
+    Применим формулу трех восьмых к построению формул приближенного интегрирования при большем числе равноотстоящих узлов.
+</p>
+
+<p style="box-sizing: border-box; margin: 0px 0px 10px; color: rgb(51, 51, 51); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; background-color: rgb(255, 255, 255);">Пусть n&nbsp;есть число, кратное трем. Разделим [a,b]&nbsp;на n&nbsp;равных частей длины&nbsp;<img height="48" src="~/Content/10.png" style="box-sizing: border-box; border: 0px; vertical-align: middle;" width="73" />. Возьмем строенный отрезок [a+kh,a+(k+3)h]&nbsp;и к интегрированию по нем применим правило (1):</p>
+
+<p style="box-sizing: border-box; margin: 0px 0px 10px; color: rgb(51, 51, 51); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; background-color: rgb(255, 255, 255);">&nbsp;</p>
+<center>
+    <img height="119" src="~/Content/11.png" />
+</center>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; color: rgb(51, 51, 51); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; background-color: rgb(255, 255, 255);">Если такие равенства записать для всех строенных отрезков [a,a+3h],[a+3h,a+6h] , &hellip; и сложить их почленно, построим общую формулу трех восьмых:</p>
+<center>
+    <img height="90" src="~/Content/be808-clip-5kb.png" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (3)</p>
+</center>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; color: rgb(51, 51, 51); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; background-color: rgb(255, 255, 255);">
+    <br style="box-sizing: border-box;" />
+    где&nbsp;<img height="25" src="~/Content/12.png" style="box-sizing: border-box; border: 0px; vertical-align: middle;" width="113" />.
+</p>
+
+<p style="box-sizing: border-box; margin: 0px 0px 10px; color: rgb(51, 51, 51); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; background-color: rgb(255, 255, 255);">Погрешность R(f)&nbsp;имеет следующее значение</p>
+
+<p align="center" style="box-sizing: border-box; margin: 0px 0px 10px; color: rgb(51, 51, 51); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; background-color: rgb(255, 255, 255);"><img height="111" src="~/Content/13.png" style="box-sizing: border-box; border: 0px; vertical-align: middle;" width="560" /></p>
+
+<p style="box-sizing: border-box; margin: 0px 0px 10px; color: rgb(51, 51, 51); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; background-color: rgb(255, 255, 255);">Множитель&nbsp;<img height="47" src="~/Content/14.png" style="box-sizing: border-box; border: 0px; vertical-align: middle;" width="214"/>&nbsp;есть среднее арифметическое, состоящее из n/3&nbsp;значений четвертой производной, и так как&nbsp;<img height="28" src="~/Content/6.png" style="box-sizing: border-box; border: 0px; vertical-align: middle;" width="32"/>&nbsp;считается непрерывной функцией, то на [a,b]&nbsp;существует точка&nbsp;<img height="23" src="~/Content/15.png" style="box-sizing: border-box; border: 0px; vertical-align: middle;" width="13"/>&nbsp;такая, что этот множитель равен&nbsp;<img height="31" src="~/Content/16.png" style="box-sizing: border-box; border: 0px; vertical-align: middle;" width="59"/>.
+    Для погрешности R(f)&nbsp;окончательно получается выражение:&nbsp;
+    <center><img src="~/Content/c2884-clip-3kb.png" />.</center></p>
+
+<p style="box-sizing: border-box; margin: 0px 0px 10px; color: rgb(51, 51, 51); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; background-color: rgb(255, 255, 255);">Погрешность формулы имеет такой же порядок, как и для формулы парабол, т.е.&nbsp;<img height="25" src="~/Content/17.png" style="box-sizing: border-box; border: 0px; vertical-align: middle;" width="45" />&nbsp;на [a,b].</p>
 
 <h2 class="myh2"><strong>Вычислить онлайн</strong></h2>
 

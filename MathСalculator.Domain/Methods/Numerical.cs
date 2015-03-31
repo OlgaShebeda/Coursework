@@ -128,7 +128,7 @@ namespace MathСalculator.Domain.Methods
                 double S = 0;
                 double h = (b - a) / n;
                 for (int i = 0; i < n; i++)
-                    S = S + h * (CalcMethods.ParseFunction(function, (a + (i + 1 / 2) * h)));
+                    S = S + h * (CalcMethods.ParseFunction(function, (a + (i + 0.5) * h)));
                 return S;
             }
         }

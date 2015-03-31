@@ -73,11 +73,20 @@ x_{j_1}+\widehat{\alpha}_{1j_2}x_{j_2}+\ldots+\widehat{\alpha}_{1j_r}x_{j_r}&amp
 <p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">Упомянутое выше условие&nbsp;<img alt="\beta_i= 0\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/3/b/4/3b4ac88101432adcf9084c8bb105f97d.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;для всех&nbsp;<img alt="i &gt; r\!" class="mwe-math-fallback-image-inline tex" src="https://upload.wikimedia.org/math/4/7/b/47b0e431535ce2ef1d908c3662097e76.png" style="border: none; vertical-align: middle; margin: 0px; display: inline-block;" />&nbsp;может быть сформулировано в качестве необходимого и достаточного условия совместности:</p>
 
 <p style="margin: 0.5em 0px; line-height: 22.3999996185303px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">Напомним, что рангом совместной системы называется ранг её основной матрицы (либо расширенной, так как они равны).</p>
+
+<center>
+    <h1>Видео-урок</h1>
+    <iframe width="854" height="510" src="https://www.youtube.com/embed/x4s7KqPB2yQ" frameborder="0" allowfullscreen></iframe>
+</center>
+
+<h2 class="myh2"><strong>Решение</strong></h2>
+<hr/>
 @if (ViewBag.flag1 == true)
-{
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-        Начать решение
-    </button>
+{ <center>
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+            Начать решение
+        </button>
+    </center>
 }
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -115,70 +124,91 @@ x_{j_1}+\widehat{\alpha}_{1j_2}x_{j_2}+\ldots+\widehat{\alpha}_{1j_r}x_{j_r}&amp
     </div>
 </div>
 
-<form method="post" action="/Methods/Gaus">
-    @if (ViewBag.flag == true)
-    {
-        <br />
-
-        @Html.Hidden("countRows", Model.countRows)
-        ;
-        @Html.Hidden("countVariable", Model.countVariable)
-        ;
-
-        @Html.LabelFor(x => x.Matrix)
-        <br />
-        for (int k = 0; k < Model.countRows * Model.countVariable; k++)
-        {
-
-            @Html.TextBox("ints", "0", new { @id = "myInput1" })
-            for (int j = 0; j < Model.countRows; j++)
-            {
-                if (j != 0 && k == j * Model.countVariable - 1)
-                {
-                    <br />
-                }
-            }
-        }
-
-        <br />
-        @Html.LabelFor(x => x.myArray)
-        <br />
-        for (int k = 0; k < Model.countRows; k++)
-        {
-            @Html.TextBoxFor(x => x.myArray,new { @placeholder = "0", @id = "myInput1" })
-
-            <br />
-        }
-        <br />
-        <br />
-    <button type="submit" class="btn btn-primary">Решить</button>
-
-    }
-</form>
-@if (ViewBag.answer == true)
-{
-    <br />
-    <br />
-    <br />
-    for (int i = 0; i < Model.answer.Length; i++)
-    {
-        @Html.Label("x[" + i + "] = ")
-        @Html.TextBoxFor(x => x.answer[i]);
-    <br />
-    }
-    {
-        <br />
-    }
-}
-
-
-
-
-
-
 <style>
     #myInput1 {
         width: 100px; /* Ширина поля в пикселах */
         /*margin-top: 100px;*/
     }
 </style>
+
+
+
+
+ @if (ViewBag.flag == true)
+                {
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Введите начальные данные</h3>
+    </div>
+    <div class="panel-body">
+        <center>
+            @using (Html.BeginForm("Gaus", "Methods", FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+               
+                    <br />
+
+                    @Html.Hidden("countRows", Model.countRows)
+
+                    @Html.Hidden("countVariable", Model.countVariable)
+
+                    @Html.LabelFor(x => x.Matrix)
+                    <br />
+                    for (int k = 0; k < Model.countRows * Model.countVariable; k++)
+                    {
+
+                        @Html.TextBox("ints", "0", new { @id = "myInput1" })
+                        for (int j = 0; j < Model.countRows; j++)
+                        {
+                            if (j != 0 && k == j * Model.countVariable - 1)
+                            {
+                                <br />
+                            }
+                        }
+                    }
+
+                    <br />
+                    @Html.LabelFor(x => x.myArray)
+                    <br />
+                    for (int k = 0; k < Model.countRows; k++)
+                    {
+                        @Html.TextBoxFor(x => x.myArray, new { @placeholder = "0", @id = "myInput1" })
+
+                        <br />
+                    }
+                    <br />
+                    <br />
+                    <button type="submit" class="btn btn-primary">Решить</button>
+
+               
+            }
+        </center>
+    </div>
+</div>
+
+}
+
+@if (ViewBag.answer == true)
+            {
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Решение</h3>
+
+    </div>
+    <div class="panel-footer">
+        <center>
+            @for (int i = 0; i < Model.answer.Length; i++)
+            {
+                @Html.Label("x[" + i + "] = ")
+                @Html.TextBoxFor(x => x.answer[i]);
+                <br />
+            }
+
+        </center>
+ 
+            
+           
+        </div>
+</div>
+            }

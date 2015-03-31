@@ -122,13 +122,33 @@
     <Content Include="App_Data\MathCalculatorDB_log.ldf">
       <DependentUpon>MathCalculatorDB.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\1.png" />
+    <Content Include="Content\10.png" />
+    <Content Include="Content\11.png" />
+    <Content Include="Content\12.png" />
+    <Content Include="Content\13.png" />
+    <Content Include="Content\14.png" />
+    <Content Include="Content\15.png" />
+    <Content Include="Content\16.png" />
+    <Content Include="Content\17.png" />
+    <Content Include="Content\2.png" />
+    <Content Include="Content\3.png" />
+    <Content Include="Content\3c302-clip-9kb.png" />
+    <Content Include="Content\4.png" />
     <Content Include="Content\404Mobile.css" />
     <Content Include="Content\435.jpg" />
+    <Content Include="Content\5.png" />
+    <Content Include="Content\6.png" />
+    <Content Include="Content\7.png" />
+    <Content Include="Content\8.png" />
+    <Content Include="Content\9.png" />
     <Content Include="Content\avatar.jpg" />
+    <Content Include="Content\be808-clip-5kb.png" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\c2884-clip-3kb.png" />
     <Content Include="Content\Error404.css" />
     <Content Include="Content\favicon.ico" />
     <Content Include="Content\fon1.jpg" />
@@ -149,7 +169,6 @@
     <Content Include="Content\style404.css" />
     <Content Include="Content\styleForm.css" />
     <Content Include="Content\StyleSheet1.css" />
-    <Content Include="Content\styleStudent.css" />
     <Content Include="Content\TextFile1.txt" />
     <Content Include="Content\ZvqE2wp2kw-1680x1050.jpg" />
     <Content Include="Global.asax" />
