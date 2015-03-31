@@ -1,0 +1,12 @@
+D:\Универ\4 курс\Coursework\MathСalculator.Domain\bin\Debug\MathСalculator.Domain.dll.config
+D:\Универ\4 курс\Coursework\MathСalculator.Domain\bin\Debug\MathСalculator.Domain.dll
+D:\Универ\4 курс\Coursework\MathСalculator.Domain\bin\Debug\MathСalculator.Domain.pdb
+D:\Универ\4 курс\Coursework\MathСalculator.Domain\bin\Debug\DocX.dll
+D:\Универ\4 курс\Coursework\MathСalculator.Domain\bin\Debug\EntityFramework.dll
+D:\Универ\4 курс\Coursework\MathСalculator.Domain\bin\Debug\EntityFramework.SqlServer.dll
+D:\Универ\4 курс\Coursework\MathСalculator.Domain\bin\Debug\info.lundin.math.dll
+D:\Универ\4 курс\Coursework\MathСalculator.Domain\bin\Debug\EntityFramework.xml
+D:\Универ\4 курс\Coursework\MathСalculator.Domain\bin\Debug\EntityFramework.SqlServer.xml
+D:\Универ\4 курс\Coursework\MathСalculator.Domain\obj\Debug\MathСalculator.Domain.csprojResolveAssemblyReference.cache
+D:\Универ\4 курс\Coursework\MathСalculator.Domain\obj\Debug\MathСalculator.Domain.dll
+D:\Универ\4 курс\Coursework\MathСalculator.Domain\obj\Debug\MathСalculator.Domain.pdb
