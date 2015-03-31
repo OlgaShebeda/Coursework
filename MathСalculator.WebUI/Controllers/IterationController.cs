@@ -43,7 +43,7 @@ namespace MathСalculator.WebUI.Controllers
                 return View(model);
             }
             string resultTxt = string.Empty;
-            COfSecantsMethod method = new COfSecantsMethod();
+            SimpleIterationMethod method = new SimpleIterationMethod();
             try
             {
                 model.Result = method.OfSecantsMethod(model.Fuctions, model.X0, model.X1, model.Epsilon, ref resultTxt);
@@ -87,7 +87,7 @@ namespace MathСalculator.WebUI.Controllers
                     Resources.MethodsController_Newton_Пожалуйста_введите_корректно_начальные_данные);
                 return View(model);
             }
-            CChordMethod method = new CChordMethod();
+            SimpleIterationMethod method = new SimpleIterationMethod();
             string resultTxt = string.Empty;
             try
             {
@@ -122,7 +122,7 @@ namespace MathСalculator.WebUI.Controllers
                     Resources.MethodsController_Newton_Пожалуйста_введите_корректно_начальные_данные);
                 return View(model);
             }
-            CNewtonsMethod method = new CNewtonsMethod();
+            SimpleIterationMethod method = new SimpleIterationMethod();
             string resultTxt = "";
             try
             {
